@@ -1,7 +1,5 @@
 # MoodleThemeBoostCustomizations
 
-# Moodle Demo / Sandbox – Theme & Styles
-
 ## Introduction
 This repository contains customizations for selected Moodle categories  
 (`category-53`, `category-114`, `category-88`) based on the **Boost theme**.
