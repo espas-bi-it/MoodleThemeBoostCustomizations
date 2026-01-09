@@ -1,0 +1,272 @@
+/* ======================================================
+   BOOST – DESIGN-ANPASSUNGEN
+   Kategorie 53 + 114 (Kurse & Dokumentation)
+   Kompakte Raw SCSS Version
+   ====================================================== */
+ 
+/* ------------------------------------------------------
+   CONTENT-BREITE (Main Inner)
+------------------------------------------------------ */
+ 
+/* Mobile */
+@media (max-width: 767.98px) {
+  body.category-53.limitedwidth #page.drawers .main-inner,
+  body.category-114.limitedwidth #page.drawers .main-inner {
+    max-width: 100%;
+    padding: 1rem;
+  }
+}
+ 
+/* Desktop */
+@media (min-width: 768px) {
+  body.category-53.limitedwidth #page.drawers .main-inner,
+  body.category-114.limitedwidth #page.drawers .main-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
+ 
+/* ------------------------------------------------------
+   HEADER & SECONDARY NAVIGATION
+------------------------------------------------------ */
+@media (min-width: 768px) {
+  body.category-53 .header-maxwidth,
+  body.category-114 .header-maxwidth {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+}
+ 
+body.category-53 .secondary-navigation .navigation .nav-tabs,
+body.category-114 .secondary-navigation .navigation .nav-tabs {
+  border: none;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+ 
+/* ------------------------------------------------------
+   NAVIGATION LINKS (DRAWER)
+------------------------------------------------------ */
+body.category-53 .drawer.drawer-left,
+body.category-114 .drawer.drawer-left {
+  width: 20.25rem;       /* ≈ 324px */
+  max-width: 20.25rem;
+}
+ 
+body.category-53:not(.drawer-open-index) .drawer.drawer-left,
+body.category-114:not(.drawer-open-index) .drawer.drawer-left {
+  left: calc(-20.25rem - 0.625rem);
+}
+ 
+body.category-53.drawer-open-index .drawer.drawer-left,
+body.category-114.drawer-open-index .drawer.drawer-left {
+  left: 0;
+}
+ 
+body.category-53 .drawer,
+body.category-114 .drawer {
+  background-color: #e8eef8;
+}
+ 
+/* ------------------------------------------------------
+   TYPOGRAFIE – KURS & AKTIVITÄTEN
+------------------------------------------------------ */
+body.category-53:is(#page-course-view-topics,
+                     #page-course-view-section-topics,
+                     #page-mod-quiz-view,
+                     #page-mod-quiz-attempt,
+                     #page-mod-wiki-view,
+                     #page-mod-page-view,
+                     #page-mod-feedback-view) strong,
+body.category-114:is(#page-course-view-topics,
+                     #page-course-view-section-topics,
+                     #page-mod-quiz-view,
+                     #page-mod-quiz-attempt,
+                     #page-mod-wiki-view,
+                     #page-mod-page-view,
+                     #page-mod-feedback-view) strong {
+  font-weight: 600 !important;
+}
+ 
+body.category-53:is(#page-course-view-topics,
+                     #page-course-view-section-topics,
+                     #page-mod-quiz-view,
+                     #page-mod-quiz-attempt,
+                     #page-mod-wiki-view,
+                     #page-mod-page-view,
+                     #page-mod-feedback-view) code,
+body.category-114:is(#page-course-view-topics,
+                     #page-course-view-section-topics,
+                     #page-mod-quiz-view,
+                     #page-mod-quiz-attempt,
+                     #page-mod-wiki-view,
+                     #page-mod-page-view,
+                     #page-mod-feedback-view) code {
+  font-size: 0.95rem;
+}
+ 
+/* ------------------------------------------------------
+   HINTERGRUND – KURS & AKTIVITÄTEN
+------------------------------------------------------ */
+body.category-53:is(#page-course-view-topics,
+                     #page-course-view-section-topics,
+                     #page-mod-quiz-view,
+                     #page-mod-quiz-attempt,
+                     #page-mod-wiki-view,
+                     #page-mod-page-view,
+                     #page-mod-feedback-view),
+body.category-114:is(#page-course-view-topics,
+                     #page-course-view-section-topics,
+                     #page-mod-quiz-view,
+                     #page-mod-quiz-attempt,
+                     #page-mod-wiki-view,
+                     #page-mod-page-view,
+                     #page-mod-feedback-view) {
+  background-image: radial-gradient(
+    circle,
+    #ffffff,
+    #fcfcfc,
+    #f8f8f8,
+    #f5f5f5,
+    #f2f2f2
+  );
+}
+ 
+/* ------------------------------------------------------
+   BOOTSTRAP bg-light – Kategorie 53 + 114
+------------------------------------------------------ */
+body.category-53 .card.bg-light,
+body.category-114 .card.bg-light,
+body.category-53 .card-header.bg-light,
+body.category-114 .card-header.bg-light,
+body.category-53 .alert.bg-light,
+body.category-114 .alert.bg-light,
+body.category-53 thead.bg-light,
+body.category-114 thead.bg-light,
+body.category-53 th.bg-light,
+body.category-114 th.bg-light,
+body.category-53 td.bg-light,
+body.category-114 td.bg-light {
+  background-color: #e8eef8 !important;
+}
+ 
+/* ------------------------------------------------------
+   FRAGEN (QUIZ / AUFGABEN)
+------------------------------------------------------ */
+body.category-53 .que .formulation,
+body.category-114 .que .formulation {
+  color: #222;
+  background-color: #fafafa;
+  border-color: transparent;
+  border-width: 0;
+  padding: 1.25rem;
+  border-radius: 0.5rem;
+}
+ 
+ 
+/* ======================================================
+   DEMO / SANDBOX – Course 200 (Sandstone Overrides)
+   ====================================================== */
+ 
+/* ------------------------------------------------------
+   CONTENT-BREITE (Main Inner)
+------------------------------------------------------ */
+@media (max-width: 767.98px) {
+  body.course-200.limitedwidth #page.drawers .main-inner {
+    max-width: 100%;
+    padding: 1rem;
+  }
+}
+ 
+@media (min-width: 768px) {
+  body.course-200.limitedwidth #page.drawers .main-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
+ 
+/* ------------------------------------------------------
+   HEADER & SECONDARY NAVIGATION
+------------------------------------------------------ */
+@media (min-width: 768px) {
+  body.course-200 .header-maxwidth {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+}
+ 
+body.course-200 .secondary-navigation .navigation .nav-tabs {
+  border: none;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+ 
+/* ------------------------------------------------------
+   NAVIGATION LINKS (DRAWER)
+------------------------------------------------------ */
+body.course-200 .drawer.drawer-left {
+  width: 20.25rem;
+  max-width: 20.25rem;
+}
+ 
+body.course-200:not(.drawer-open-index) .drawer.drawer-left {
+  left: calc(-20.25rem - 0.625rem);
+}
+ 
+body.course-200.drawer-open-index .drawer.drawer-left {
+  left: 0;
+}
+ 
+body.course-200 .drawer {
+  background-color: #e8eef8;
+}
+ 
+/* ------------------------------------------------------
+   TYPOGRAFIE – DEMO Course 200
+------------------------------------------------------ */
+body.course-200:is(#page-course-view-topics,
+                    #page-course-view-section-topics,
+                    #page-mod-quiz-view,
+                    #page-mod-quiz-attempt,
+                    #page-mod-wiki-view,
+                    #page-mod-page-view,
+                    #page-mod-feedback-view) strong {
+  font-weight: 600 !important;
+}
+ 
+body.course-200:is(#page-course-view-topics,
+                    #page-course-view-section-topics,
+                    #page-mod-quiz-view,
+                    #page-mod-quiz-attempt,
+                    #page-mod-wiki-view,
+                    #page-mod-page-view,
+                    #page-mod-feedback-view) code {
+  font-size: 0.95rem;
+}
+ 
+/* ------------------------------------------------------
+   HINTERGRUND – DEMO Course 200
+------------------------------------------------------ */
+body.course-200:is(#page-course-view-topics,
+                    #page-course-view-section-topics,
+                    #page-mod-quiz-view,
+                    #page-mod-quiz-attempt,
+                    #page-mod-wiki-view,
+                    #page-mod-page-view,
+                    #page-mod-feedback-view) {
+  background-image: linear-gradient(100deg, rgb(230, 100, 70) 25%, rgb(235, 150, 70) 75%);
+}
+ 
+/* ------------------------------------------------------
+   FRAGEN (QUIZ / AUFGABEN)
+------------------------------------------------------ */
+body.course-200 .que .formulation {
+  color: #222;
+  background-color: #fafafa;
+  border-color: transparent;
+  border-width: 0;
+  padding: 1.25rem;
+  border-radius: 0.5rem;
+}
