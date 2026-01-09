@@ -1,23 +1,23 @@
 /* ======================================================
-   DEMO / SANDBOX – Kurse
-   Gültig für:
+   DEMO / SANDBOX – Courses
+   Applies to:
    - category-53
    - category-114
    - category-88
    ====================================================== */
 
 /* ------------------------------------------------------
-   Body Font-Size für Sandbox-Kategorien
+   Body font size for sandbox categories
 ------------------------------------------------------ */
 body.category-53,
 body.category-114,
 body.category-88 {
-  font-size: 0.9375rem; /* entspricht 15px */
+  font-size: 0.9375rem; /* equals 15px */
 }
 
 
 /* ======================================================
-   1) SEITENHINTERGRUND (nur ausgewählte Pages)
+   1) PAGE BACKGROUND (selected pages only)
    ====================================================== */
 
 body.category-53#page-course-view-topics,
@@ -50,7 +50,7 @@ body.category-88#page-mod-feedback-view {
 
 
 /* ======================================================
-   2) DRAWER – Links ohne Unterstreichung
+   2) DRAWER – remove link underline
    ====================================================== */
 
 body.category-53 .drawercontent.drag-container li a,
@@ -67,7 +67,7 @@ body.category-88 .drawercontent.drag-container li a:focus {
 
 
 /* ======================================================
-   3) CONTAINER / MAIN-INNER (Boost-Standard)
+   3) CONTAINER / MAIN-INNER (Boost default)
    ====================================================== */
 
 /* Mobile */
@@ -113,7 +113,7 @@ body.category-88 .secondary-navigation .navigation .nav-tabs {
 
 
 /* ======================================================
-   5) DRAWER (Boost-Originalbreite)
+   5) DRAWER (Boost default width)
    ====================================================== */
 
 body.category-53 .drawer.drawer-left,
@@ -141,13 +141,13 @@ body.category-88 .drawer {
   background-color: #e8eef8;
 }
 
-/* ❗ Keine manuelle Container-Verschiebung
-   → verhindert Überlagerungen (Quiz-Report, rechte Blockleiste, Editing)
+/* No manual container shifting
+   → prevents overlaps (quiz reports, right blocks, editing mode)
 */
 
 
 /* ======================================================
-   6) TYPOGRAFIE / CODE
+   6) TYPOGRAPHY / CODE
    ====================================================== */
 
 body.category-53 strong,
@@ -164,7 +164,7 @@ body.category-88 code {
 
 
 /* ======================================================
-   7) CARDS / ALERTS / TABELLEN
+   7) CARDS / ALERTS / TABLES
    ====================================================== */
 
 body.category-53 .card.bg-light,
@@ -208,7 +208,7 @@ body.category-88 .que .formulation {
 
 
 /* ======================================================
-   9) KOMPETENZBLOCK
+   9) COMPETENCE BLOCK
    ====================================================== */
 
 body.category-53 #course-competence p,
@@ -227,7 +227,7 @@ body.category-88 #course-competence li {
 
 
 /* ======================================================
-   10) ALERTS (Feinabstimmung)
+   10) ALERTS (fine tuning)
    ====================================================== */
 
 body.category-53 .alert,
@@ -239,7 +239,7 @@ body.category-88 .alert {
 
 
 /* ======================================================
-   11) TIMETRACKING
+   11) TIME TRACKING
    ====================================================== */
 
 div#course-time-tracking i {
@@ -249,7 +249,7 @@ div#course-time-tracking i {
 
 
 /* ======================================================
-   12) BEWERTER-INFORMATION
+   12) GRADER INFORMATION
    ====================================================== */
 
 div#course-grading-info .card-header.bg-light {
@@ -258,18 +258,7 @@ div#course-grading-info .card-header.bg-light {
 
 
 /* ======================================================
-   13) MOODLE SYSTEM (TinyMCE)
-   ====================================================== */
-
-body.category-53 .tox.tox-tinymce,
-body.category-114 .tox.tox-tinymce,
-body.category-88 .tox.tox-tinymce {
-  height: 250px !important;
-}
-
-
-/* ======================================================
-   14) ASSIGN GRADING – QUICKGRADE COMMENTS
+   13) ASSIGN GRADING – QUICKGRADE COMMENTS
    ====================================================== */
 
 body.category-53#page-mod-assign-grading textarea[id^="quickgrade_comments_"],
