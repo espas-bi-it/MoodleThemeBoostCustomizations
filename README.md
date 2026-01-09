@@ -17,6 +17,16 @@ All changes are **category-scoped**, upgrade-safe, and avoid layout hacks.
 
 ---
 
+## Supported Moodle Categories
+
+The following Moodle categories are covered by these theme customizations:
+
+- **category-53** – *Gezielte Vorbereitung (GV)*
+- **category-88** – *Abklärung (AK)*
+- **category-114** – *Dokumentationen*
+
+---
+
 ## Installation
 
 ### 1. Insert Script
