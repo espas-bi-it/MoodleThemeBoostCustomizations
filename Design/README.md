@@ -178,7 +178,7 @@ body.category-88 .drawer {
   background-color: #e8eef8;
 }
 
-/* ❗ Keine manuelle Container-Verschiebung
+/* Keine manuelle Container-Verschiebung
    → verhindert Überlagerungen (Quiz-Report, rechte Blockleiste, Editing)
 */
 
@@ -295,18 +295,7 @@ div#course-grading-info .card-header.bg-light {
 
 
 /* ======================================================
-   13) MOODLE SYSTEM (TinyMCE)
-   ====================================================== */
-
-body.category-53 .tox.tox-tinymce,
-body.category-114 .tox.tox-tinymce,
-body.category-88 .tox.tox-tinymce {
-  height: 250px !important;
-}
-
-
-/* ======================================================
-   14) ASSIGN GRADING – QUICKGRADE COMMENTS
+   13) ASSIGN GRADING – QUICKGRADE COMMENTS
    ====================================================== */
 
 body.category-53#page-mod-assign-grading textarea[id^="quickgrade_comments_"],
