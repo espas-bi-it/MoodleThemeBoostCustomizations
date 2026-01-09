@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
 </script>
 ```
 
-### 2. Raw SCSS einfügen
+### 2. Insert Raw SCSS
 - **Location:** `Webseiten Administration → Designs → Boost → Zahnrad → Erweiterte Einstellungen → Raw SCSS (theme_boost | scss)`  
 - **Content:**
 
