@@ -388,3 +388,51 @@ body.category-88#page-mod-assign-grading textarea[id^="quickgrade_comments_"] {
 - Use Boost layout classes (`main-inner`, `.header-maxwidth`)
 - Apply styles only via **category + page selectors**
 - Keep changes **robust, upgrade-safe, and cache-friendly**
+
+---
+
+## Reusable HTML Template Blocks
+
+For consistent content creation, a set of **reusable HTML template blocks** is provided.  
+These blocks are designed for use within Moodle content areas and follow the established Boost-based styling and conventions used in this project.
+
+The templates can be copied and reused across courses and activities.
+
+### Available Template Blocks
+
+- **Quiz Info Block**
+- **Installation Instructions**
+- **Image Block**
+- **Internal Link**
+- **External Link**
+- **Code Block**
+- **Alert**
+- **Alert (Subtle)**
+- **To-Do Block**
+- **Accordion**
+
+### Template Collection
+
+All template examples are available in the following Moodle course:
+
+🔗 **Template Library (Moodle Course)**  
+https://moodle-espas.ch/course/view.php?id=193
+
+> ℹ️ These templates are intended to be copied directly into Moodle HTML editors  
+> (e.g. Page, Label, Description fields, or Activity introductions).
+
+---
+
+## Course Template for New Courses
+
+A **course template** is available for creating new courses.  
+It already contains the commonly used structure and elements aligned with the templates and styles defined in this repository.
+
+🔗 **Course Template (Moodle Course)**  
+https://moodle-espas.ch/course/view.php?id=194
+
+> ℹ️ Recommended starting point for new courses to ensure consistent layout, structure,  
+> and reuse of established HTML components.
+
+---
+
