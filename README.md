@@ -2,22 +2,35 @@
 
 # Moodle Demo / Sandbox – Theme & Styles
 
-## Einführung
-Dieses Repository enthält Anpassungen für ausgewählte Moodle-Kategorien (`category-53`, `category-114`, `category-88`) auf Basis des Boost-Themes.  
-Ziel ist eine einheitliche Darstellung von Hintergrund, Drawer, Textformatierungen, Fragenblöcken, Karten, Alerts, Kompetenzblöcken und Quickgrade-Kommentarfeldern.
+## Introduction
+This repository contains customizations for selected Moodle categories  
+(`category-53`, `category-114`, `category-88`) based on the **Boost theme**.
+
+The goal is to provide a consistent visual appearance for:
+- page backgrounds
+- drawers
+- typography
+- quiz question blocks
+- cards and alerts
+- competence blocks
+- quickgrade comment fields
+
+All changes are **category-scoped**, upgrade-safe, and avoid layout hacks.
 
 ---
 
 ## Installation
 
-### 1. Script einfügen
-- **Ort:** `Webseiten Administration → Darstellung → Vor dem Schließen von <body> (additionalhtmlfooter)`  
-- **Inhalt:**
+### 1. Insert Script
+- **Location:**  
+  `Site administration → Appearance → Before </body> is closed (additionalhtmlfooter)`
+
+- **Content:**
 ```html
 <script>
 document.addEventListener("DOMContentLoaded", function () {
 
-  // Theme für Demo-Kategorien
+  // Theme for demo / sandbox categories
   const demoCategories = ["category-53", "category-114", "category-88"];
   demoCategories.forEach(cat => {
     if (document.body.classList.contains(cat)) {
@@ -33,30 +46,30 @@ document.addEventListener("DOMContentLoaded", function () {
 ```
 
 ### 2. Raw SCSS einfügen
-- **Ort:** `Webseiten Administration → Designs → Boost → Zahnrad → Erweiterte Einstellungen → Raw SCSS (theme_boost | scss)`  
-- **Inhalt:**
+- **Location:** `Webseiten Administration → Designs → Boost → Zahnrad → Erweiterte Einstellungen → Raw SCSS (theme_boost | scss)`  
+- **Content:**
 
 ```css
 /* ======================================================
-   DEMO / SANDBOX – Kurse
-   Gültig für:
+   DEMO / SANDBOX – Courses
+   Applies to:
    - category-53
    - category-114
    - category-88
    ====================================================== */
 
 /* ------------------------------------------------------
-   Body Font-Size für Sandbox-Kategorien
+   Body font size for sandbox categories
 ------------------------------------------------------ */
 body.category-53,
 body.category-114,
 body.category-88 {
-  font-size: 0.9375rem; /* entspricht 15px */
+  font-size: 0.9375rem; /* equals 15px */
 }
 
 
 /* ======================================================
-   1) SEITENHINTERGRUND (nur ausgewählte Pages)
+   1) PAGE BACKGROUND (selected pages only)
    ====================================================== */
 
 body.category-53#page-course-view-topics,
@@ -89,7 +102,7 @@ body.category-88#page-mod-feedback-view {
 
 
 /* ======================================================
-   2) DRAWER – Links ohne Unterstreichung
+   2) DRAWER – remove link underline
    ====================================================== */
 
 body.category-53 .drawercontent.drag-container li a,
@@ -106,7 +119,7 @@ body.category-88 .drawercontent.drag-container li a:focus {
 
 
 /* ======================================================
-   3) CONTAINER / MAIN-INNER (Boost-Standard)
+   3) CONTAINER / MAIN-INNER (Boost default)
    ====================================================== */
 
 /* Mobile */
@@ -152,7 +165,7 @@ body.category-88 .secondary-navigation .navigation .nav-tabs {
 
 
 /* ======================================================
-   5) DRAWER (Boost-Originalbreite)
+   5) DRAWER (Boost default width)
    ====================================================== */
 
 body.category-53 .drawer.drawer-left,
@@ -180,13 +193,13 @@ body.category-88 .drawer {
   background-color: #e8eef8;
 }
 
-/* Keine manuelle Container-Verschiebung
-   → verhindert Überlagerungen (Quiz-Report, rechte Blockleiste, Editing)
+/* No manual container shifting
+   → prevents overlaps (quiz reports, right blocks, editing mode)
 */
 
 
 /* ======================================================
-   6) TYPOGRAFIE / CODE
+   6) TYPOGRAPHY / CODE
    ====================================================== */
 
 body.category-53 strong,
@@ -203,7 +216,7 @@ body.category-88 code {
 
 
 /* ======================================================
-   7) CARDS / ALERTS / TABELLEN
+   7) CARDS / ALERTS / TABLES
    ====================================================== */
 
 body.category-53 .card.bg-light,
@@ -247,7 +260,7 @@ body.category-88 .que .formulation {
 
 
 /* ======================================================
-   9) KOMPETENZBLOCK
+   9) COMPETENCE BLOCK
    ====================================================== */
 
 body.category-53 #course-competence p,
@@ -266,7 +279,7 @@ body.category-88 #course-competence li {
 
 
 /* ======================================================
-   10) ALERTS (Feinabstimmung)
+   10) ALERTS (fine tuning)
    ====================================================== */
 
 body.category-53 .alert,
@@ -278,7 +291,7 @@ body.category-88 .alert {
 
 
 /* ======================================================
-   11) TIMETRACKING
+   11) TIME TRACKING
    ====================================================== */
 
 div#course-time-tracking i {
@@ -288,7 +301,7 @@ div#course-time-tracking i {
 
 
 /* ======================================================
-   12) BEWERTER-INFORMATION
+   12) GRADER INFORMATION
    ====================================================== */
 
 div#course-grading-info .card-header.bg-light {
@@ -307,52 +320,63 @@ body.category-88#page-mod-assign-grading textarea[id^="quickgrade_comments_"] {
   height: 100px;
   resize: vertical;
 }
-
-
 ```
 
 ## Troubleshooting
 
-### Änderungen sind nicht sichtbar
-- Moodle-Cache leeren:  
+### Changes are not visible
+- Purge Moodle caches:  
   `Website-Administration → Entwicklung → Cache leeren`
-- Browser-Cache hart neu laden (`Ctrl + F5`)
-- Prüfen, ob das **Boost-Theme** aktiv ist
-
-### Raw SCSS wird nicht angewendet
-- Sicherstellen, dass der Code im Feld  
-  **„Raw SCSS (theme_boost | scss)“** eingefügt wurde
-- Keine Syntaxfehler im SCSS (z. B. fehlende `{}` oder ungültige Selektoren)
-- Nach dem Speichern **Cache zwingend leeren**
-
-### JavaScript wird nicht ausgeführt
-- Script befindet sich wirklich unter  
-  **„Vor dem Schließen von `<body>` (additionalhtmlfooter)“**
-- Browser-DevTools öffnen → Tab **Console** → nach Fehlern suchen
-- Prüfen, ob die Zielklasse (z. B. `category-53`) im `<body>` existiert
-
-### Styles greifen nur auf manchen Seiten
-- Prüfen, ob die Seite die erwartete `page-*`-ID besitzt  
-  (z. B. `page-course-view-topics`, `page-mod-quiz-view`)
-
-### Drawer oder Inhalte überlagern sich
-- Keine manuelle Verschiebung von `#page.drawers` erzwingen
-- Breite des Drawers nicht verändern, solange Editing-Modus oder Reports genutzt werden
-- Besonders kritisch bei:
-  - `page-mod-quiz-report`
-  - `page-mod-assign-grading`
-  - Seiten mit rechter Blockleiste
-
-### CSS-Validator meldet Fehler
-- Der Selektor `:is()` wird von manchen Validatoren nicht akzeptiert  
-  → Daher im SCSS explizit ausgeschrieben (`body.category-53, body.category-114, body.category-88`)
+- Hard reload browser cache (`Ctrl + F5`)
+- Verify that the **Boost theme** is active
 
 ---
 
-## Best Practice: Keine Layout-Hacks
-- **Keine manuelle Verschiebung von Containern** (`margin-left` bei Drawer-Öffnung)  
-  → verhindert Überlagerungen, besonders bei Editing-Modus oder Reports
-- **Breite des Drawers** nur auf Standard belassen (285px)
-- **Responsive Layout** über Boost / Standardklassen steuern (`main-inner`, `.header-maxwidth`)
-- **Hintergrund- und Stilelemente** selektiv auf Kategorie + Seite anwenden
-- Änderungen sollen **robust, upgrade-sicher und cache-freundlich** bleiben
+### Raw SCSS is not applied
+- Ensure the code is placed in  
+  **“Raw SCSS (theme_boost | scss)”**
+- Check for syntax errors (missing `{}`, invalid selectors)
+- Always **purge caches after saving**
+
+---
+
+### JavaScript is not executed
+- Script must be placed under  
+  **“Before </body> is closed (additionalhtmlfooter)”**
+- Open browser DevTools → **Console** → check for errors
+- Verify the `<body>` contains the expected category class  
+  (e.g. `category-53`)
+
+---
+
+### Styles only apply on some pages
+- Verify the page has the expected `page-*` body ID  
+  (e.g. `page-course-view-topics`, `page-mod-quiz-view`)
+
+---
+
+### Drawer or content overlaps
+- Do **not** force container shifts (`margin-left` when drawer opens)
+- Keep drawer width at the **Boost default (285px)**
+- Especially critical for:
+  - `page-mod-quiz-report`
+  - `page-mod-assign-grading`
+  - Pages with a right-side block region
+
+---
+
+### CSS validator reports errors
+- Some validators do not accept the `:is()` selector  
+  → Therefore all selectors are explicitly written:
+  - `body.category-53`
+  - `body.category-114`
+  - `body.category-88`
+
+---
+
+## Best Practice: No Layout Hacks
+- No manual container shifting when the drawer opens
+- Keep drawer width at the Boost default
+- Use Boost layout classes (`main-inner`, `.header-maxwidth`)
+- Apply styles only via **category + page selectors**
+- Keep changes **robust, upgrade-safe, and cache-friendly**
