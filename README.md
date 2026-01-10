@@ -1,3 +1,4 @@
+
 # MoodleThemeBoostCustomizations
 
 ## Introduction
@@ -17,6 +18,26 @@ All changes are **category-scoped**, upgrade-safe, and avoid layout hacks.
 
 ---
 
+## Design Goals & Rationale
+
+These customizations are not purely visual.  
+They are based on concrete didactic, usability, and maintenance goals.
+
+### Primary Goals
+- More space for content and complex questions
+- Reduced scrolling and improved readability
+- Clear visual separation between:
+  - tasks
+  - information
+  - instructions
+  - grading context
+- Consistent look & feel across all courses
+- Upgrade-safe implementation without theme hacks
+
+All decisions documented below directly map to implemented CSS and templates.
+
+---
+
 ## Supported Moodle Categories
 
 The following Moodle categories are covered by these theme customizations:
@@ -31,7 +52,7 @@ The following Moodle categories are covered by these theme customizations:
 
 ### 1. Insert Script
 - **Location:**  
-  `Site administration → Appearance → Before </body> is closed (additionalhtmlfooter)`
+  `Webseiten Administration → Designs → Zusätzliches HTML -> Vor dem Schliessen von </body> (additionalhtmlfooter)`
 
 - **Content:**
 ```html
@@ -52,11 +73,11 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 </script>
 ```
-
 ### 2. Insert Raw SCSS
-- **Location:** `Webseiten Administration → Designs → Boost → Zahnrad → Erweiterte Einstellungen → Raw SCSS (theme_boost | scss)`  
-- **Content:**
 
+-   **Location:** `Webseiten Administration → Designs → Boost → Zahnrad → Erweiterte Einstellungen → Raw SCSS (theme_boost | scss)`
+    
+-   **Content:**
 ```css
 /* ======================================================
    DEMO / SANDBOX – Courses
@@ -329,6 +350,89 @@ body.category-88#page-mod-assign-grading textarea[id^="quickgrade_comments_"] {
   resize: vertical;
 }
 ```
+## Layout Decisions (Mapped to Implementation)
+
+### Container Width & Spacing
+- Main content width increased to `1200px`
+- Implemented via:
+  - `.main-inner`
+  - `.header-maxwidth`
+- Result:
+  - more horizontal space for questions and code
+  - reduced vertical scrolling
+  - improved overview for complex tasks
+
+No manual container shifting is used to avoid drawer-related issues.
+
+### Question Background & Visual Separation
+- Question blocks use a neutral white background
+- Replaces the former light-blue background
+- Implemented via:
+  - `.que .formulation`
+- Benefits:
+  - reduced visual noise
+  - better focus on question content
+  - clearer separation from informational blocks
+
+### Question & Content Structure
+
+#### Semantic Markup
+- All questions use valid, semantic Bootstrap markup
+- No inline styles
+- Bootstrap utility classes preferred over custom CSS
+
+This ensures:
+- consistent rendering
+- lower maintenance cost
+- easier global style changes
+
+#### Visual Context Separation
+- Quiz questions are visually separated from:
+  - information blocks
+  - installation instructions
+  - meta content
+- Context colors are used consistently:
+  - Blue → information
+  - Red → task / assignment
+
+Font Awesome icons are used sparingly to support orientation.
+
+### Media, Code & Readability
+
+#### Code Blocks
+- Code is always wrapped in `<pre><code>`
+- Ensures:
+  - clean separation from text
+  - readable submissions
+  - easier grading
+
+#### Images
+- Images use subtle shadows
+- Improves separation from surrounding text
+- Reduces visual blending with content blocks
+
+### Grader Information Templates
+- Unified grader information structure
+- Includes:
+  - grading rules
+  - point allocation
+  - evaluation hints
+
+Goal:
+- consistent grading across courses
+- reproducible assessments
+- reduced subjective interpretation
+
+### Maintenance & Future-Proofing
+- All visual changes are controlled via CSS
+- No course content needs modification for design updates
+- Category-scoped selectors ensure isolation
+- No dependency on undocumented Moodle internals
+
+This allows:
+- safe Moodle upgrades
+- global design changes
+- scalable course development
 
 ## Troubleshooting
 
@@ -338,15 +442,11 @@ body.category-88#page-mod-assign-grading textarea[id^="quickgrade_comments_"] {
 - Hard reload browser cache (`Ctrl + F5`)
 - Verify that the **Boost theme** is active
 
----
-
 ### Raw SCSS is not applied
 - Ensure the code is placed in  
   **“Raw SCSS (theme_boost | scss)”**
 - Check for syntax errors (missing `{}`, invalid selectors)
 - Always **purge caches after saving**
-
----
 
 ### JavaScript is not executed
 - Script must be placed under  
@@ -355,13 +455,9 @@ body.category-88#page-mod-assign-grading textarea[id^="quickgrade_comments_"] {
 - Verify the `<body>` contains the expected category class  
   (e.g. `category-53`)
 
----
-
 ### Styles only apply on some pages
 - Verify the page has the expected `page-*` body ID  
   (e.g. `page-course-view-topics`, `page-mod-quiz-view`)
-
----
 
 ### Drawer or content overlaps
 - Do **not** force container shifts (`margin-left` when drawer opens)
@@ -371,16 +467,12 @@ body.category-88#page-mod-assign-grading textarea[id^="quickgrade_comments_"] {
   - `page-mod-assign-grading`
   - Pages with a right-side block region
 
----
-
 ### CSS validator reports errors
 - Some validators do not accept the `:is()` selector  
   → Therefore all selectors are explicitly written:
   - `body.category-53`
   - `body.category-114`
   - `body.category-88`
-
----
 
 ## Best Practice: No Layout Hacks
 - No manual container shifting when the drawer opens
@@ -389,17 +481,11 @@ body.category-88#page-mod-assign-grading textarea[id^="quickgrade_comments_"] {
 - Apply styles only via **category + page selectors**
 - Keep changes **robust, upgrade-safe, and cache-friendly**
 
----
-
 ## Reusable HTML Template Blocks
-
 For consistent content creation, a set of **reusable HTML template blocks** is provided.  
 These blocks are designed for use within Moodle content areas and follow the established Boost-based styling and conventions used in this project.
 
-The templates can be copied and reused across courses and activities.
-
 ### Available Template Blocks
-
 - **Quiz Info Block**
 - **Installation Instructions**
 - **Image Block**
@@ -411,8 +497,22 @@ The templates can be copied and reused across courses and activities.
 - **To-Do Block**
 - **Accordion**
 
-### Template Collection
+## Answer & Grading Concept
 
+### Answer Templates
+- Free-text questions provide predefined answer areas
+- Clearly communicates:
+  - what must be submitted
+  - expected format (text, code, screenshots)
+
+Instructions are intentionally placed in the answer template,
+not in the question text.
+
+Result:
+- fewer incorrect submissions
+- less clarification effort during grading
+
+### Template Collection
 All template examples are available in the following Moodle course:
 
 🔗 **Template Library (Moodle Course)**  
@@ -421,10 +521,7 @@ https://moodle-espas.ch/course/view.php?id=193
 > ℹ️ These templates are intended to be copied directly into Moodle HTML editors  
 > (e.g. Page, Label, Description fields, or Activity introductions).
 
----
-
 ## Course Template for New Courses
-
 A **course template** is available for creating new courses.  
 It already contains the commonly used structure and elements aligned with the templates and styles defined in this repository.
 
@@ -433,6 +530,3 @@ https://moodle-espas.ch/course/view.php?id=194
 
 > ℹ️ Recommended starting point for new courses to ensure consistent layout, structure,  
 > and reuse of established HTML components.
-
----
-
