@@ -18,6 +18,15 @@ All changes are **category-scoped**, upgrade-safe, and avoid layout hacks.
 
 ---
 
+## Tech-Stack
+
+- **Theme:** Bootswatch – Yeti  
+- **Framework:** Bootstrap  
+- **Einbindung:** CDN (jsDelivr)
+- **Icons:** Font Awesome
+
+---
+
 ## Design Goals & Rationale
 
 These customizations are not purely visual.  
