@@ -358,6 +358,27 @@ body.category-88#page-mod-assign-grading textarea[id^="quickgrade_comments_"] {
   height: 100px;
   resize: vertical;
 }
+
+/* ======================================================
+   14) GRADING COMMENTS
+   ====================================================== */
+
+body.category-53#page-mod-quiz-comment .tox .tox-edit-area,
+body.category-114#page-mod-quiz-comment .tox .tox-edit-area,
+body.category-88#page-mod-quiz-comment .tox .tox-edit-area {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+    height: auto;
+}
+
+body.category-53#page-mod-quiz-comment .tox.tox-tinymce,
+body.category-114#page-mod-quiz-comment .tox.tox-tinymce,
+body.category-88#page-mod-quiz-comment .tox.tox-tinymce {
+    height: 320px !important;
+}
+
 ```
 ## Layout Decisions (Mapped to Implementation)
 
@@ -443,6 +464,8 @@ This allows:
 - global design changes
 - scalable course development
 
+---
+
 ## Troubleshooting
 
 ### Changes are not visible
@@ -506,6 +529,8 @@ These blocks are designed for use within Moodle content areas and follow the est
 - **To-Do Block**
 - **Accordion**
 
+---
+
 ## Answer & Grading Concept
 
 ### Answer Templates
@@ -529,6 +554,8 @@ https://moodle-espas.ch/course/view.php?id=193
 
 > ℹ️ These templates are intended to be copied directly into Moodle HTML editors  
 > (e.g. Page, Label, Description fields, or Activity introductions).
+
+---
 
 ## Course Template for New Courses
 A **course template** is available for creating new courses.  
