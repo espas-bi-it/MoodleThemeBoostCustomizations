@@ -7,12 +7,11 @@ This repository contains customizations for selected Moodle categories
 
 The goal is to provide a consistent visual appearance for:
 - page backgrounds
-- drawers
 - typography
 - quiz question blocks
 - cards and alerts
 - competence blocks
-- quickgrade comment fields
+- comment fields / answer fields
 
 All changes are **category-scoped**, upgrade-safe, and avoid layout hacks.
 
@@ -42,8 +41,6 @@ They are based on concrete didactic, usability, and maintenance goals.
   - grading context
 - Consistent look & feel across all courses
 - Upgrade-safe implementation without theme hacks
-
-All decisions documented below directly map to implemented CSS and templates.
 
 ---
 
@@ -422,8 +419,9 @@ This ensures:
   - installation instructions
   - meta content
 - Context colors are used consistently:
-  - Blue → information
-  - Red → task / assignment
+  - Blue → information and question headers
+  - Orange -> warning
+  - Red → danger / important 
 
 Font Awesome icons are used sparingly to support orientation.
 
@@ -457,7 +455,6 @@ Goal:
 - All visual changes are controlled via CSS
 - No course content needs modification for design updates
 - Category-scoped selectors ensure isolation
-- No dependency on undocumented Moodle internals
 
 This allows:
 - safe Moodle upgrades
@@ -517,17 +514,7 @@ This allows:
 For consistent content creation, a set of **reusable HTML template blocks** is provided.  
 These blocks are designed for use within Moodle content areas and follow the established Boost-based styling and conventions used in this project.
 
-### Available Template Blocks
-- **Quiz Info Block**
-- **Installation Instructions**
-- **Image Block**
-- **Internal Link**
-- **External Link**
-- **Code Block**
-- **Alert**
-- **Alert (Subtle)**
-- **To-Do Block**
-- **Accordion**
+See: [Template Libary]([https://duckduckgo.com](https://moodle-espas.ch/course/section.php?id=968))
 
 ---
 
