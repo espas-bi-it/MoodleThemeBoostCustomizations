@@ -268,3 +268,23 @@ body.category-88#page-mod-assign-grading textarea[id^="quickgrade_comments_"] {
   height: 100px;
   resize: vertical;
 }
+
+/* ======================================================
+   14) GRADING COMMENTS
+   ====================================================== */
+
+body.category-53#page-mod-quiz-comment .tox .tox-edit-area,
+body.category-114#page-mod-quiz-comment .tox .tox-edit-area,
+body.category-88#page-mod-quiz-comment .tox .tox-edit-area {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+    height: auto;
+}
+
+body.category-53#page-mod-quiz-comment .tox.tox-tinymce,
+body.category-114#page-mod-quiz-comment .tox.tox-tinymce,
+body.category-88#page-mod-quiz-comment .tox.tox-tinymce {
+    height: 320px !important;
+}
