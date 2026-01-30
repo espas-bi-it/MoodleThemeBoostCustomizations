@@ -14,6 +14,7 @@ The goal is to provide a consistent visual appearance for:
 - comment fields / answer fields
 
 All changes are **category-scoped**, upgrade-safe, and avoid layout hacks.
+No changes were made to the Moodle system core.
 
 ---
 
