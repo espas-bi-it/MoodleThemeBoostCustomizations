@@ -1,0 +1,50 @@
+<style>
+@media print {
+
+  /* Nur innerhalb des Configurable-Reports-View */
+  #page-blocks-configurable_reports-viewreport table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  #page-blocks-configurable_reports-viewreport th,
+  #page-blocks-configurable_reports-viewreport td {
+    padding: 4px 6px;
+    vertical-align: middle;
+    white-space: nowrap;
+    font-size: 10pt;
+  }
+
+  /* Bootstrap-Wrapper neutralisieren */
+  #page-blocks-configurable_reports-viewreport .table-responsive {
+    overflow: visible !important;
+    max-width: 100% !important;
+  }
+
+  /* Spaltenbreiten stabilisieren */
+  #page-blocks-configurable_reports-viewreport table colgroup col:nth-child(1) { width: 24% !important; }
+  #page-blocks-configurable_reports-viewreport table colgroup col:nth-child(2),
+  #page-blocks-configurable_reports-viewreport table colgroup col:nth-child(9),
+  #page-blocks-configurable_reports-viewreport table colgroup col:nth-child(10) { width: 9% !important; }
+  #page-blocks-configurable_reports-viewreport table colgroup col:nth-child(3),
+  #page-blocks-configurable_reports-viewreport table colgroup col:nth-child(4),
+  #page-blocks-configurable_reports-viewreport table colgroup col:nth-child(5),
+  #page-blocks-configurable_reports-viewreport table colgroup col:nth-child(6),
+  #page-blocks-configurable_reports-viewreport table colgroup col:nth-child(7),
+  #page-blocks-configurable_reports-viewreport table colgroup col:nth-child(8) { width: 8% !important; }
+
+  /* Hintergrundfarben korrekt drucken */
+  #page-blocks-configurable_reports-viewreport tr[style*="background-color"] {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Seitenränder */
+  body {
+    margin: 10mm;
+  }
+}
+</style>
+
+
+<meta name="robots" content="noindex" />
