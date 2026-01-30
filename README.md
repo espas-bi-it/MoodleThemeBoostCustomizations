@@ -379,7 +379,7 @@ body.category-88#page-mod-quiz-comment .tox.tox-tinymce {
 
 ```
 
-### 2. Insert Raw SCSS
+### 3. Zusätzliches HTML
 
 -   **Location:** `Webseiten Administration → Darstellung → Zusätzliches HTML → Innerhalb von <head> (additionalhtmlhead)`
     
