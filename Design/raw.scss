@@ -1,3 +1,529 @@
+/* ===========================
+   CSS Variables
+   =========================== */
+:root {
+  --primary:   #008cba;
+  --secondary: #bbc0c4;
+  --success:   #28a745;
+  --info:      #17a2b8;
+  --warning:   #ffd633;
+  --danger:    #d9534f;
+  --light:     #f8f9fa;
+  --dark:      #212529;
+
+  --white: #ffffff;
+  --gray-100: #f7f8fa;
+  --gray-200: #e9ecef;
+  --gray-222: #222;
+  --gray-333: #333;
+  --gray-555: #555;
+  --gray-777: #777;
+  --gray-999: #999;
+}
+
+/**************************************
+ * COURSE 169 – TEASER BLOCK OPTIMIERT
+ **************************************/
+
+/* Gesamter Teaserblock – moderner Card-Look */
+body.course-169 #course-teaser {
+    background: var(--gray-100);
+    border: 1px solid var(--gray-200);
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Soft-Grid Pattern Overlay */
+body.course-169 #course-teaser::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='20' height='20' fill='none'/%3E%3Cpath d='M20 0H0V20' fill='none' stroke='%23e5e5e5' stroke-width='1'/%3E%3C/svg%3E");
+    opacity: 0.35;
+    pointer-events: none;
+}
+
+/* Inhalt über dem Pattern */
+body.course-169 #course-teaser > * {
+    position: relative;
+    z-index: 2;
+}
+
+/********************************************
+ * COURSE 169 – GEOMETRIC TECH PATTERN VARIABLES
+ ********************************************/
+:root {
+  /* 1) Hexagon Pattern – Topics View (Tech Look) */
+  --pattern-waves: url("data:image/svg+xml,%3Csvg width='40' height='35' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='20,0 40,10 40,25 20,35 0,25 0,10' fill='%23008cba' opacity='0.12'/%3E%3C/svg%3E");
+
+  /* 2) Diamond Grid – Tool Views (Wiki, Feedback, Quiz Übersicht) */
+  --pattern-grid: url("data:image/svg+xml,%3Csvg width='14' height='14' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 0 L14 7 L7 14 L0 7 Z' fill='%23008cba' opacity='0.18'/%3E%3C/svg%3E");
+
+  /* 3) Micro Dots – Quiz Attempt (super dezent, aber sichtbar) */
+  --pattern-dots: url("data:image/svg+xml,%3Csvg width='4' height='4' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='1' cy='1' r='0.7' fill='%23008cba' opacity='0.22'/%3E%3C/svg%3E");
+}
+
+/********************************************
+ * COURSE 169 – PAGE-SPECIFIC PATTERN ASSIGNMENTS
+ ********************************************/
+
+/* 1) Topics View – Hexagon Tech Pattern */
+body.course-169#page-course-view-topics {
+    /* background-image: var(--pattern-waves); */
+    /* background-size: 5px; */
+    /* background-repeat: repeat; */
+    background-color: #f2f2f2a3;
+}
+
+/* 2) Wiki, Feedback, Quiz – Diamond Grid */
+body.course-169#page-mod-wiki-view,
+body.course-169#page-mod-feedback-view,
+body.course-169#page-mod-quiz-view {
+    /* background-image: var(--pattern-grid); */
+    /* background-size: 10px; */
+   /*  background-repeat: repeat; */
+    background-color: #f2f2f2a3;
+}
+
+/* 3) Quiz Attempt – Micro Dots */
+body.course-169#page-mod-quiz-attempt {
+    /* background-image: var(--pattern-dots); */
+    /*  background-size: 5px; */
+   /* background-repeat: repeat; */
+background-color: #f2f2f2a3;
+}
+
+/********************************************
+ * QUIZ EDITOR – Micro Dots
+ ********************************************/
+
+body.course-169#page-mod-quiz-attempt .tox-edit-area__iframe {
+    background-image: var(--pattern-dots) !important;
+    background-size: 5px !important;
+    border: 2px solid var(--primary) !important;
+    border-radius: 6px !important;
+}
+
+/********************************************
+ * QUIZ EDITOR – geometric micro triangles
+ ********************************************/
+
+body.course-169#page-mod-quiz-attempt .tox-edit-area__iframe {
+    background-image: var(--pattern-dots) !important;
+    background-size: 90px !important;
+    border: 2px solid var(--primary) !important;
+    border-radius: 6px !important;
+}
+
+/********************************************
+ * QUIZ EDITOR – dezente Version (Pattern-basiert)
+ ********************************************/
+
+body.course-169#page-mod-quiz-attempt .tox-edit-area__iframe {
+    background-image: var(--pattern-dots) !important;
+    background-size: 10px !important;
+    border: 2px solid var(--primary) !important;
+    border-radius: 6px !important;
+}
+
+
+/* Header-Bildbereich – Blur + Soft White Overlay */
+body.course-169 #course-teaser .position-relative > .position-absolute {
+    background: rgba(255,255,255,0.55) !important;
+    backdrop-filter: blur(3px);
+}
+
+/* Titelbox im Bildbereich */
+body.course-169 #course-teaser .rounded {
+    border-radius: 10px !important;
+    background: rgba(255,255,255,0.85) !important;
+    backdrop-filter: blur(3px);
+    padding-left: 16px !important;
+}
+
+/* Titeltypografie */
+body.course-169 #course-teaser h1 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--gray-333);
+}
+
+/* Untertitel */
+body.course-169 #course-teaser em {
+    color: var(--gray-777);
+}
+
+/*  Activity-Border Top*/
+body.course-169 .activity-item .activity-altcontent.activity-description {
+    margin-top: .5rem;
+    padding-top: .5rem;
+    border-top: none;
+    font-size: .875em;
+}
+
+
+/* Karten im Teaser – Activity-Card-Stil */
+body.course-169 #course-teaser .card {
+    border-radius: 10px;
+    /* box-shadow: 0 1px 4px rgba(0,0,0,0.06); */
+}
+
+/* Card-Titel */
+body.course-169 #course-teaser .card-title {
+    background: var(--gray-200);
+    border-radius: 6px;
+    padding: 8px 12px;
+    color: var(--gray-333);
+}
+
+/* Icons angleichen */
+body.course-169 #course-teaser .fa-lightbulb {
+    color: var(--primary) !important;
+    border-color: var(--primary) !important;
+}
+
+/* Card-Body Abstände harmonisieren */
+body.course-169 #course-teaser .card-body {
+    padding: 1.25rem !important;
+}
+
+/* Responsive Optimierung */
+@media (max-width: 768px) {
+    body.course-169 #course-teaser .position-relative {
+        min-height: 180px !important;
+    }
+}
+
+       body.course-169#page-mod-quiz-attempt .tox-edit-area__iframe {
+    background: #eef7ee !important; /* dezentes, sehr helles Grün */
+    border: 2px solid #8bbf8b !important;
+    border-radius: 6px !important;
+}
+
+/* =========================================================
+   COURSE 169 – Background - ready for rollout
+========================================================= */
+
+
+/* =========================================================
+   COURSE 169 – STICKY HEADER FIX (MOODLE SAFE)
+========================================================= */
+
+/* Basis Navbar Z-Index (Sicherheit gegen Überdeckung) */
+.navbar {
+    z-index: 200 !important;
+}
+
+/* Sticky Page Header */
+body.course-169 #page-header {
+    position: sticky;
+    top: 60px; /* Abstand unter Moodle Top-Navigation */
+    z-index: 90;
+    background: #fff;
+    border-bottom: 1px solid #e9ecef;
+}
+
+/* Header Titel Box */
+body.course-169 .page-header-headings {
+    background: color-mix(in srgb, var(--primary) 15%, white);
+    padding: 12px 12px;
+    border-radius: 12px;
+    font-weight: 600;
+    color: color-mix(in srgb, var(--primary) 75%, black);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.06);
+    display: inline-block;
+}
+
+/* Breadcrumb Styling */
+body.course-169 .breadcrumb {
+    background: transparent;
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+}
+
+body.course-169 .breadcrumb a {
+    color: var(--info);
+    text-decoration: none;
+}
+
+body.course-169 .breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+/* Course Actions */
+body.course-169 .course-content-header .actions,
+body.course-169 #course-header .actions {
+    gap: 6px;
+}
+
+/* Buttons harmonisieren */
+body.course-169 .btn {
+    border-radius: 8px;
+}
+
+/* Sections spacing */
+body.course-169 .course-content .section {
+    margin-top: 16px;
+}
+
+/* COURSE VIEW - 169 /*
+body#page-course-view-section-topics.course-169 .page-header-headings {
+    background: color-mix(in srgb, var(--info) 15%, white);
+    padding: 12px 18px;
+    border-radius: 10px;
+    font-weight: 600;
+    color: color-mix(in srgb, var(--info) 75%, black);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.06);
+}
+
+
+/* -------------------------------------------
+   COURSE COMPETENCE - 169
+------------------------------------------- */
+body.course-169 #course-competence .card {
+  background: color-mix(in srgb, var(--info) 15%, transparent);
+  border-left: 8px solid var(--info) !important;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+body.course-169 #course-competence table.table {
+  background: var(--white) !important;
+  border-radius: 10px;
+  overflow: hidden;
+  border: none !important;
+}
+
+body.course-169 #course-competence table.table td {
+  background: var(--white);
+  border: none !important;
+}
+
+body.course-169 #course-competence .border-start {
+  border-width: 4px !important;
+  border-radius: 4px;
+  padding-left: 8px !important;
+}
+
+body.course-169 #course-competence td img {
+  border-radius: 6px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.10);
+}
+
+body.course-169 #course-competence th.bg-secondary {
+  background: var(--gray-200) !important;
+  color: var(--gray-333) !important;
+  font-weight: 600;
+  font-size: 1.05rem;
+  padding: 12px 16px !important;
+  border-radius: 10px 10px 0 0 !important;
+  border: none !important;
+}
+
+body[class*="course-"] #course-competence .img-box {
+    background-image: url(https://moodle-espas.ch/pluginfile.php/5362/mod_page/content/6/1-lernprozess-auftrag_klein.png?time=1776706931883);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center left;
+    height: 125px;
+    width: 875px;
+    margin-left: 50px;
+    border-radius: 8px;
+    /* box-shadow: 0 1px 4px rgb(0 0 0 / .06); */
+}  
+
+body[class*="course-"] #course-knowhow .img-box {
+     background-image: url(https://moodle-espas.ch/pluginfile.php/5362/mod_page/content/6/2-lernprozess-knowhow_klein.png?time=1776706952600);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center left;
+    height: 125px;
+    width: 875px;
+    border-radius: 8px;
+    /* box-shadow: 0 1px 4px rgb(0 0 0 / .06); */
+}  
+
+body[class*="course-"] #course-topic .img-box {
+    background-image: url(https://moodle-espas.ch/pluginfile.php/5362/mod_page/content/6/3-lernprozess-praxis_klein.png?time=1776706977129);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center left;
+    height: 125px;
+    width: 875px;
+    border-radius: 8px;
+    /* box-shadow: 0 1px 4px rgb(0 0 0 / .06); */
+}  
+
+/* -------------------------------------------
+   QUIZ QUESTIONS– Kurs 169
+------------------------------------------- */
+body.course-169.path-mod-quiz .que {
+    background: var(--white);
+    border-radius: 10px;
+    padding: 16px;
+    margin-bottom: 28px;
+    border: 1px solid var(--gray-200);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.10);
+}
+
+/* -------------------------------------------
+   QUIZ VIEW – Kurs 169
+------------------------------------------- */
+
+body#page-mod-quiz-view.course-169 .activity-header {
+  background: color-mix(in srgb, var(--primary) 20%, transparent) !important;
+  border-radius: 10px;
+  padding: 14px 18px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+/* -------------------------------------------
+   WIKI VIEW – Kurs 169
+------------------------------------------- */
+body#page-mod-wiki-view.course-169 .activity-header {
+  background: color-mix(in srgb, var(--warning) 22%, transparent) !important;
+  border-radius: 10px;
+  padding: 14px 18px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+body#page-mod-wiki-view.course-169 .activity-header .activityname {
+  color: color-mix(in srgb, var(--warning) 70%, black) !important;
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+
+body#page-mod-wiki-view.course-169 .wiki_headingtitle h3 {
+  background: color-mix(in srgb, var(--warning) 20%, transparent) !important;
+  border-left: 6px solid var(--warning) !important;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  color: color-mix(in srgb, var(--warning) 70%, black);
+  margin-bottom: 18px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+body#page-mod-wiki-view.course-169 .generalbox {
+  background: color-mix(in srgb, var(--warning) 10%, transparent) !important;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+body#page-mod-wiki-view.course-169 .generalbox .card {
+  background: var(--white) !important;
+  border-left: none !important;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+body#page-mod-wiki-view.course-169 .generalbox .card-header {
+  background: var(--warning) !important;
+  color: var(--gray-333) !important;
+  border-radius: 10px 10px 0 0 !important;
+  font-weight: 600;
+}
+
+body#page-mod-wiki-view.course-169 .generalbox .card-body {
+  background: var(--white) !important;
+  border-radius: 0 0 10px 10px;
+}
+
+body#page-mod-wiki-view.course-169 .generalbox .bg-white.p-3 {
+  background: var(--white) !important;
+  border-left: none !important;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+}
+
+
+/* -------------------------------------------
+   TIMETRACKING VIEW – Kurs 169
+------------------------------------------- */
+
+body#page-mod-feedback-view.course-169 .activity-header .activityname {
+  color: color-mix(in srgb, var(--success) 70%, black) !important;
+  font-size: 1.25rem;
+}
+
+body#page-mod-feedback-view.course-169 .box.py-3.generalbox.feedback_description {
+  background: rgba(40, 167, 69, 0.2);
+  padding: 14px 18px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 6px rgb(0 0 0 / 8%);
+  border-radius: 6px;
+}
+
+body#page-mod-feedback-view.course-169 .generalbox .card-header {
+  background: var(--success) !important;
+  color: var(--white) !important;
+  border-radius: 10px 10px 0 0 !important;
+  font-weight: 600;
+}
+
+/* -------------------------------------------
+   ACTIVITIES – Kurs 169
+------------------------------------------- */
+.course-169 .activity {
+    border-radius: 10px;
+    padding: 4px 2px;
+    margin: 14px 0;
+    box-shadow: 0 2px 6px rgb(0 0 0 / .08);
+    border-left: 8px solid #fff0;
+    transition: 0.2s ease;
+}
+
+.course-169 .activity:hover {
+  box-shadow: 0 3px 10px rgba(0,0,0,0.12);
+  transform: translateY(-1px);
+}
+
+.course-169 .activity.modtype_quiz {
+  background: color-mix(in srgb, var(--primary) 15%, transparent);
+  border-left-color: var(--primary);
+}
+
+.course-169 .activity.modtype_wiki {
+  background: color-mix(in srgb, var(--warning) 20%, transparent);
+  border-left-color: var(--warning);
+}
+
+.course-169 .activity.modtype_feedback {
+  background: color-mix(in srgb, var(--success) 18%, transparent);
+  border-left-color: var(--success);
+  margin: 0;
+  padding: 5px;
+}
+
+.course-169 .activity.modtype_assign {
+  background: color-mix(in srgb, var(--gray-999) 15%, transparent);
+  border-left-color: var(--gray-999);
+}
+
+.course-169 .activity.modtype_url {
+  background: color-mix(in srgb, var(--danger) 18%, transparent);
+  border-left-color: var(--danger);
+  margin: 0;
+  padding: 5px;
+}
+
+.course-169 .activity.modtype_resource {
+  background: color-mix(in srgb, var(--gray-777) 15%, transparent);
+  border-left-color: var(--gray-777);
+}
+
+.course-169 .activity .activityname a {
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+
+
 /* ======================================================
    DEMO / SANDBOX – Courses
    Applies to:
@@ -6,53 +532,11 @@
    - category-88
    ====================================================== */
 
-/* ------------------------------------------------------
-   Body font size for sandbox categories
------------------------------------------------------- */
-body.category-53,
-body.category-114,
-body.category-88 {
-  font-size: 0.9375rem; /* equals 15px */
-}
-
-
-/* ======================================================
-   1) PAGE BACKGROUND (selected pages only)
-   ====================================================== */
-
-body.category-53#page-course-view-topics,
-body.category-53#page-mod-quiz-view,
-body.category-53#page-mod-wiki-view,
-body.category-53#page-mod-page-view,
-body.category-53#page-course-view-section-topics,
-body.category-53#page-mod-feedback-view,
-
-body.category-114#page-course-view-topics,
-body.category-114#page-mod-quiz-view,
-body.category-114#page-mod-wiki-view,
-body.category-114#page-mod-page-view,
-body.category-114#page-course-view-section-topics,
-body.category-114#page-mod-feedback-view,
-
-body.category-88#page-course-view-topics,
-body.category-88#page-mod-quiz-view,
-body.category-88#page-mod-wiki-view,
-body.category-88#page-mod-page-view,
-body.category-88#page-course-view-section-topics,
-body.category-88#page-mod-feedback-view {
-  background-image: linear-gradient(
-    90deg,
-    rgba(104, 180, 237, 1) 0%,
-    rgba(192, 198, 204, 1) 30%,
-    rgba(211, 229, 242, 1) 100%
-  );
-}
-
 
 /* ======================================================
    2) DRAWER – remove link underline
    ====================================================== */
-
+ 
 body.category-53 .drawercontent.drag-container li a,
 body.category-114 .drawercontent.drag-container li a,
 body.category-88 .drawercontent.drag-container li a,
@@ -64,45 +548,50 @@ body.category-114 .drawercontent.drag-container li a:focus,
 body.category-88 .drawercontent.drag-container li a:focus {
   text-decoration: none;
 }
-
-
+ 
+ 
 /* ======================================================
    3) CONTAINER / MAIN-INNER (Boost default)
    ====================================================== */
-
+ 
 /* Mobile */
 @media (max-width: 767.98px) {
   body.category-53.limitedwidth #page.drawers .main-inner,
   body.category-114.limitedwidth #page.drawers .main-inner,
-  body.category-88.limitedwidth #page.drawers .main-inner {
+  body.category-88.limitedwidth #page.drawers .main-inner,
+  body#page-my-index.limitedwidth #page.drawers .main-inner {
     max-width: 100%;
     padding: 1rem;
   }
 }
-
+ 
 /* Desktop */
 @media (min-width: 768px) {
   body.category-53.limitedwidth #page.drawers .main-inner,
   body.category-114.limitedwidth #page.drawers .main-inner,
-  body.category-88.limitedwidth #page.drawers .main-inner {
+  body.category-88.limitedwidth #page.drawers .main-inner,
+  body#page-my-index.limitedwidth #page.drawers .main-inner,
+  body#page-site-index.limitedwidth #page.drawers .main-inner {
     max-width: 1200px;
     margin: 0 auto;
   }
-
+ 
   body.category-53 .header-maxwidth,
   body.category-114 .header-maxwidth,
-  body.category-88 .header-maxwidth {
+  body.category-88 .header-maxwidth,
+  body#page-my-index .header-maxwidth,
+  body#page-site-index .header-maxwidth {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 1rem;
   }
 }
-
-
+ 
+ 
 /* ======================================================
    4) SECONDARY NAVIGATION / TABS
    ====================================================== */
-
+ 
 body.category-53 .secondary-navigation .navigation .nav-tabs,
 body.category-114 .secondary-navigation .navigation .nav-tabs,
 body.category-88 .secondary-navigation .navigation .nav-tabs {
@@ -110,157 +599,114 @@ body.category-88 .secondary-navigation .navigation .nav-tabs {
   max-width: 1200px;
   margin: 0 auto;
 }
-
-
+ 
+ 
 /* ======================================================
    5) DRAWER (Boost default width)
    ====================================================== */
-
+ 
 body.category-53 .drawer.drawer-left,
 body.category-114 .drawer.drawer-left,
 body.category-88 .drawer.drawer-left {
   width: 285px;
   max-width: 285px;
 }
-
+ 
 body.category-53:not(.drawer-open-index) .drawer.drawer-left,
 body.category-114:not(.drawer-open-index) .drawer.drawer-left,
 body.category-88:not(.drawer-open-index) .drawer.drawer-left {
   left: calc(-285px - 0.625rem);
 }
-
+ 
 body.category-53.drawer-open-index .drawer.drawer-left,
 body.category-114.drawer-open-index .drawer.drawer-left,
 body.category-88.drawer-open-index .drawer.drawer-left {
   left: 0;
 }
-
+ 
 body.category-53 .drawer,
 body.category-114 .drawer,
 body.category-88 .drawer {
   background-color: #e8eef8;
 }
-
+ 
 /* No manual container shifting
    → prevents overlaps (quiz reports, right blocks, editing mode)
 */
-
-
+ 
+ 
 /* ======================================================
    6) TYPOGRAPHY / CODE
    ====================================================== */
-
-body.category-53 strong,
-body.category-114 strong,
-body.category-88 strong {
-  font-weight: 550 !important;
-}
-
+ 
 body.category-53 code,
 body.category-114 code,
 body.category-88 code {
   font-size: 0.95rem;
 }
-
-
+ 
 /* ======================================================
-   7) CARDS / ALERTS / TABLES
+   7) CARDS 
    ====================================================== */
-
-body.category-53 .card.bg-light,
+ 
 body.category-53 .card-header.bg-light,
-body.category-53 .alert.bg-light,
-body.category-53 thead.bg-light,
-body.category-53 th.bg-light,
-body.category-53 td.bg-light,
-
-body.category-114 .card.bg-light,
 body.category-114 .card-header.bg-light,
-body.category-114 .alert.bg-light,
-body.category-114 thead.bg-light,
-body.category-114 th.bg-light,
-body.category-114 td.bg-light,
-
-body.category-88 .card.bg-light,
-body.category-88 .card-header.bg-light,
-body.category-88 .alert.bg-light,
-body.category-88 thead.bg-light,
-body.category-88 th.bg-light,
-body.category-88 td.bg-light {
-  background-color: #008cba !important;
-  color: #ffffff;
+body.category-88 .card-header.bg-light
+ {
+    background-color: color-mix(in srgb, var(--primary) 85%, black) !important;
+    color: color-mix(in srgb, var(--white) 80%, var(--gray-200));
 }
-
-
+ 
 /* ======================================================
    8) QUIZ – QUESTION FORMULATION
    ====================================================== */
-
+ 
 body.category-53 .que .formulation,
 body.category-114 .que .formulation,
 body.category-88 .que .formulation {
   color: #222;
-  background-color: #fafafa;
+  background-color: var(--gray-100) !important;
   border: 0;
   padding: 1.25rem;
   border-radius: 0.5rem;
 }
-
-
-/* ======================================================
-   9) COMPETENCE BLOCK
-   ====================================================== */
-
-body.category-53 #course-competence p,
-body.category-53 #course-competence th,
-body.category-53 #course-competence li,
-
-body.category-114 #course-competence p,
-body.category-114 #course-competence th,
-body.category-114 #course-competence li,
-
-body.category-88 #course-competence p,
-body.category-88 #course-competence th,
-body.category-88 #course-competence li {
-  font-size: 0.9375rem;
-}
-
-
+ 
+ 
 /* ======================================================
    10) ALERTS (fine tuning)
    ====================================================== */
-
+ 
 body.category-53 .alert,
 body.category-114 .alert,
 body.category-88 .alert {
   font-size: 0.9rem;
   font-weight: 500;
 }
-
-
+ 
+ 
 /* ======================================================
    11) TIME TRACKING
    ====================================================== */
-
+ 
 div#course-time-tracking i {
   color: #ffffff !important;
   margin-right: 2px !important;
 }
-
-
+ 
+ 
 /* ======================================================
    12) GRADER INFORMATION
    ====================================================== */
-
+ 
 div#course-grading-info .card-header.bg-light {
-  background-color: #ffffff !important;
+  background-color: var(--gray-333) !important;
 }
-
-
+ 
+ 
 /* ======================================================
    13) ASSIGN GRADING – QUICKGRADE COMMENTS
    ====================================================== */
-
+ 
 body.category-53#page-mod-assign-grading textarea[id^="quickgrade_comments_"],
 body.category-114#page-mod-assign-grading textarea[id^="quickgrade_comments_"],
 body.category-88#page-mod-assign-grading textarea[id^="quickgrade_comments_"] {
@@ -268,11 +714,11 @@ body.category-88#page-mod-assign-grading textarea[id^="quickgrade_comments_"] {
   height: 100px;
   resize: vertical;
 }
-
+ 
 /* ======================================================
    14) GRADING COMMENTS
    ====================================================== */
-
+ 
 body.category-53#page-mod-quiz-comment .tox .tox-edit-area,
 body.category-114#page-mod-quiz-comment .tox .tox-edit-area,
 body.category-88#page-mod-quiz-comment .tox .tox-edit-area {
@@ -282,9 +728,370 @@ body.category-88#page-mod-quiz-comment .tox .tox-edit-area {
     position: relative;
     height: auto;
 }
-
+ 
 body.category-53#page-mod-quiz-comment .tox.tox-tinymce,
 body.category-114#page-mod-quiz-comment .tox.tox-tinymce,
 body.category-88#page-mod-quiz-comment .tox.tox-tinymce {
     height: 320px !important;
+    resize: vertical !important;
+    overflow: auto !important;
 }
+ 
+/* =====================================================
+   SCOPE: NUR FÜR COURSE 169
+   ===================================================== */
+
+/* Drawer */
+body.course-169 .drawercontent.drag-container {
+    background: rgba(255, 255, 255, 0.45) !important;
+    backdrop-filter: blur(8px);
+    border-radius: 10px;
+    padding: 4px !important;
+    margin: 0;
+}
+
+/* Course index container */
+body.course-169 #courseindex {
+    background: rgb(232 238 248);
+    backdrop-filter: blur(8px);
+    border-radius: 10px;
+    padding: 4px;
+    margin: 0;
+    /* border: 1px solid rgb(255 255 255 / .3); */
+}
+
+body.course-169 #courseindex-content {
+    background: rgb(232 238 248);
+    backdrop-filter: blur(8px);
+    border-radius: 10px;
+    padding: 4px;
+    margin: 0;
+    /* border: 1px solid rgb(255 255 255 / .3); */
+}
+
+body.course-169 #course-index {
+    background: transparent;
+    backdrop-filter: blur(8px);
+    border-radius: 10px;
+    padding: 4px;
+    margin: 0;
+    /* border: 1px solid rgb(255 255 255 / .3); */
+}
+
+/* Sections */
+body.course-169 .courseindex-section {
+    margin-bottom: 3px;
+    border-radius: 6px;
+    transition: all .15s ease;
+}
+
+body.course-169 .courseindex-section:hover {
+    transform: translateX(2px);
+}
+
+/* Section title */
+body.course-169 .courseindex-section-title {
+    background: rgb(255 255 255 / .6);
+    padding: 6px 2px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+
+/* Links */
+body.course-169 .courseindex-link {
+   font-weight: 600;
+    /* color: var(--primary); */
+    line-height: 2;
+    flex: 1;
+    min-width: 0;
+}
+
+/* Chevron icons */
+body.course-169 .courseindex-chevron .icon {
+    font-size: 0.8rem;
+    margin-right: 2px;
+    color: var(--primary);
+}
+
+/* Items */
+body.course-169 .courseindex-sectioncontent li {
+    background: rgba(255,255,255,0.75);
+    padding: 3px 6px;
+    margin: 2px 0;
+    border-radius: 5px;
+    transition: all .15s ease;
+}
+
+body.course-169 .courseindex-sectioncontent li:hover {
+    background: var(--white);
+    transform: translateX(3px);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+/* Badge */
+body.course-169 .current-badge {
+    font-size: 0.6rem;
+    padding: 1px 5px;
+    border-radius: 20px;
+    background: var(--primary) !important;
+}
+
+/* Lock icon */
+body.course-169 .courseindex-locked .icon {
+    font-size: 0.7rem;
+    color: var(--danger);
+}
+
+/* Darkmode Toggle Button */
+body.course-169 .darkmode-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+    background: color-mix(in srgb, var(--primary) 20%, black);
+    color: var(--white);
+    border: none;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.25);
+    transition: 0.2s ease;
+}
+
+body.course-169 .darkmode-btn:hover {
+    background: color-mix(in srgb, var(--primary) 35%, black);
+    transform: translateY(-2px);
+}
+
+/* ============================================
+   DARK MODE – Grundlayout
+   ============================================ */
+
+body.course-169.darkmode {
+    background: #121314 !important; /* echter Dark-Mode Hintergrund */
+    color: var(--dark) !important;
+}
+
+/* Globaler Text */
+body.course-169.darkmode p,
+body.course-169.darkmode li,
+body.course-169.darkmode td,
+body.course-169.darkmode th,
+body.course-169.darkmode span,
+body.course-169.darkmode div,
+body.course-169.darkmode a {
+    color: var(--dark) !important;
+}
+
+/* Links */
+body.course-169.darkmode a {
+    color: var(--primary) !important;
+}
+
+/* ============================================
+   Activities – komplett dunkel
+   ============================================ */
+
+body.course-169.darkmode .activity {
+    background: #1b1c1f !important;
+    border-left-color: var(--primary) !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.6) !important;
+}
+
+body.course-169.darkmode .activity:hover {
+    background: #222327 !important;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.7) !important;
+}
+
+/* Activity Titles */
+body.course-169.darkmode .activity .activityname a {
+    color: var(--dark) !important;
+}
+
+/* ============================================
+   Cards – dunkel + heller Text
+   ============================================ */
+
+body.course-169.darkmode .card {
+    background: #1c1d20 !important;
+    color: var(--dark) !important;
+    border-color: #2a2c2f !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.6) !important;
+}
+
+body.course-169.darkmode .card-title {
+    background: #2a2c2f !important;
+    color: var(--dark) !important;
+}
+
+/* ============================================
+   Course Teaser
+   ============================================ */
+
+body.course-169.darkmode #course-teaser {
+    background: #1b1c1f !important;
+    border-color: #2a2c2f !important;
+    color: var(--dark) !important;
+}
+
+body.course-169.darkmode #course-teaser h1,
+body.course-169.darkmode #course-teaser em {
+    color: var(--dark) !important;
+}
+
+/* ============================================
+   Course Index
+   ============================================ */
+
+body.course-169.darkmode #courseindex,
+body.course-169.darkmode #courseindex-content {
+    background: rgba(30,30,30,0.7) !important;
+}
+
+body.course-169.darkmode .courseindex-section-title {
+    background: rgba(255,255,255,0.05) !important;
+    color: var(--dark) !important;
+}
+
+body.course-169.darkmode .courseindex-sectioncontent li {
+    background: rgba(255,255,255,0.05) !important;
+    color: var(--dark) !important;
+}
+
+body.course-169.darkmode .courseindex-sectioncontent li:hover {
+    background: rgba(255,255,255,0.12) !important;
+}
+
+/* ============================================
+   Quiz Questions
+   ============================================ */
+
+body.course-169.darkmode.path-mod-quiz .que {
+    background: #1c1d20 !important;
+    border: 1px solid #2a2c2f !important;
+    color: var(--dark) !important;
+}
+
+/* ============================================
+   Bildboxen – leicht abdunkeln
+   ============================================ */
+
+body.course-169.darkmode #course-competence .img-box,
+body.course-169.darkmode #course-knowhow .img-box,
+body.course-169.darkmode #course-topic .img-box {
+    filter: brightness(0.75) contrast(1.15);
+}
+
+/* ============================================
+   Page Header
+   ============================================ */
+
+body.course-169.darkmode #page-header {
+    background: rgba(20,20,20,0.8) !important;
+    border-bottom: 1px solid rgba(255,255,255,0.1) !important;
+}
+
+body.course-169.darkmode .page-header-headings {
+    background: rgba(255,255,255,0.05) !important;
+    color: var(--dark) !important;
+}
+
+/* ============================================
+   Breadcrumbs
+   ============================================ */
+
+body.course-169.darkmode .breadcrumb {
+    color: var(--gray-555) !important;
+}
+
+body.course-169.darkmode .breadcrumb a {
+    color: var(--primary) !important;
+}
+
+/* ============================================
+   DARK MODE – Tabellen komplett dunkel
+   ============================================ */
+
+body.course-169.darkmode table,
+body.course-169.darkmode .table {
+    background: #1b1c1f !important;
+    color: var(--dark) !important;
+    border-color: #2a2c2f !important;
+}
+
+body.course-169.darkmode .table td,
+body.course-169.darkmode .table th {
+    background: var(--dark);
+    color: var(--dark) !important;
+    border-color: #2a2c2f !important;
+}
+
+/* Tabellenrahmen */
+body.course-169.darkmode .table-bordered {
+    border: 1px solid #2a2c2f !important;
+}
+
+/* Schatten */
+body.course-169.darkmode .shadow-sm {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.6) !important;
+}
+
+/* ============================================
+   DARK MODE – Tabellenkopf (bg-info, bg-warning etc.)
+   ============================================ */
+
+body.course-169.darkmode .bg-info {
+    background: color-mix(in srgb, var(--info) 25%, black) !important;
+    color: var(--dark) !important;
+}
+
+body.course-169.darkmode .bg-warning {
+    background: color-mix(in srgb, var(--warning) 25%, black) !important;
+    color: var(--dark) !important;
+}
+
+body.course-169.darkmode .bg-success {
+    background: color-mix(in srgb, var(--success) 25%, black) !important;
+    color: var(--dark) !important;
+}
+
+body.course-169.darkmode .bg-danger {
+    background: color-mix(in srgb, var(--danger) 25%, black) !important;
+    color: var(--dark) !important;
+}
+
+/* Textfarben */
+body.course-169.darkmode .text-white {
+    color: var(--dark) !important;
+}
+
+/* ============================================
+   DARK MODE – Card-Inhalte (p, li, strong)
+   ============================================ */
+
+body.course-169.darkmode .card p,
+body.course-169.darkmode .card li,
+body.course-169.darkmode .card strong,
+body.course-169.darkmode .card span {
+        color: var(--white) !important;
+}
+
+/* ============================================
+   DARK MODE – Tabellenzellen mit farbigen Rändern
+   ============================================ */
+
+body.course-169.darkmode .border-warning {
+    border-color: color-mix(in srgb, var(--warning) 60%, black) !important;
+}
+
+body.course-169.darkmode .border-primary {
+    border-color: color-mix(in srgb, var(--primary) 60%, black) !important;
+}
+
+body.course-169.darkmode .border-success {
+    border-color: color-mix(in srgb, var(--success) 60%, black) !important;
+}
+
