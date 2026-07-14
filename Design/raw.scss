@@ -175,23 +175,84 @@ body#page-my-index {
   background-position: center;
 }
 
-/* Quiz-Ansicht + Quiz-Versuch NUR in bestimmten Kategorien */
-body.category-53#page-mod-quiz-view,
+/* Admin-Bereich */
+.path-admin {
+    --admin-accent: #dc5656;
+}
+
+/* Adminbereich */
+.path-admin .navbar {
+    background: #dc5656 !important;
+}
+
+/* Bearbeitungsseiten */
+body[class*="-edit"] #page-header {
+    border-bottom: 3px solid #f0a500;
+}
+
+/* Nur die Leiste signalisiert Admin */
+.path-admin .navbar {
+    background: var(--admin-accent) !important;
+}
+
+/* Dezente Linie */
+.path-admin #page-header {
+    border-bottom: 3px solid var(--admin-accent);
+}
+
+/* Seite fast normal lassen */
+.path-admin #page {
+    background: #f5f5f5;
+}
+
+/* Karten normal */
+.path-admin .card,
+.path-admin .card-body {
+    background: #ffffff;
+}
+
+/* Überschriften */
+.path-admin h1,
+.path-admin h2,
+.path-admin h3 {
+    color: var(--admin-accent);
+}
+
+/* Quiz-Ansicht + Quiz-Versuch NUR in GV Kategorien  */
 body.category-53#page-mod-quiz-attempt,
-body.category-53#page-course-view-topics,
-body.category-114#page-mod-quiz-view,
 body.category-114#page-mod-quiz-attempt,
-body.category-114#page-course-view-topics,
-body.category-88#page-mod-quiz-view,
-body.category-88#page-mod-quiz-attempt,
-body.category-88#page-course-view-topics,
-body.category-48#page-mod-quiz-view {
+body.category-88#page-mod-quiz-attempt
+ {
   background-image:
     linear-gradient(to bottom, transparent 23px, #d0d0d0 24px),
     linear-gradient(to right, transparent 23px, #d0d0d0 24px) !important;
   background-size:
     100% 24px,
     24px 100% !important;
+}
+
+/* API Kurse */
+body.category-110#page-course-view-topics,
+body.category-110#page-course-view-section-topics,
+body.category-110#page-mod-quiz-view {
+  background-image: url("https://moodle-espas.ch/pluginfile.php/5519/mod_folder/content/0/Kurs-Hintergrund/bg-admin.png") !important;
+  background-repeat: repeat !important;
+}
+
+/* PFE Kurse */
+body.category-111#page-course-view-topics,
+body.category-111#page-course-view-section-topics,
+body.category-111#page-mod-quiz-view {
+  background-image: url("https://moodle-espas.ch/pluginfile.php/5519/mod_folder/content/0/Kurs-Hintergrund/bg-admin.png") !important;
+  background-repeat: repeat !important;
+}
+
+/* ABU Kurse */
+body.category-109#page-course-view-topics,
+body.category-109#page-course-view-section-topics,
+body.category-109#page-mod-quiz-view {
+  background-image: url("https://moodle-espas.ch/pluginfile.php/5519/mod_folder/content/0/Kurs-Hintergrund/bg-admin.png") !important;
+  background-repeat: repeat !important;
 }
 
 /* ===========================
@@ -275,20 +336,20 @@ body #page.drawers .main-inner {
    3.2 Main Inner Width
    =========================== */
 
-#page.drawers .main-inner {
+body:not(#page-blocks-configurable_reports-viewreport) #page.drawers .main-inner {
   max-width: 1200px;
   margin: 0 auto;
 }
 
-/* Darkmode überschreiben */
-body.darkmode #page.drawers .main-inner {
+/* Darkmode */
+body.darkmode:not(#page-blocks-configurable_reports-viewreport) #page.drawers .main-inner {
   max-width: 1200px !important;
   margin: 0 auto;
 }
 
 @media (min-width: 768px) {
-  .pagelayout-standard #page.drawers .main-inner,
-  body.limitedwidth #page.drawers .main-inner {
+  body:not(#page-blocks-configurable_reports-viewreport).pagelayout-standard #page.drawers .main-inner,
+  body:not(#page-blocks-configurable_reports-viewreport).limitedwidth #page.drawers .main-inner {
     max-width: 1200px;
   }
 }
@@ -763,7 +824,7 @@ body.category-53 {
 /* Aktiv-Zustand */
 .darkmode-btn.active {
   background: #212529;
-  color: #fff;
+  color: var(--dark) !important;
 }
 
 /* Integration in Moodle Layout */
@@ -798,18 +859,19 @@ body.darkmode[class*="course-"] #course-topic .img-box {
    5.7 Notizzettel
    =========================== */
 
-.notizzettel[data-note]:before {
+.notizzettel[data-note]::before {
   content: attr(data-note);
   white-space: pre-line;
   display: block;
+  position: relative;
   background: #fff7a8;
   padding: 12px 18px 18px 18px;
-  margin-bottom: 0px;
   border-radius: 6px;
   border-left: 5px solid #ccb100;
   font-size: 0.95rem;
+  font-style: italic;
   font-weight: 500;
-  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.15);
+  box-shadow: 2px 2px 6px rgba(0,0,0,0.15);
 }
 
 .notizzettel[data-note]:after {
@@ -1163,8 +1225,8 @@ body.darkmode #course-competence th {
 
 body.category-53 #course-feedback-link .text-primary {
   color: var(--primary);
-  font-size: 1.05rem !important;
-  border: 2px solid var(--danger) !important;
+  font-size: 1rem !important;
+  border: 3px solid var(--danger) !important;
   background: var(--gray-100) !important;
 }
 
@@ -1447,13 +1509,42 @@ body.darkmode {
     color: var(--dark) !important;
   }
 
-  #page-content a {
-    color: color-mix(in srgb, var(--primary) 60%, white) !important;
+/* Links */
+
+  #page-content a,
+  #block-region-side-pre a {
+    color: color-mix(in srgb, var(--primary) 25%, white) !important;
 
     &:hover {
       text-decoration: underline;
     }
   }
+}
+
+/* Focus Link */
+
+body.darkmode {
+
+    .aalink.focus,
+    a.focus.autolink,
+    .aalink:focus,
+    a.autolink:focus,
+    #page-footer a:not([class]).focus,
+    #page-footer a:not([class]):focus,
+    .arrow_link.focus,
+    .arrow_link:focus,
+    a:not([class]).focus,
+    a:not([class]):focus,
+    .activityinstance > a.focus,
+    .activityinstance > a:focus {
+
+        outline: 0.2rem solid transparent;
+        color: var(--white);
+        background-color: var(--primary);
+        box-shadow:
+            0 -0.2rem var(--primary),
+            0 0.2rem var(--gray-333);
+    }
 }
 
 /* ===========================
@@ -1554,7 +1645,7 @@ body.darkmode {
     td,
     th {
       border-color: var(--gray-300) !important;
-      background-color: var(--gray-200);
+      background-color: var(--gray-200) !important;
     }
   }
 
@@ -1567,7 +1658,8 @@ body.darkmode {
    8.9 Moodle Table Special Cases
    =========================== */
 
-body.darkmode.path-mod-quiz#page-mod-quiz-review {
+body.darkmode.path-mod-quiz#page-mod-quiz-review,
+body.darkmode.path-mod-quiz#page-mod-quiz-view {
 
   /* Grundtabelle */
   table.quizreviewsummary {
@@ -1606,6 +1698,37 @@ body.darkmode.path-mod-quiz#page-mod-quiz-review {
   .generaltable td {
     background-color: var(--gray-800);
     color: var(--gray-100);
+  }
+}
+
+ /* Quiz Summary Table */
+body.darkmode.path-mod-quiz {
+
+  .quizsummaryofattempt {
+    color: var(--gray-100);
+  }
+
+  .quizsummaryofattempt th,
+  .quizsummaryofattempt td {
+    background-color: var(--gray-800) !important;
+    color: var(--gray-100) !important;
+    border-color: var(--gray-600) !important;
+  }
+
+  .quizsummaryofattempt thead th {
+    background-color: var(--gray-900) !important;
+    color: var(--white) !important;
+  }
+
+  /* gerade Zeilen */
+  .quizsummaryofattempt tbody tr:nth-child(even) td,
+  .quizsummaryofattempt tbody tr:nth-child(even) th {
+    background-color: var(--gray-700) !important;
+  }
+
+  /* Links */
+  .quizsummaryofattempt a {
+    color: var(--primary) !important;
   }
 }
 
@@ -1714,6 +1837,7 @@ body.darkmode .que .history,
 body.darkmode .que .outcome {
   border-color: var(--gray-333) !important;
   background-color: var(--gray-100) !important;
+  color: var(--dark) !important;
 }
 
 /* Markierte Frage */
@@ -2082,7 +2206,7 @@ body.darkmode pre[class*="language-"] {
 
 /* NUR VBA Kurs */
 body.darkmode.course-173 #course-question tbody {
-  background: var(--light) !important;
+  background: var(--gray-200) !important;
 }
 
 /*
@@ -2090,6 +2214,7 @@ pre.language-markup {
     background: white;
     color: #1681c9;
 }
+
 */
 
 /* ===========================
@@ -2163,8 +2288,8 @@ body.darkmode {
     color: var(--gray-200) !important;
 
     &:hover {
-      background: color-mix(in srgb, var(--primary) 25%, black) !important;
-      color: var(--white) !important;
+          background: var(--gray-600) !important;
+          color: var(--dark) !important;
     }
   }
 
@@ -2537,10 +2662,43 @@ body.darkmode
   color: var(--dark) !important;
 }
 
+/*  Moodle Help Icon Popover in Footer*/
+body.darkmode {
+
+    .popover,
+    .popover-body,
+    .footer-section {
+        background-color: var(--gray-700);
+        color: var(--gray-333);
+    }
+
+    .footer-section {
+        border-color: var(--secondary) !important;
+    }
+
+    .footer-section a {
+        color: var(--primary);
+    }
+
+    .footer-section .icon {
+        color: var(--gray-555);
+    }
+}
+
 /* Kursspezifisch CMD 170*/
 body.darkmode.course-170 #course-question pre {
   background: var(--dark) !important;
   color: var(--dark) !important;
+}
+
+/*  Edit Modus */
+
+body.darkmode.editing {
+
+  .divider .divider-content {
+    background: var(--gray-800) !important;
+  }
+
 }
 
 /* ============================================================
