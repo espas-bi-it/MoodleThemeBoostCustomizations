@@ -223,12 +223,11 @@ body.category-53#page-mod-quiz-attempt,
 body.category-114#page-mod-quiz-attempt,
 body.category-88#page-mod-quiz-attempt
  {
-  background-image:
-    linear-gradient(to bottom, transparent 23px, #d0d0d0 24px),
-    linear-gradient(to right, transparent 23px, #d0d0d0 24px) !important;
+ background-image: linear-gradient(transparent 17px, rgb(208, 208, 208) 18px), 
+ linear-gradient(to right, transparent 17px, rgb(208, 208, 208) 18px) !important;
   background-size:
-    100% 24px,
-    24px 100% !important;
+    100% 18px,
+    18px 100% !important;
 }
 
 /* API Kurse */
@@ -260,7 +259,7 @@ body.category-109#page-mod-quiz-view {
    =========================== */
 
 .pagelayout-login #page {
-  background-image: url(https://images.pexels.com/photos/13072971/pexels-photo-13072971.jpeg);
+  background-image: url(https://www.moodle-espas.ch/pluginfile.php/5512/mod_page/content/1/pexels-towfiqu-barbhuiya-3440682-13072971.jpg);
   background-attachment: fixed;
   background-position: center;
 }
@@ -365,13 +364,16 @@ body.darkmode:not(#page-blocks-configurable_reports-viewreport) #page.drawers .m
 
 /* Page Header */
 #page-header {
-  position: sticky;
-  top: 60px;
-  z-index: 90;
-  background: var(--white);
-  border-bottom: 1px solid var(--gray-200);
-  max-width: 100% !important;
-  margin: 0 15px 15px !important;
+    position: sticky;
+    top: 60px;
+    z-index: 90;
+    width: calc(100% + 30px);
+    left: -15px;
+    margin-left: -15px !important;
+    margin-right: -15px !important;
+    max-width: none !important;
+    background: var(--white);
+    border-bottom: 1px solid var(--gray-200);
 }
 
 /* Header Titel */
@@ -859,32 +861,39 @@ body.darkmode[class*="course-"] #course-topic .img-box {
    5.7 Notizzettel
    =========================== */
 
-.notizzettel[data-note]::before {
-  content: attr(data-note);
-  white-space: pre-line;
-  display: block;
+.notizzettel[data-note] {
   position: relative;
-  background: #fff7a8;
-  padding: 12px 18px 18px 18px;
-  border-radius: 6px;
-  border-left: 5px solid #ccb100;
-  font-size: 0.95rem;
-  font-style: italic;
-  font-weight: 500;
-  box-shadow: 2px 2px 6px rgba(0,0,0,0.15);
 }
 
-.notizzettel[data-note]:after {
-  content: "";
-  position: absolute;
-  top: -12px;
-  left: 8px;
-  background-image: none;
-  /* WICHTIG für SCSS */
-  background-size: contain;
-  background-repeat: no-repeat;
-  transform: rotate(-10deg);
-  z-index: 10;
+.notizzettel[data-note]::before {
+    content: attr(data-note);
+    white-space: pre-line;
+    letter-spacing: 0.2px;
+    line-height: 1.5;
+    display: block;
+    position: relative;
+    background: #fff7a8;
+    padding: 12px 18px 18px 18px;
+    border-radius: 6px;
+    border-left: 5px solid #ccb100;
+    font-size: .90rem;
+    font-style: italic;
+    font-weight: 500;
+    box-shadow: 2px 2px 6px rgb(0 0 0 / .15);
+}
+
+.notizzettel[data-note]::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 38px 38px 0;
+    border-color: transparent #f5f5eaba transparent transparent;
+    filter: drop-shadow(-3px 3px 3px rgb(0 0 0 / .15));
+    z-index: 1;
 }
 
 body.darkmode .notizzettel[data-note]:before {
