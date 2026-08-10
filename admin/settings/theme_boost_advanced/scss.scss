@@ -1,0 +1,1730 @@
+/* ============================================================
+   1. VARIABLES
+   ============================================================ */
+
+/* ===========================
+   1.1 CSS Variables
+   =========================== */
+
+:root {
+  --primary: #007399;
+  --secondary: #047b20;
+  --success: #28a745;
+  --info: #17a2b8;
+  --warning: #ffc107;
+  --danger: #d9534f;
+  --yellow: #fcec03;
+  --light: #f2f2f2;
+  --dark: #031417;
+
+  --white: #ffffff;
+  --gray-100: #f7f8fa;
+  --gray-200: #e9ecef;
+  --gray-222: #222;
+  --gray-333: #333;
+  --gray-555: #555;
+  --gray-777: #777;
+  --gray-999: #999;
+}
+
+/* ===========================
+   1.2 Color Utility Mapping
+   =========================== */
+
+/* generisches System */
+.bg-primary {
+  background-color: var(--primary) !important;
+}
+
+.bg-secondary {
+  background-color: var(--secondary) !important;
+}
+
+.bg-success {
+  background-color: var(--success) !important;
+}
+
+.bg-info {
+  background-color: var(--info) !important;
+}
+
+.bg-warning {
+  background-color: var(--warning) !important;
+}
+
+.bg-danger {
+  background-color: var(--danger) !important;
+}
+
+.bg-light {
+  background-color: var(--light) !important;
+}
+
+.bg-dark {
+  background-color: var(--dark) !important;
+}
+
+.bg-white {
+  background-color: var(--white) !important;
+}
+
+.text-primary {
+  color: var(--primary) !important;
+}
+
+.text-secondary {
+  color: var(--secondary) !important;
+}
+
+.text-info {
+  color: var(--info) !important;
+}
+
+.text-warning {
+  color: var(--warning) !important;
+}
+
+.text-danger {
+  color: var(--danger) !important;
+}
+
+.text-light {
+  color: var(--light) !important;
+}
+
+.text-dark {
+  color: var(--dark) !important;
+}
+
+.text-white {
+  color: var(--white) !important;
+}
+
+.border-primary {
+  border-color: var(--primary) !important;
+}
+
+.border-secondary {
+  border-color: var(--secondary) !important;
+}
+
+.border-success {
+  border-color: var(--success) !important;
+}
+
+.border-info {
+  border-color: var(--info) !important;
+}
+
+.border-warning {
+  border-color: var(--warning) !important;
+}
+
+.border-danger {
+  border-color: var(--danger) !important;
+}
+
+.border-light {
+  border-color: var(--light) !important;
+}
+
+.border-dark {
+  border-color: var(--dark) !important;
+}
+
+.border-white {
+  border-color: var(--white) !important;
+}
+
+/* ============================================================
+   2. BASE (GLOBAL TYPOGRAPHY / PAGE BASICS)
+   ============================================================ */
+
+/* ===========================
+   2.1 Global Typography
+   =========================== */
+
+body {
+  font-family: "Inter", sans-serif !important;
+  letter-spacing: -0.4px !important;
+  line-height: 1.5 !important;
+  font-size: .9375rem;
+}
+
+/* Headings */
+body h1,
+body h2,
+body h3
+ {
+  font-weight: 600;
+  letter-spacing: -0.5px;
+  color: var(--secondary);
+  text-transform: uppercase;
+}
+
+/* Links */
+body a{
+  color: var(--primary);
+}
+
+body a:hover {
+ color: var(--dark);
+}
+
+/* ===========================
+   2.2 Backgrounds
+   =========================== */
+
+body#page-site-index,
+body#page-course-index-category,
+body#page-my-index {
+  background-image: url(https://www.moodle-espas.ch/pluginfile.php/5512/mod_page/content/1/pexels-towfiqu-barbhuiya-3440682-13072971.jpg);
+  background-attachment: fixed;
+  background-position: center;
+}
+
+/* Admin-Bereich */
+.path-admin {
+    --admin-accent: #dc5656;
+}
+
+/* Adminbereich */
+.path-admin .navbar {
+    background: var(--admin-accent) !important;
+}
+
+/* Bearbeitungsseiten */
+body[class*="-edit"] #page-header {
+    border-bottom: 3px solid #f0a500;
+}
+
+/* Nur die Leiste signalisiert Admin */
+.path-admin .navbar {
+    background: var(--admin-accent) !important;
+}
+
+/* Dezente Linie */
+.path-admin #page-header {
+    border-bottom: 3px solid var(--admin-accent);
+}
+
+/* Seite fast normal lassen */
+.path-admin #page {
+    background: transparent;
+}
+
+/* Karten normal */
+.path-admin .card,
+.path-admin .card-body {
+    background: var(--white);
+}
+
+/* Überschriften */
+.path-admin h1,
+.path-admin h2,
+.path-admin h3 {
+    color: var(--admin-accent);
+}
+
+/* Dokumentationsseiten Category-114*/
+.category-114,
+.category-106 {
+    --doc-accent: #669999;
+}
+
+.category-114 .navbar,
+.category-106 .navbar {
+    background: var(--doc-accent) !important;
+}
+
+/* Nur die Leiste signalisiert Admin */
+.category-114 .navbar, 
+.category-106 .navbar {
+    background: var(--doc-accent) !important;
+}
+
+/* Dezente Linie */
+.category-114 #page-header,
+.category-106 #page-header {
+    border-bottom: 3px solid var(--doc-accent);
+}
+
+/* Seite fast normal lassen */
+.category-114 #page,
+.category-106 #page {
+    background: transparent;
+}
+
+/* Karten normal */
+.category-114 .card,
+.category-106 .card, 
+.category-114 .card-body,
+.category-106 .card-body {
+    background: var(--white);
+}
+
+/* Überschriften */
+.category-114  h1,
+.category-106 h1,
+.category-114  h2,
+.category-106 h2,
+.category-114  h3,
+.category-106 h3 {
+    color: var(--doc-accent);
+}
+
+/* Quiz-Ansicht + Quiz-Versuch NUR in GV Kategorien  */
+body.category-53#page-mod-quiz-attempt,
+body.category-114#page-mod-quiz-attempt,
+body.category-88#page-mod-quiz-attempt
+ {
+ background-image: linear-gradient(transparent 17px, rgb(208, 208, 208) 18px), 
+ linear-gradient(to right, transparent 17px, rgb(208, 208, 208) 18px) !important;
+  background-size:
+    100% 18px,
+    18px 100% !important;
+}
+
+/* API Kurse */
+body.category-110#page-course-view-topics,
+body.category-110#page-course-view-section-topics,
+body.category-110#page-mod-quiz-view {
+ background: linear-gradient(
+        273deg,
+        color-mix(in srgb, var(--primary) 15%, transparent) 46%,
+        color-mix(in srgb, var(--secondary) 12%, transparent) 100%
+    );
+}
+
+body.category-110#page-mod-wiki-view,
+body.category-110#page-mod-assign-view,
+body.category-110#page-mod-feedback-view {
+   background: linear-gradient(
+        273deg,
+        color-mix(in srgb, var(--primary) 15%, transparent) 46%,
+        color-mix(in srgb, var(--secondary) 12%, transparent) 100%
+    );
+}
+
+/* PFE Kurse */
+body.category-111#page-course-view-topics,
+body.category-111#page-course-view-section-topics,
+body.category-111#page-mod-quiz-view {
+ background: linear-gradient(
+        273deg,
+        color-mix(in srgb, var(--primary) 15%, transparent) 46%,
+        color-mix(in srgb, var(--secondary) 12%, transparent) 100%
+    );
+}
+
+body.category-111#page-mod-wiki-view,
+body.category-111#page-mod-assign-view,
+body.category-111#page-mod-feedback-view {
+ background: linear-gradient(
+        273deg,
+        color-mix(in srgb, var(--primary) 15%, transparent) 46%,
+        color-mix(in srgb, var(--secondary) 12%, transparent) 100%
+    );
+}
+
+/* ABU Kurse */
+body.category-109#page-course-view-topics,
+body.category-109#page-course-view-section-topics,
+body.category-109#page-mod-quiz-view,
+body.category-109#page-mod-feedback-view {
+ background: linear-gradient(
+        273deg,
+        color-mix(in srgb, var(--primary) 15%, transparent) 46%,
+        color-mix(in srgb, var(--secondary) 12%, transparent) 100%
+    );
+}
+
+body.category-109#page-mod-wiki-view,
+body.category-109#page-mod-assign-view,
+body.category-109#page-mod-feedback-view {
+ background: linear-gradient(
+        273deg,
+        color-mix(in srgb, var(--primary) 15%, transparent) 46%,
+        color-mix(in srgb, var(--secondary) 12%, transparent) 100%
+    );
+}
+
+/* ===========================
+   2.3 Login Page
+   =========================== */
+
+.login-container {
+  background-color: var(--gray-100);
+  padding: 3rem;
+  box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 0.15);
+  margin-bottom: 2rem;
+}
+
+/* ===========================
+   2.4 Region Main
+   =========================== */
+
+/* Default */
+#region-main {
+  background-color: var(--gray-100) !important;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.06);
+  padding-bottom: 15px;
+}
+
+/* Ausnahme: Login */
+#page-login-index #region-main {
+  background: none !important;
+  box-shadow: none !important;
+  padding-bottom: 0;
+}
+
+/* Forgot Password Page */
+        body#page-login-forgot_password #region-main {
+    background-color: transparent !important;
+}
+
+
+/* ===========================
+   2.5 Code
+   =========================== */
+
+code {
+  font-size: 0.95rem;
+}
+
+html.darkmode pre code {
+  color: var(--dark) !important;
+  font-size: 1rem;
+}
+
+html.darkmode code {
+  color: #f359f3 !important;
+}
+
+/* ============================================================
+   3. LAYOUT
+   ============================================================ */
+
+/* ===========================
+   3.1 Drawer Layout
+   =========================== */
+
+body .drawercontent.drag-container {
+  padding: 0;
+}
+
+body .drawer {
+  z-index: 5 !important;
+}
+
+/* main content container */
+body #page.drawers .main-inner {
+    background: var(--white);
+    border-radius: 1.5rem;
+    border: 1px solid color-mix(in srgb, var(--gray-300) 25%, transparent) !important;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    padding: 2rem 1.5rem !important;
+    margin-top: 0.5rem !important;
+}
+
+/* ===========================
+   3.2 Main Inner Width
+   =========================== */
+
+body:not(#page-blocks-configurable_reports-viewreport) #page.drawers .main-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  body:not(#page-blocks-configurable_reports-viewreport).pagelayout-standard #page.drawers .main-inner,
+  body:not(#page-blocks-configurable_reports-viewreport).limitedwidth #page.drawers .main-inner {
+    max-width: 1200px;
+  }
+}
+
+/* ===========================
+   3.3 Sticky Header
+   =========================== */
+
+/* Navbar Sicherheit */
+.navbar {
+  z-index: 200 !important;
+}
+
+/* Page Header */
+#page-header {
+    position: sticky;
+    top: 60px;
+    z-index: 90;
+    width: calc(100% + 30px);
+    left: -15px;
+    margin-left: -15px !important;
+    margin-right: -15px !important;
+    max-width: none !important;
+    background: var(--white);
+    border-bottom: 3px solid var(--secondary);
+}
+
+/* Header Titel */
+.page-header-headings {
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-weight: 600;
+  color: var(--dark);
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.06);
+  display: inline-block;
+}
+
+/* ===========================
+   3.4 Scrollbar
+   =========================== */
+
+body .drawercontent {
+  scrollbar-color: #6a737b #f8f9fa;
+}
+
+html.darkmode .drawercontent {
+  scrollbar-color: var(--primary) var(--gray-999) !important;
+}
+
+/* ============================================================
+   4. NAVIGATION
+   ============================================================ */
+
+/* ===========================
+   4.1 Navbar
+   =========================== */
+
+body .navbar {
+  background: var(--light) !important;
+  border-bottom: 1px solid var(--gray-100) !important;
+  padding: 0.75rem 1.25rem !important;
+
+  .nav-link {
+    font-weight: 700 !important;
+    color: var(--gray-333);
+  }
+}
+
+/* Fix für Moremenu */
+body .moremenu .nav-link:hover,
+body .moremenu .nav-link:focus {
+  background-color: var(--gray-200) !important;
+}
+
+body .moremenu .nav-link.active {
+border-bottom-color: var(--primary) !important;
+}
+
+/* ===========================
+   4.2 Breadcrumb
+   =========================== */
+
+body .breadcrumb {
+  background: transparent !important;
+  font-size: 14px;
+}
+
+.breadcrumb {
+  background: transparent;
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+
+  a {
+    color: var(--primary);
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+/* ===========================
+   4.3 Secondary Navigation
+   =========================== */
+
+.secondary-navigation .nav-tabs {
+  border: none;
+}
+
+/* ===========================
+   4.4 Course Index
+   =========================== */
+
+/* SECTION TITLES */
+
+.courseindex-section-title a {
+   text-transform: uppercase;
+    background: var(--gray-300) !important;
+    color: var(--dark) !important;
+    font-weight: 600 !important;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    transition: 0.2s ease;
+
+  &:hover {
+    background: var(--gray-700);
+  }
+
+  .icons-collapse-expand i {
+    color: var(--gray-555);
+    opacity: 0.7;
+  }
+}
+
+/* Darkmode */
+html.darkmode .courseindex-section-title a {
+    text-transform: uppercase;
+    color: #7eb4d8 !important;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    transition: 0.2s ease;
+    background: none !important;
+
+  &:hover {
+    background: var(--gray-700);
+  }
+
+  .icons-collapse-expand i {
+    color: var(--gray-555);
+    opacity: 0.7;
+  }
+}
+
+/* ITEMS */
+
+.courseindex-sectioncontent .courseindex-item {
+  padding: 0 2px;
+  margin: 2px 0;
+  border-radius: 6px;
+  transition: 0.2s ease;
+}
+
+.courseindex .courseindex-item {
+padding: .25rem 0 !important;
+}
+
+.courseindex-item.pageitem {
+  background-color: var(--primary) !important;
+
+  a {
+    color: var(--white) !important;
+  }
+}
+
+/* LOCK */
+.courseindex-locked i {
+  color: var(--danger);
+  opacity: 0.8;
+}
+
+/* BADGE */
+
+.current-badge {
+  background: var(--primary) !important;
+  color: var(--white) !important;
+  font-size: 0.75rem;
+  padding: 2px 8px;
+  border-radius: 12px;
+}
+
+/* Allgemeine fixes*/
+#course-question .card-body p:last-child {
+    margin-bottom: 0 !important;
+}
+
+#course-question {
+  .card-header.bg-light {
+    background: var(--light);
+    border-bottom: 1px solid var(--secondary);
+    letter-spacing: 0.2px;
+    color: var(--dark);
+    text-transform: uppercase;
+}
+  }
+
+  .card-body.bg-white {
+    background: color-mix(in srgb, var(--primary) 3%, white) !important;
+   color: var(--dark) !important;
+  }
+
+
+/* ============================================================
+   5. COMPONENTS
+   ============================================================ */
+
+/* ===========================
+   5.1 Buttons
+   =========================== */
+
+.btn {
+  --btn-bg: color-mix(in srgb, var(--primary) 75%, white);
+  --btn-border: var(--primary);
+  --btn-color: var(--white);
+
+  background-color: var(--btn-bg) !important;
+  border-color: var(--btn-border) !important;
+  color: var(--btn-color) !important;
+}
+
+/* Varianten mit Variablen */
+.btn-primary {
+  --btn-bg: var(--primary);
+}
+
+.btn-secondary {
+  --btn-bg: color-mix(in srgb, var(--secondary) 75%, white);
+  --btn-color: var(--white);
+}
+
+.btn-success {
+  --btn-bg: var(--success);
+}
+
+.btn-info {
+  --btn-bg: var(--info);
+}
+
+.btn-warning {
+  --btn-bg: var(--warning);
+}
+
+.btn-danger {
+  --btn-bg: var(--danger);
+}
+
+.btn-light {
+  --btn-bg: var(--light);
+  --btn-color: var(--dark);
+}
+
+.btn-dark {
+  --btn-bg: var(--dark);
+}
+
+/* Spezialfall */
+.btn.btn-icon.icons-collapse-expand {
+  --btn-bg: color-mix(in srgb, var(--primary) 90%, black);
+}
+
+.btn-link {
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+
+  --btn-bg: transparent;
+  --btn-color: var(--primary);
+}
+
+body .btn {
+  border-radius: 8px !important;
+  font-weight: 500 !important;
+  transition:
+    background 0.2s ease,
+    transform 0.1s ease;
+}
+
+/* User-Menü anderes Verhalten */
+#user-menu-toggle {
+  --btn-bg: transparent;
+  --btn-border: transparent;
+  --btn-color: var(--primary);
+
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+
+  &:hover {
+    background: color-mix(in srgb, var(--primary) 10%, transparent) !important;
+  }
+}
+
+/* Einheitliches Verhalten für Drawer-Buttons  */
+button[data-toggler="drawers"]:not(.btn-footer-popover),
+button.drawertoggle:not(.btn-footer-popover),
+button.btn-icon:not(.btn-footer-popover),
+button.icon-no-margin:not(.btn-footer-popover) {
+  --btn-bg: transparent;
+  --btn-border: transparent;
+  --btn-color: var(--dark);
+
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+
+  &:hover {
+    background: color-mix(in srgb, var(--primary) 10%, transparent) !important;
+  }
+
+  i.icon {
+    color: var(--primary);
+  }
+}
+
+
+/* ===========================
+   5.2 Badges
+   =========================== */
+
+.badge {
+  --badge-bg: var(--danger);
+  --badge-color: var(--white);
+
+  background-color: var(--badge-bg) !important;
+  color: var(--badge-color) !important;
+}
+
+.badge-primary {
+  --badge-bg: var(--primary);
+}
+
+.badge-secondary {
+  --badge-bg: var(--secondary);
+}
+
+.badge-success {
+  --badge-bg: var(--success);
+}
+
+.badge-info {
+  --badge-bg: var(--info);
+}
+
+.badge-warning {
+  --badge-bg: var(--warning);
+  --badge-color: var(--dark);
+}
+
+.badge-danger {
+  --badge-bg: var(--danger);
+}
+
+.badge-light {
+  --badge-bg: var(--light);
+  --badge-color: var(--dark);
+}
+
+.badge-dark {
+  --badge-bg: var(--dark);
+}
+
+/* DARKMODE */
+
+html.darkmode #course-question {
+  .card-header.bg-light {
+    background: color-mix(in srgb, var(--primary) 35%, black) !important;
+    color: var(--dark) !important;
+  }
+
+  .card-body.bg-white {
+    background: color-mix(in srgb, var(--dark) 25%, black) !important;
+  }
+}
+
+/* ===========================
+   5.3 Alerts
+   =========================== */
+
+.alert {
+  --alert-color: var(--primary);
+
+  background-color: color-mix(
+    in srgb,
+    var(--alert-color) 15%,
+    transparent
+  ) !important;
+  border-color: var(--alert-color) !important;
+  color: var(--alert-color) !important;
+}
+
+.alert-primary {
+  --alert-color: var(--primary);
+}
+
+.alert-info {
+  --alert-color: var(--info);
+}
+
+.alert-success {
+  --alert-color: var(--success);
+}
+
+.alert-danger {
+  --alert-color: var(--danger);
+}
+
+/* Sonderfall warning */
+.alert-warning {
+  background: color-mix(in srgb, var(--warning) 30%, white) !important;
+  border-color: var(--warning) !important;
+  color: color-mix(in srgb, var(--warning) 50%, black) !important;
+}
+
+/* ===========================
+   5.4 Cards
+   =========================== */
+
+body .card {
+  border-radius: 12px !important;
+  border: 1px solid var(--gray-100) !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+  background: var(--white);
+}
+
+body .coursebox,
+body .course-card {
+  border-radius: 14px !important;
+  padding: 20px !important;
+  background: var(--white);
+  border: 1px solid var(--gray-100) !important;
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  }
+}
+
+/* ===========================
+   5.5 Tables
+   =========================== */
+
+body.category-53 {
+  .table {
+    background-color: var(--white) !important;
+    color: var(--dark) !important;
+  }
+
+  .table-bordered,
+  .table td,
+  .table th {
+    border-color: var(--gray-200) !important;
+  }
+
+  .table-striped tbody tr:nth-of-type(odd) {
+    background-color: var(--gray-200);
+  }
+}
+
+/* ===========================
+   5.6 Darkmode Toggle Button
+   =========================== */
+
+/* Darkmode Toggle Button (für Profil-Card) */
+.darkmode-btn {
+  /* Layout */
+  position: static;
+  display: inline-block;
+
+  /* Look behalten */
+  background: color-mix(in srgb, var(--primary) 20%, black);
+  color: var(--white) !important;
+  border: none;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgb(0 0 0 / 0.15);
+  transition: 0.2s ease;
+}
+
+/* Hover */
+.darkmode-btn:hover {
+  background: color-mix(in srgb, var(--primary) 35%, black);
+  transform: translateY(-1px);
+}
+
+/* Aktiv-Zustand */
+.darkmode-btn.active {
+  background: #212529;
+  color: var(--dark) !important;
+}
+
+/* Integration in Moodle Layout */
+.contentnode dl {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contentnode dt {
+  margin: 0;
+}
+
+.contentnode dd {
+  margin: 0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Login-Seite: verstecken (bleibt sinnvoll) */
+body#page-login-index #darkmode-toggle {
+  display: none;
+}
+
+html.darkmode[class*="course-"] #course-competence .img-box,
+html.darkmode[class*="course-"] #course-knowhow .img-box,
+html.darkmode[class*="course-"] #course-topic .img-box {
+  filter: brightness(0.8);
+}
+
+/* ===========================
+   5.7 Notizzettel
+   =========================== */
+
+.notizzettel[data-note] {
+  position: relative;
+}
+
+.notizzettel[data-note]::before {
+    content: attr(data-note);
+    white-space: pre-line;
+    letter-spacing: 0.1px;
+    line-height: 1.5;
+    display: block;
+    position: relative;
+    background: #fff7a8;
+    padding: 12px 18px 18px 18px;
+    border-radius: 4px;
+    border-left: 5px solid #ccb100;
+    font-size: .9rem;
+    font-style: italic;
+    font-weight: 400;
+    box-shadow: 2px 2px 6px rgb(0 0 0 / .15);
+}
+
+.notizzettel[data-note]::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 38px 38px 0;
+    border-color: transparent #f5f5eaba transparent transparent;
+    filter: drop-shadow(-3px 3px 3px rgb(0 0 0 / .15));
+    z-index: 1;
+}
+
+html.darkmode .notizzettel[data-note]:before {
+  background: var(--warning) !important;
+}
+
+/* ===========================
+   5.8 Accordion
+   =========================== */
+
+/* Modal z-index */
+body#page-site-index .modal-backdrop {
+  z-index: 1001 !important;
+}
+
+#course-accordeon .btn.btn-link::before {
+  content: "▼";
+  margin-right: 8px;
+  transition: transform 0.25s ease;
+}
+
+#course-accordeon .btn.btn-link:not(.collapsed)::before {
+  transform: rotate(180deg);
+}
+
+/* ============================================================
+   6. MOODLE COURSE AREAS
+   ============================================================ */
+
+/* ===========================
+   6.1 Course Actions
+   =========================== */
+
+.course-content-header .actions,
+#course-header .actions {
+  gap: 6px;
+}
+
+/* ===========================
+   6.3 Sections
+   =========================== */
+
+.course-content .section {
+  margin-top: 16px;
+  background: var(--gray-100);
+}
+
+/*Section name color */
+.course-section .sectionname a {
+  color: var(--primary) !important;
+}
+
+/* ===========================
+   6.3 Course Teaser
+   =========================== */
+
+#course-teaser {
+    background: var(--gray-300);
+    border-radius: 12px !important;
+    padding: 24px;
+    box-shadow: 0 2px 8px rgb(0 0 0 / .06);
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+/* Overlay */
+#course-teaser .position-relative > .position-absolute {
+  background: color-mix(in srgb, var(--light) 10%, transparent) !important;
+}
+
+/* Titelbox */
+#course-teaser .rounded {
+  border-radius: 10px !important;
+  background: color-mix(in srgb, var(--white) 90%, transparent) !important;
+}
+
+/* Titel */
+#course-teaser h1 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--gray-333);
+}
+
+/* Untertitel */
+#course-teaser em {
+  color: var(--gray-777);
+}
+
+/* Cards im Teaser */
+#course-teaser .card {
+  border-radius: 10px;
+}
+
+#course-teaser .card-title {
+  background: var(--gray-200);
+  border-radius: 6px;
+  color: var(--dark);
+}
+
+#course-teaser .card-body {
+  padding: 1.25rem !important;
+}
+
+/* Teaser-Icon /*
+       .teaser-icon {
+    background-image: url("https://moodle-espas.ch/pluginfile.php/5445/mod_page/content/2/Info.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 100px;
+    height: 100px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  #course-teaser .position-relative {
+    min-height: 180px !important;
+  }
+}
+
+/* ===========================
+   6.4 Course Competence
+   =========================== */
+
+#course-competence .card {
+  background: color-mix(in srgb, var(--info) 18%, transparent);
+  border-left: 8px solid var(--info) !important;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+#course-competence table.table {
+  background: var(--white) !important;
+  border-radius: 10px;
+  overflow: hidden;
+  border: none !important;
+}
+
+#course-competence td {
+  background: var(--white);
+  border: none !important;
+}
+
+#course-competence th.bg-secondary {
+  background: var(--gray-200) !important;
+  color: var(--gray-333) !important;
+  font-weight: 600;
+  padding: 12px 16px !important;
+  border-radius: 10px 10px 0 0 !important;
+}
+
+#course-competence .border-start {
+  border-width: 4px !important;
+  border-radius: 4px;
+  padding-left: 8px !important;
+}
+
+#course-competence img {
+  border-radius: 6px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* ===========================
+   6.5 Course Image Boxes
+   =========================== */
+
+body[class*="course-"] {
+  #course-competence .img-box {
+    background: url(https://www.moodle-espas.ch/pluginfile.php/5362/mod_page/content/6/1-lernprozess-auftrag_klein.png?time=1776706931883)
+      no-repeat center center/ contain;
+    height: 95px;
+    width: auto;
+    margin-left: 50px;
+  }
+
+  #course-knowhow .img-box {
+    background: url(https://www.moodle-espas.ch/pluginfile.php/5362/mod_page/content/6/2-lernprozess-knowhow_klein.png?time=1776706952600)
+      no-repeat center center / contain;
+    height: 95px;
+    width: auto;
+  }
+
+  #course-topic .img-box {
+    background: url(https://www.moodle-espas.ch/pluginfile.php/5362/mod_page/content/6/3-lernprozess-praxis_klein.png?time=1776706977129)
+      no-repeat center center/ contain;
+    height: 95px;
+    width: auto;
+  }
+}
+
+/* ===========================
+   6.6 Activities
+   =========================== */
+
+body .activity-item .activity-altcontent.activity-description {
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+  border-top: none;
+  font-size: 0.875em;
+}
+
+/* ===========================
+   Activity Card
+   =========================== */
+
+.activity {
+  --activity-bg: transparent;
+  --activity-border: var(--secondary);
+
+  border-radius: 10px;
+  padding: 4px 2px;
+  margin: 14px 0;
+
+  box-shadow: 0 2px 6px rgb(0 0 0 / 0.08);
+  background: var(--activity-bg);
+  border-left: 8px solid var(--activity-border);
+
+  transition: all 0.2s ease;
+
+  /*  FIX: stacking context */
+  position: relative;
+  z-index: 1;
+
+  &:hover {
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
+    transform: translateY(-1px);
+
+    /*  aktive Activity nach vorne */
+    z-index: 10;
+  }
+
+  /* wichtig: Dropdown bleibt sichtbar */
+  &:focus-within {
+    z-index: 10;
+  }
+}
+
+/* ===========================
+   Activity Wrapper
+   =========================== */
+
+.activity-item {
+  --activity-item-bg: transparent;
+  background-color: var(--activity-item-bg) !important;
+}
+
+/* ===========================
+   Action Menu Fix
+   =========================== */
+
+.cm_action_menu,
+.action-menu {
+  position: relative;
+  z-index: 20;
+}
+
+/* Dropdown immer über allem */
+.dropdown-menu {
+  z-index: 9999;
+}
+
+/* ===========================
+   Varianten
+   =========================== */
+
+.activity.modtype_quiz {
+  --activity-bg: color-mix(in srgb, var(--primary) 18%, transparent);
+  --activity-border: var(--primary);
+}
+
+.activity.modtype_feedback {
+  --activity-bg: color-mix(in srgb, var(--success) 18%, transparent);
+  --activity-border: var(--success);
+}
+
+.activity.modtype_assign {
+  --activity-border: var(--gray-999);
+}
+
+.activity.modtype_wiki,
+.activity.modtype_book {
+  --activity-bg: color-mix(in srgb, var(--yellow) 22%, transparent);
+  --activity-border: var(--yellow);
+}
+
+.activity.modtype_resource {
+  --activity-bg: color-mix(in srgb, var(--yellow) 22%, transparent);
+}
+
+.activity.modtype_url {
+  --activity-bg: color-mix(in srgb, var(--primary) 18%, transparent);
+}
+
+/* ===========================
+   Name Styling
+   =========================== */
+
+.activity .instancename {
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* ===========================
+   Hidden State
+   =========================== */
+
+.activity-item.hiddenactivity {
+  background-color: var(--gray-300);
+}
+
+.course-section.hidden .section-item, .course-section.orphaned .section-item {
+    background-color: transparent;
+}
+
+/* ===========================
+   Overflow Fix (falls erforderlich)
+   =========================== */
+
+.course-content,
+.section {
+  overflow: visible;
+}
+
+/* ===========================
+   6.7 Info div in Frage (Nicht beantwortet, Richtig, Falsch)
+   =========================== */
+
+body #region-main-box .state {
+    color: var(--dark);
+    background: var(--white);
+    display: inline-block;
+    padding: .25em;
+    font-size: 95%;
+    font-weight: 600;
+    line-height: 1;
+    text-align: left;
+    vertical-align: baseline;
+    border-radius: .25rem;
+}
+
+/* ===========================
+   6.8 Course Time Tracking / Questions
+   =========================== */
+
+#course-time-tracking i {
+  margin-right: 2px !important;
+}
+
+html.darkmode.category-53 #course-teaser .card-title,
+html.darkmode.category-88 #course-teaser .card-title,
+html.darkmode.category-114 #course-teaser .card-title,
+html.darkmode.category-48 #course-teaser .card-title {
+  background: var(--light) !important;
+  border-radius: 6px;
+  color: var(--white) !important;
+}
+
+html.darkmode #course-competence th {
+  background: var(--light) !important;
+  border-radius: 6px;
+  color: var(--white) !important;
+}
+
+body.category-53 #course-feedback-link .text-primary {
+  color: var(--primary);
+  font-size: 1rem !important;
+  border: 3px solid var(--danger) !important;
+  background: var(--gray-100) !important;
+}
+
+html.darkmode.category-53 #course-feedback-link .text-primary {
+  color: color-mix(in srgb, var(--primary) 35%, white) !important;
+  font-size: 1.05rem !important;
+  border: 2px solid var(--danger) !important;
+  background: var(--gray-100) !important;
+}
+
+html.darkmode .invalid-feedback {
+  color: var(--danger) !important;
+}
+
+.activity-item .activity-completion button.btn-success,
+.activity-item .activity-completion a[role="button"].btn-success {
+  color: var(--gray-700) !important;
+}
+
+/* ===========================
+   6.8 Schnupperer
+   =========================== */
+
+body.course-68 {
+  background-image: url(https://moodle-espas.ch/pluginfile.php/5519/mod_folder/content/0/Kurs-Hintergrund/bg-schnuppi.png);
+}
+
+body#page-mod-quiz-attempt .mod_quiz-section-heading {
+  font-size: 1.1rem !important;
+  margin-bottom: 5px !important;
+}
+
+#page-mod-quiz-review #mod_quiz_navblock h3.mod_quiz-section-heading {
+font-size: 1.1rem !important;
+}
+
+/* ============================================================
+   7. MOODLE MODULES / PATH-BASED
+   ============================================================ */
+
+/* ===========================
+   7.1 Quiz
+   =========================== */
+
+.path-mod-quiz {
+  .que {
+    background: var(--white) !important;
+    padding: 2px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  }
+
+  .que .formulation {
+    background-color: var(--gray-100) !important;
+  }
+}
+
+/* Quiz Header */
+#page-mod-quiz-view .activity-header {
+ background: var(--gray-300);
+    border-radius: 12px !important;
+    padding: 24px;
+    box-shadow: 0 2px 8px rgb(0 0 0 / .06);
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+/* ===========================
+   7.2 Wiki
+   =========================== */
+
+#page-mod-wiki-view {
+  .activity-header {
+    background: color-mix(in srgb, var(--yellow) 36%, transparent) !important;
+    border-radius: 10px;
+  }
+
+  .activityname {
+    color: color-mix(in srgb, var(--warning) 70%, black) !important;
+    font-weight: 600;
+  }
+
+  .wiki_headingtitle h3 {
+    background: color-mix(in srgb, var(--yellow) 20%, transparent);
+    border-left: 6px solid var(--yellow);
+    padding: 10px 16px;
+    border-radius: 8px;
+  }
+
+  .generalbox {
+    background: color-mix(in srgb, var(--yellow) 36%, transparent);
+    border-radius: 10px;
+    padding: 20px;
+  }
+}
+
+/* ===========================
+   7.3 Feedback / Timetracking
+   =========================== */
+
+#page-mod-feedback-view,
+#page-mod-feedback-complete {
+  .activityname {
+    color: color-mix(in srgb, var(--success) 70%, black) !important;
+    font-size: 1.25rem;
+  }
+
+  .feedback_description {
+    background: color-mix(in srgb, var(--success) 20%, transparent) !important;
+    padding: 14px 18px;
+    border-radius: 6px;
+  }
+
+  .card-header {
+    background: var(--success) !important;
+    color: var(--white);
+  }
+}
+
+/* ===========================
+   7.4 Assign Grading
+   =========================== */
+
+/* Assign grading */
+#page-mod-assign-grading textarea[id^="quickgrade_comments_"] {
+  width: 300px;
+  height: 100px;
+  resize: vertical;
+}
+
+/* ===========================
+   7.5 TinyMCE Grading
+   =========================== */
+
+/* TinyMCE grading */
+#page-mod-quiz-comment .tox.tox-tinymce {
+  height: 320px !important;
+  resize: vertical !important;
+}
+
+/* ===========================
+   7.6 Quiz Comment Popup
+   =========================== */
+
+/* Popup Kommentar Versuch vergrössern */
+/* Grundlayout: Popup soll volle Fensterbreite nutzen */
+body#page-mod-quiz-comment {
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+  padding: 20px !important;
+  box-sizing: border-box !important;
+}
+
+/* Hauptcontainer der Frage */
+body#page-mod-quiz-comment .que {
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* Inhaltselemente der Frage */
+body#page-mod-quiz-comment .formulation,
+body#page-mod-quiz-comment .outcome,
+body#page-mod-quiz-comment .comment {
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* Moodle-Formularcontainer */
+body#page-mod-quiz-comment .mform,
+body#page-mod-quiz-comment .fcontainer,
+body#page-mod-quiz-comment form {
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* Tabellen im Popup */
+body#page-mod-quiz-comment table {
+  width: 100% !important;
+  max-width: 100% !important;
+  table-layout: fixed !important;
+  box-sizing: border-box !important;
+}
+
+/* Textareas (Kommentar-Feld) */
+body#page-mod-quiz-comment textarea {
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* Antwort-History im Kommentar-Popup ausblenden */
+body#page-mod-quiz-comment .history,
+body#page-mod-quiz-comment .comment-history,
+body#page-mod-quiz-comment .commentarea .comment-list,
+body#page-mod-quiz-comment .commentarea .comment {
+  display: none !important;
+}
+
+/* Oberen Abstand im Kommentar-Popup entfernen */
+body#page-mod-quiz-comment #page-wrapper,
+body#page-mod-quiz-comment #page,
+body#page-mod-quiz-comment #region-main-box,
+body#page-mod-quiz-comment #region-main,
+body#page-mod-quiz-comment .navbar,
+body#page-mod-quiz-comment .breadcrumb,
+body#page-mod-quiz-comment .page-context-header,
+body#page-mod-quiz-comment .page-header {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+body#page-mod-quiz-comment .qtype_essay_response.readonly {
+  min-height: 0 !important;
+  height: auto !important;
+  max-height: none !important;
+  overflow: visible !important;
+}
+
+body#page-mod-quiz-comment .qtype_essay_response.readonly {
+  padding: 10px !important;
+  border-radius: 6px !important;
+  border: 2px solid var(--primary) !important;
+  background: rgba(255, 255, 255, 0.05) !important;
+}
+
+/* ===========================
+   7.7 Configurable Reports
+   =========================== */
+
+/* Configurable Reports */
+body#page-blocks-configurable_reports-viewreport #region-main {
+  overflow-y: visible;
+  background-color: var(--gray-100);
+}
+
+/* ============================================================
+   9. PRINT
+   ============================================================ */
+
+/* ===========================
+   9.1 Print Report Table
+   =========================== */
+
+@media print {
+  #page-blocks-configurable_reports-viewreport table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  #page-blocks-configurable_reports-viewreport th,
+  #page-blocks-configurable_reports-viewreport td {
+    padding: 4px 6px;
+    vertical-align: middle;
+    white-space: nowrap;
+  }
+
+  #page-blocks-configurable_reports-viewreport .table-responsive {
+    overflow: visible !important;
+    max-width: 100% !important;
+  }
+
+  #page-blocks-configurable_reports-viewreport table colgroup col:nth-child(1) {
+    width: 24% !important;
+  }
+
+  #page-blocks-configurable_reports-viewreport table colgroup col:nth-child(2),
+  #page-blocks-configurable_reports-viewreport table colgroup col:nth-child(9),
+  #page-blocks-configurable_reports-viewreport
+    table
+    colgroup
+    col:nth-child(10) {
+    width: 9% !important;
+  }
+
+  #page-blocks-configurable_reports-viewreport table colgroup col:nth-child(3),
+  #page-blocks-configurable_reports-viewreport table colgroup col:nth-child(4),
+  #page-blocks-configurable_reports-viewreport table colgroup col:nth-child(5),
+  #page-blocks-configurable_reports-viewreport table colgroup col:nth-child(6),
+  #page-blocks-configurable_reports-viewreport table colgroup col:nth-child(7),
+  #page-blocks-configurable_reports-viewreport table colgroup col:nth-child(8) {
+    width: 8% !important;
+  }
+
+  #page-blocks-configurable_reports-viewreport tr[style*="background-color"] {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
+
+
+.darkmode-switch {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    user-select: none;
+}
+
+
+.darkmode-switch input {
+    display: none;
+}
+
+
+.darkmode-switch .slider {
+    width: 42px;
+    height: 22px;
+    background-color: #ccc;
+    border-radius: 20px;
+    position: relative;
+    transition: 0.3s;
+}
+
+
+.darkmode-switch .slider:before {
+    content: "";
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    left: 2px;
+    top: 2px;
+    background-color: white;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+
+.darkmode-switch input:checked + .slider {
+    background-color: #0d6efd;
+}
+
+
+.darkmode-switch input:checked + .slider:before {
+    transform: translateX(20px);
+}
+
+
+.switch-text {
+    font-size: 14px;
+}
+
+/* Darkmode-Schalter auf Login-Seite ausblenden */
+
+body#page-login-index .darkmode-control {
+    display: none !important;
+}
