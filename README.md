@@ -20,7 +20,7 @@ The following screenshots should provide a visual overview of the main ESPAS Moo
 
 <!-- Replace the image paths with the actual screenshots -->
 
-|                     ESPAS Moodle Dashboard                    |                   ESPAS Course View                   |
+|                     ESPAS Moodle Frontpage                    |                   ESPAS Course View                   |
 | :-----------------------------------------------------------: | :---------------------------------------------------: |
 | ![ESPAS Moodle Dashboard](/screenshots/frontpage.png) | ![ESPAS Course View](/screenshots/course-view.png) |
 
