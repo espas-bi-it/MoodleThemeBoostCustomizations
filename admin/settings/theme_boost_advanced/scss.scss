@@ -7,7 +7,7 @@
    =========================== */
 
 :root {
-  --primary: #007399;
+  --primary: #008cba;
   --secondary: #047b20;
   --success: #28a745;
   --info: #17a2b8;
@@ -178,7 +178,7 @@ body a:hover {
 body#page-site-index,
 body#page-course-index-category,
 body#page-my-index {
-  background-image: url(https://www.moodle-espas.ch/pluginfile.php/5512/mod_page/content/1/pexels-towfiqu-barbhuiya-3440682-13072971.jpg);
+  background-image: url(https://moodle-espas.ch/pluginfile.php/5695/mod_resource/content/2/pexels-towfiqu-barbhuiya-3440682-13072971.jpg);
   background-attachment: fixed;
   background-position: center;
 }
@@ -228,8 +228,15 @@ body[class*="-edit"] #page-header {
 
 /* Dokumentationsseiten Category-114*/
 .category-114,
-.category-106 {
-    --doc-accent: #669999;
+.category-106,
+#page-blocks-configurable_reports-viewreport {
+    --doc-accent: #5b8b8b;
+}
+
+/* GV-Template Reset */
+.category-114 .activity .instancename,
+.category-114 .courseindex-section-title a {
+    text-transform: none !important;
 }
 
 .category-114 .navbar,
@@ -239,114 +246,67 @@ body[class*="-edit"] #page-header {
 
 /* Nur die Leiste signalisiert Admin */
 .category-114 .navbar, 
-.category-106 .navbar {
+.category-106 .navbar,
+#page-blocks-configurable_reports-viewreport .navbar {
     background: var(--doc-accent) !important;
 }
 
 /* Dezente Linie */
 .category-114 #page-header,
-.category-106 #page-header {
+.category-106 #page-header,
+#page-blocks-configurable_reports-viewreport #page-header{
     border-bottom: 3px solid var(--doc-accent);
 }
 
 /* Seite fast normal lassen */
 .category-114 #page,
-.category-106 #page {
+.category-106 #page,
+#page-blocks-configurable_reports-viewreport #page {
     background: transparent;
 }
 
 /* Karten normal */
 .category-114 .card,
 .category-106 .card, 
+#page-blocks-configurable_reports-viewreport .card,
+#page-blocks-configurable_reports-viewreport .card, 
 .category-114 .card-body,
-.category-106 .card-body {
+.category-106 .card-body,
+#page-blocks-configurable_reports-viewreport .card-body,
+#page-blocks-configurable_reports-viewreport .card-body {
     background: var(--white);
 }
 
 /* Überschriften */
 .category-114  h1,
 .category-106 h1,
+#page-blocks-configurable_reports-viewreport h1,
 .category-114  h2,
 .category-106 h2,
+#page-blocks-configurable_reports-viewreport h2,
 .category-114  h3,
-.category-106 h3 {
+.category-106 h3,
+#page-blocks-configurable_reports-viewreport h3 {
     color: var(--doc-accent);
+    text-transform: none;
 }
 
-/* Quiz-Ansicht + Quiz-Versuch NUR in GV Kategorien  */
-body.category-53#page-mod-quiz-attempt,
-body.category-114#page-mod-quiz-attempt,
-body.category-88#page-mod-quiz-attempt
- {
- background-image: linear-gradient(transparent 17px, rgb(208, 208, 208) 18px), 
- linear-gradient(to right, transparent 17px, rgb(208, 208, 208) 18px) !important;
-  background-size:
-    100% 18px,
-    18px 100% !important;
-}
+/* GV Quiz-Versuche */
+body:is(.category-53, .category-114, .category-88)#page-mod-quiz-attempt,
 
-/* API Kurse */
-body.category-110#page-course-view-topics,
-body.category-110#page-course-view-section-topics,
-body.category-110#page-mod-quiz-view {
- background: linear-gradient(
-        273deg,
-        color-mix(in srgb, var(--primary) 15%, transparent) 46%,
-        color-mix(in srgb, var(--secondary) 12%, transparent) 100%
-    );
-}
-
-body.category-110#page-mod-wiki-view,
-body.category-110#page-mod-assign-view,
-body.category-110#page-mod-feedback-view {
-   background: linear-gradient(
-        273deg,
-        color-mix(in srgb, var(--primary) 15%, transparent) 46%,
-        color-mix(in srgb, var(--secondary) 12%, transparent) 100%
-    );
-}
-
-/* PFE Kurse */
-body.category-111#page-course-view-topics,
-body.category-111#page-course-view-section-topics,
-body.category-111#page-mod-quiz-view {
- background: linear-gradient(
-        273deg,
-        color-mix(in srgb, var(--primary) 15%, transparent) 46%,
-        color-mix(in srgb, var(--secondary) 12%, transparent) 100%
-    );
-}
-
-body.category-111#page-mod-wiki-view,
-body.category-111#page-mod-assign-view,
-body.category-111#page-mod-feedback-view {
- background: linear-gradient(
-        273deg,
-        color-mix(in srgb, var(--primary) 15%, transparent) 46%,
-        color-mix(in srgb, var(--secondary) 12%, transparent) 100%
-    );
-}
-
-/* ABU Kurse */
-body.category-109#page-course-view-topics,
-body.category-109#page-course-view-section-topics,
-body.category-109#page-mod-quiz-view,
-body.category-109#page-mod-feedback-view {
- background: linear-gradient(
-        273deg,
-        color-mix(in srgb, var(--primary) 15%, transparent) 46%,
-        color-mix(in srgb, var(--secondary) 12%, transparent) 100%
-    );
-}
-
-body.category-109#page-mod-wiki-view,
-body.category-109#page-mod-assign-view,
-body.category-109#page-mod-feedback-view {
- background: linear-gradient(
-        273deg,
-        color-mix(in srgb, var(--primary) 15%, transparent) 46%,
-        color-mix(in srgb, var(--secondary) 12%, transparent) 100%
-    );
+/* API, PFE & ABU */
+body:is(.category-109, .category-110, .category-111):is(
+  #page-course-view-topics,
+  #page-course-view-section-topics,
+  #page-mod-quiz-view,
+  #page-mod-wiki-view,
+  #page-mod-assign-view,
+  #page-mod-feedback-view
+) {
+  background-image:
+    linear-gradient(transparent 17px, rgb(208, 208, 208) 18px),
+    linear-gradient(to right, transparent 17px, rgb(208, 208, 208) 18px) !important;
+  background-size: 100% 18px, 18px 100% !important;
 }
 
 /* ===========================
@@ -366,7 +326,7 @@ body.category-109#page-mod-feedback-view {
 
 /* Default */
 #region-main {
-  background-color: var(--gray-100) !important;
+  background-color: var(--white);
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.06);
   padding-bottom: 15px;
 }
@@ -390,15 +350,6 @@ body.category-109#page-mod-feedback-view {
 
 code {
   font-size: 0.95rem;
-}
-
-html.darkmode pre code {
-  color: var(--dark) !important;
-  font-size: 1rem;
-}
-
-html.darkmode code {
-  color: #f359f3 !important;
 }
 
 /* ============================================================
@@ -431,10 +382,11 @@ body #page.drawers .main-inner {
    3.2 Main Inner Width
    =========================== */
 
-body:not(#page-blocks-configurable_reports-viewreport) #page.drawers .main-inner {
+body:not(#page-blocks-configurable_reports-viewreport):not(#page-question-edit) #page.drawers .main-inner {
   max-width: 1200px;
   margin: 0 auto;
 }
+
 
 @media (min-width: 768px) {
   body:not(#page-blocks-configurable_reports-viewreport).pagelayout-standard #page.drawers .main-inner,
@@ -461,6 +413,7 @@ body:not(#page-blocks-configurable_reports-viewreport) #page.drawers .main-inner
     left: -15px;
     margin-left: -15px !important;
     margin-right: -15px !important;
+    margin-bottom: 15px;
     max-width: none !important;
     background: var(--white);
     border-bottom: 3px solid var(--secondary);
@@ -772,11 +725,12 @@ button.icon-no-margin:not(.btn-footer-popover) {
    =========================== */
 
 .badge {
-  --badge-bg: var(--danger);
+  --badge-bg: var(--primary);
   --badge-color: var(--white);
 
   background-color: var(--badge-bg) !important;
   color: var(--badge-color) !important;
+  padding: 2px !important;
 }
 
 .badge-primary {
@@ -880,7 +834,7 @@ body .coursebox,
 body .course-card {
   border-radius: 14px !important;
   padding: 20px !important;
-  background: var(--white);
+  background: var(--gray-200);
   border: 1px solid var(--gray-100) !important;
   transition:
     transform 0.15s ease,
@@ -913,62 +867,6 @@ body.category-53 {
   }
 }
 
-/* ===========================
-   5.6 Darkmode Toggle Button
-   =========================== */
-
-/* Darkmode Toggle Button (für Profil-Card) */
-.darkmode-btn {
-  /* Layout */
-  position: static;
-  display: inline-block;
-
-  /* Look behalten */
-  background: color-mix(in srgb, var(--primary) 20%, black);
-  color: var(--white) !important;
-  border: none;
-  padding: 4px 10px;
-  border-radius: 6px;
-  font-size: 0.9rem;
-  cursor: pointer;
-  box-shadow: 0 2px 6px rgb(0 0 0 / 0.15);
-  transition: 0.2s ease;
-}
-
-/* Hover */
-.darkmode-btn:hover {
-  background: color-mix(in srgb, var(--primary) 35%, black);
-  transform: translateY(-1px);
-}
-
-/* Aktiv-Zustand */
-.darkmode-btn.active {
-  background: #212529;
-  color: var(--dark) !important;
-}
-
-/* Integration in Moodle Layout */
-.contentnode dl {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.contentnode dt {
-  margin: 0;
-}
-
-.contentnode dd {
-  margin: 0;
-  display: flex;
-  justify-content: flex-end;
-}
-
-/* Login-Seite: verstecken (bleibt sinnvoll) */
-body#page-login-index #darkmode-toggle {
-  display: none;
-}
-
 html.darkmode[class*="course-"] #course-competence .img-box,
 html.darkmode[class*="course-"] #course-knowhow .img-box,
 html.darkmode[class*="course-"] #course-topic .img-box {
@@ -976,7 +874,7 @@ html.darkmode[class*="course-"] #course-topic .img-box {
 }
 
 /* ===========================
-   5.7 Notizzettel
+   5.6 Notizzettel
    =========================== */
 
 .notizzettel[data-note] {
@@ -1019,7 +917,7 @@ html.darkmode .notizzettel[data-note]:before {
 }
 
 /* ===========================
-   5.8 Accordion
+   5.7 Accordion
    =========================== */
 
 /* Modal z-index */
@@ -1051,7 +949,7 @@ body#page-site-index .modal-backdrop {
 }
 
 /* ===========================
-   6.3 Sections
+   6.2 Sections
    =========================== */
 
 .course-content .section {
@@ -1079,7 +977,8 @@ body#page-site-index .modal-backdrop {
 
 /* Overlay */
 #course-teaser .position-relative > .position-absolute {
-  background: color-mix(in srgb, var(--light) 10%, transparent) !important;
+         background: url(https://moodle-espas.ch/pluginfile.php/5694/mod_resource/content/1/teaser-image.jpg) no-repeat center center fixed #eaeaea;
+    background-size: cover;
 }
 
 /* Titelbox */
@@ -1179,28 +1078,71 @@ body#page-site-index .modal-backdrop {
    6.5 Course Image Boxes
    =========================== */
 
-body[class*="course-"] {
-  #course-competence .img-box {
-    background: url(https://www.moodle-espas.ch/pluginfile.php/5362/mod_page/content/6/1-lernprozess-auftrag_klein.png?time=1776706931883)
-      no-repeat center center/ contain;
-    height: 95px;
-    width: auto;
-    margin-left: 50px;
-  }
+body[class*="course-"] .summarytext #course-competence::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 95px;
+  background: url("https://moodle-espas.ch/pluginfile.php/5696/mod_resource/content/3/1-lernprozess-auftrag_klein.png")
+    no-repeat left center / contain;
+}
 
-  #course-knowhow .img-box {
-    background: url(https://www.moodle-espas.ch/pluginfile.php/5362/mod_page/content/6/2-lernprozess-knowhow_klein.png?time=1776706952600)
-      no-repeat center center / contain;
-    height: 95px;
-    width: auto;
-  }
+body.category-53 .activity.modtype_wiki::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 95px;
+  background: url("https://moodle-espas.ch/pluginfile.php/5697/mod_resource/content/1/2-lernprozess-knowhow_klein.png")
+   no-repeat left 5px / contain;
+}
 
-  #course-topic .img-box {
-    background: url(https://www.moodle-espas.ch/pluginfile.php/5362/mod_page/content/6/3-lernprozess-praxis_klein.png?time=1776706977129)
-      no-repeat center center/ contain;
+body.category-53 .activity.modtype_quiz::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 95px;
+  background: url("https://moodle-espas.ch/pluginfile.php/5698/mod_resource/content/2/3-lernprozess-praxis_klein.png")
+    no-repeat left 5px / contain;
+}
+
+/* ===========================
+   6.5 Course Image Boxes
+   =========================== */
+
+body[class*="course-"] .summarytext #course-competence::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 95px;
+  background: url("https://moodle-espas.ch/pluginfile.php/5696/mod_resource/content/3/1-lernprozess-auftrag_klein.png")
+    no-repeat left center / contain;
+}
+
+body.category-53 .activity.modtype_wiki::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 95px;
+  background: url("https://moodle-espas.ch/pluginfile.php/5697/mod_resource/content/1/2-lernprozess-knowhow_klein.png")
+   no-repeat left 5px / contain;
+}
+
+body.category-53 .activity.modtype_quiz::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 95px;
+  background: url("https://moodle-espas.ch/pluginfile.php/5698/mod_resource/content/2/3-lernprozess-praxis_klein.png")
+    no-repeat left 5px / contain;
+}
+
+body#page-mod-quiz-view.category-53 .singlebutton::before {
+    content: "";
+    display: block;
+    width: 1000px;
     height: 95px;
-    width: auto;
-  }
+    margin-bottom: 15px;
+    background: url(https://moodle-espas.ch/pluginfile.php/5698/mod_resource/content/2/3-lernprozess-praxis_klein.png) no-repeat left 0px / contain;
 }
 
 /* ===========================
@@ -1376,7 +1318,9 @@ html.darkmode #course-competence th {
   color: var(--white) !important;
 }
 
-body.category-53 #course-feedback-link .text-primary {
+body.category-53 #course-feedback-link .text-primary,
+body.category-114 #course-feedback-link .text-primary
+ {
   color: var(--primary);
   font-size: 1rem !important;
   border: 3px solid var(--danger) !important;
@@ -1400,7 +1344,7 @@ html.darkmode .invalid-feedback {
 }
 
 /* ===========================
-   6.8 Schnupperer
+   6.9 Schnupperer
    =========================== */
 
 body.course-68 {
@@ -1432,7 +1376,8 @@ font-size: 1.1rem !important;
   }
 
   .que .formulation {
-    background-color: var(--gray-100) !important;
+    background-color: transparent;
+    border: 1px solid var(--gray-200);
   }
 }
 
@@ -1513,10 +1458,12 @@ font-size: 1.1rem !important;
    7.5 TinyMCE Grading
    =========================== */
 
-/* TinyMCE grading */
-#page-mod-quiz-comment .tox.tox-tinymce {
-  height: 320px !important;
-  resize: vertical !important;
+   #page-mod-quiz-comment .tox.tox-tinymce {
+    height: 320px !important;
+    min-height: 200px !important;
+    max-height: 800px !important;
+    resize: vertical !important;
+    overflow: auto !important;
 }
 
 /* ===========================
@@ -1618,59 +1565,524 @@ body#page-blocks-configurable_reports-viewreport #region-main {
 }
 
 /* ============================================================
-   9. PRINT
+   8. PRINT
    ============================================================ */
 
-/* ===========================
-   9.1 Print Report Table
-   =========================== */
+/* =========================================================
+   GV-AUFGABEN REPORT – PRINT
+   Moodle printablediv
+   ========================================================= */
 
 @media print {
-  #page-blocks-configurable_reports-viewreport table {
-    border-collapse: collapse;
-    width: 100%;
-  }
 
-  #page-blocks-configurable_reports-viewreport th,
-  #page-blocks-configurable_reports-viewreport td {
-    padding: 4px 6px;
-    vertical-align: middle;
-    white-space: nowrap;
-  }
+    /* =====================================================
+       SEITE
+       ===================================================== */
 
-  #page-blocks-configurable_reports-viewreport .table-responsive {
-    overflow: visible !important;
-    max-width: 100% !important;
-  }
+    @page {
+        size: A4 landscape;
+        margin: 10mm 8mm 12mm 8mm;
+    }
 
-  #page-blocks-configurable_reports-viewreport table colgroup col:nth-child(1) {
-    width: 24% !important;
-  }
 
-  #page-blocks-configurable_reports-viewreport table colgroup col:nth-child(2),
-  #page-blocks-configurable_reports-viewreport table colgroup col:nth-child(9),
-  #page-blocks-configurable_reports-viewreport
-    table
-    colgroup
-    col:nth-child(10) {
-    width: 9% !important;
-  }
+    /* =====================================================
+       SCHRIFT
+       ===================================================== */
 
-  #page-blocks-configurable_reports-viewreport table colgroup col:nth-child(3),
-  #page-blocks-configurable_reports-viewreport table colgroup col:nth-child(4),
-  #page-blocks-configurable_reports-viewreport table colgroup col:nth-child(5),
-  #page-blocks-configurable_reports-viewreport table colgroup col:nth-child(6),
-  #page-blocks-configurable_reports-viewreport table colgroup col:nth-child(7),
-  #page-blocks-configurable_reports-viewreport table colgroup col:nth-child(8) {
-    width: 8% !important;
-  }
+    #printablediv,
+    #printablediv *,
+    #printablediv .report-print,
+    #printablediv .report-print * {
+        font-family: Arial, Helvetica, sans-serif !important;
+    }
 
-  #page-blocks-configurable_reports-viewreport tr[style*="background-color"] {
-    -webkit-print-color-adjust: exact;
-    print-color-adjust: exact;
-  }
+    html,
+    body {
+        margin: 0 !important;
+        padding: 0 !important;
+
+        background: #fff !important;
+        color: #111 !important;
+
+        font-family: Arial, Helvetica, sans-serif !important;
+        font-size: 9pt !important;
+    }
+
+    #printablediv {
+        width: 100% !important;
+        max-width: none !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        background: #fff !important;
+        color: #111 !important;
+    }
+
+    #printablediv .report-print {
+        width: 100% !important;
+        max-width: none !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        background: #fff !important;
+    }
+
+
+    /* =====================================================
+       MOODLE / BOOTSTRAP ABSTÄNDE
+       ===================================================== */
+
+    #printablediv .container-fluid {
+        width: 100% !important;
+        max-width: none !important;
+
+        margin: 0 !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    #printablediv .row {
+        width: 100% !important;
+
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+    #printablediv .col-12 {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    #printablediv .px-3 {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    #printablediv .shadow,
+    #printablediv .shadow-sm {
+        box-shadow: none !important;
+    }
+
+
+    /* =====================================================
+       TITEL
+       ===================================================== */
+
+    #printablediv .card-body {
+        padding: 0 0 4mm 0 !important;
+    }
+
+    #printablediv .card-header {
+        margin: 0 0 2.5mm 0 !important;
+        padding: 3mm 4mm !important;
+
+        background: #f1f3f5 !important;
+
+        border: 1px solid #c8c8c8 !important;
+        border-radius: 2px !important;
+    }
+
+    #printablediv .card-header h4 {
+        margin: 0 !important;
+        padding: 0 !important;
+
+        font-family: Arial, Helvetica, sans-serif !important;
+        font-size: 15pt !important;
+        line-height: 1.2 !important;
+        font-weight: 700 !important;
+
+        color: #111 !important;
+    }
+
+    /* Version ausblenden */
+    #printablediv .card-header .badge {
+        display: none !important;
+    }
+
+    /* Beschreibung */
+    #printablediv .card-body > .row p.text-muted {
+        margin: 0 0 3mm 0 !important;
+
+        font-size: 8.5pt !important;
+        line-height: 1.3 !important;
+
+        color: #555 !important;
+    }
+
+
+    /* =====================================================
+       LEGENDE
+       ===================================================== */
+
+    #printablediv .card.mt-4 {
+        margin: 2mm 0 4mm 0 !important;
+        padding: 0 !important;
+
+        background: #fff !important;
+
+        border: 1px solid #d0d0d0 !important;
+        border-radius: 2px !important;
+    }
+
+    #printablediv .card.mt-4 .card-body {
+        padding: 2.5mm 3mm !important;
+    }
+
+    #printablediv .card.mt-4 p {
+        margin: 0 0 1.5mm 0 !important;
+
+        font-size: 7.5pt !important;
+        line-height: 1.2 !important;
+    }
+
+    #printablediv .list-inline {
+        margin: 0 0 2mm 0 !important;
+        padding: 0 !important;
+    }
+
+    #printablediv .list-inline-item {
+        display: inline-block !important;
+
+        margin: 0 1mm 1mm 0 !important;
+        padding: 1.2mm 2mm !important;
+
+        font-size: 7pt !important;
+        line-height: 1.1 !important;
+
+        border: 1px solid #d0d0d0 !important;
+        border-radius: 2px !important;
+    }
+
+    #printablediv .alert-primary {
+        background-color: #e7f1ff !important;
+        color: #111 !important;
+    }
+
+    #printablediv .alert-success {
+        background-color: #e8f7ed !important;
+        color: #111 !important;
+    }
+
+    #printablediv .alert-warning {
+        background-color: #fff7db !important;
+        color: #111 !important;
+    }
+
+    #printablediv .alert-dark {
+        background-color: #eeeeee !important;
+        color: #111 !important;
+    }
+
+    #printablediv .list-inline-item[style*="#ffc107"] {
+        background-color: #fff3cd !important;
+        color: #111 !important;
+    }
+
+    #printablediv .card.mt-4 ul:not(.list-inline) {
+        margin: 0 !important;
+        padding-left: 5mm !important;
+
+        font-size: 7pt !important;
+        line-height: 1.25 !important;
+    }
+
+    #printablediv .card.mt-4 ul:not(.list-inline) > li {
+        margin-bottom: 0.8mm !important;
+    }
+
+    #printablediv .card.mt-4 ul ul {
+        margin-top: 0.5mm !important;
+    }
+
+
+    /* =====================================================
+       ALLE TABELLEN
+       ===================================================== */
+
+    #printablediv table {
+        width: 100% !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        table-layout: fixed !important;
+        border-collapse: collapse !important;
+        border-spacing: 0 !important;
+
+        background: #fff !important;
+
+        font-family: Arial, Helvetica, sans-serif !important;
+        font-size: 8pt !important;
+
+        box-shadow: none !important;
+
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+    }
+
+
+    /* =====================================================
+       NORMALE TABELLENLINIEN
+       ===================================================== */
+
+    #printablediv table th,
+    #printablediv table td {
+        border-width: 1px !important;
+        border-style: solid !important;
+        border-color: #d9d9d9 !important;
+
+        padding: 1.2mm 1.5mm !important;
+
+        vertical-align: middle !important;
+
+        line-height: 1.15 !important;
+    }
+
+
+    /* =====================================================
+       TABELLENKOPF
+       ===================================================== */
+
+    #printablediv table thead {
+        display: table-header-group !important;
+    }
+
+    #printablediv table thead tr {
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+    }
+
+    #printablediv table thead th {
+        padding: 1.8mm 1.5mm !important;
+
+        background-color: #f0f0f0 !important;
+        color: #111 !important;
+
+        border-width: 1px !important;
+        border-style: solid !important;
+        border-color: #bdbdbd !important;
+
+        font-family: Arial, Helvetica, sans-serif !important;
+        font-size: 7.5pt !important;
+        line-height: 1.1 !important;
+        font-weight: 700 !important;
+
+        text-align: center !important;
+    }
+
+    #printablediv table thead th:first-child {
+        text-align: left !important;
+    }
+
+    #printablediv table thead th .small {
+        font-size: 6pt !important;
+        line-height: 1.1 !important;
+        font-weight: 400 !important;
+    }
+
+
+    /* =====================================================
+       FARBEN TABELLENKOPF
+       ===================================================== */
+
+    #printablediv table thead th.alert-primary {
+        background-color: #e7f1ff !important;
+        color: #111 !important;
+    }
+
+    #printablediv table thead th.alert-success {
+        background-color: #e8f7ed !important;
+        color: #111 !important;
+    }
+
+    #printablediv table thead th.alert-warning {
+        background-color: #fff7db !important;
+        color: #111 !important;
+    }
+
+    #printablediv table thead th.alert-dark {
+        background-color: #eeeeee !important;
+        color: #111 !important;
+    }
+
+
+    /* =====================================================
+       TEILNEHMERZEILEN
+       ===================================================== */
+
+    #printablediv table tbody tr {
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+    }
+
+    #printablediv table tbody td {
+        background-color: #fff !important;
+    }
+
+
+    /* =====================================================
+       TEILNEHMER / STARTDATUM
+       ===================================================== */
+
+    #printablediv table tbody td:first-child {
+        text-align: left !important;
+
+        padding-left: 2mm !important;
+
+        font-size: 8pt !important;
+    }
+
+    #printablediv table tbody td:first-child strong {
+        font-size: 8.5pt !important;
+        font-weight: 700 !important;
+    }
+
+    #printablediv table tbody td:first-child .small {
+        font-size: 6.5pt !important;
+        line-height: 1.1 !important;
+
+        color: #666 !important;
+    }
+
+
+    /* =====================================================
+       AUFGABEN
+       ===================================================== */
+
+    #printablediv table tbody td:nth-child(2) {
+        text-align: center !important;
+        font-size: 8pt !important;
+    }
+
+
+    /* =====================================================
+       PROZENTWERTE
+       ===================================================== */
+
+    #printablediv table tbody td strong {
+        font-size: 8.2pt !important;
+        font-weight: 700 !important;
+    }
+
+
+    /* =====================================================
+       ZEITEN
+       ===================================================== */
+
+    #printablediv table tbody td .small {
+        font-size: 7pt !important;
+        line-height: 1.15 !important;
+    }
+
+
+    /* =====================================================
+       ABWEICHUNG
+       ===================================================== */
+
+    #printablediv table tbody td .text-muted {
+        white-space: nowrap !important;
+
+        color: #666 !important;
+    }
+
+
+    /* =====================================================
+       WARNWERTE
+       ===================================================== */
+
+    #printablediv .text-danger {
+        color: #b00020 !important;
+        font-weight: 700 !important;
+    }
+
+    #printablediv .fw-bold,
+    #printablediv .fw-semibold {
+        font-weight: 700 !important;
+    }
+
+
+    /* =====================================================
+       GESAMTDURCHSCHNITT
+       ===================================================== */
+
+    #printablediv table[style*="background-color:#ffc107"] {
+        margin-top: 1mm !important;
+
+        background-color: #fff3cd !important;
+
+        border-top: 2px solid #999 !important;
+
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+    }
+
+    #printablediv table[style*="background-color:#ffc107"] td {
+        background-color: #fff3cd !important;
+
+        border-width: 1px !important;
+        border-style: solid !important;
+        border-color: #d9d9d9 !important;
+
+        font-weight: 600 !important;
+    }
+
+    #printablediv table[style*="background-color:#ffc107"] td:first-child {
+        font-weight: 700 !important;
+    }
+
+
+    /* =====================================================
+       GETRENNTE TEILNEHMERTABELLEN
+       ===================================================== */
+
+    #printablediv .px-3.w-100 {
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+    }
+
+    #printablediv .px-3.w-100[style*="margin-top:-1px"] {
+        margin-top: -1px !important;
+    }
+
+
+    /* =====================================================
+       DRUCKUMBRÜCHE
+       ===================================================== */
+
+    #printablediv table,
+    #printablediv tbody,
+    #printablediv tr {
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+    }
+
+
+    /* =====================================================
+       LINKS
+       ===================================================== */
+
+    #printablediv a[href]::after {
+        content: none !important;
+    }
+
+
+    /* =====================================================
+       DRUCKFARBEN
+       ===================================================== */
+
+    #printablediv,
+    #printablediv * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
 }
 
+/* ============================================================
+  9. DARKMODE SWITCH
+   ============================================================ */
 
 .darkmode-switch {
     display: flex;
@@ -1728,3 +2140,531 @@ body#page-blocks-configurable_reports-viewreport #region-main {
 body#page-login-index .darkmode-control {
     display: none !important;
 }
+
+/* ============================================================
+ 10. FIXES
+   ============================================================ */
+
+body#page-mod-book-view #page-header {
+      position: static !important;
+}
+
+body .moodle-dialogue-base .moodle-dialogue-wrap {
+    background-color: gray;
+    border: 1px solid #ccc;
+}
+
+body #quiz-timer-wrapper #quiz-timer {
+    border: 1px solid #ca3120;
+    background-color: #a5b9cb;
+}
+
+body.aalink.focus, a.focus.autolink, .aalink:focus, a.autolink:focus, #page-footer a:not([class]).focus, #page-footer a:not([class]):focus, .arrow_link.focus, .arrow_link:focus, a:not([class]).focus, a:not([class]):focus, .activityinstance>a.focus, .activityinstance>a:focus {
+    outline: .2rem solid #fff0;
+    color: #1d2125;
+    background-color: #c6dbef;
+    box-shadow: 0 -.2rem #c6dbef, 0 .2rem #343a40;
+}
+
+
+html.darkmode .aalink.focus, a.focus.autolink, .aalink:focus, a.autolink:focus, #page-footer a:not([class]).focus, #page-footer a:not([class]):focus, .arrow_link.focus, .arrow_link:focus, a:not([class]).focus, a:not([class]):focus, .activityinstance>a.focus, .activityinstance>a:focus {
+    outline: .2rem solid #fff0;
+    color: #1d2125;
+    background-color: #22505f;
+    box-shadow: 0 -.2rem #22505f, 0 .2rem #343a40;
+}
+
+.course-208#page-mod-book-view #page-content img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid gray !important;
+    padding: 10px;
+    background-color: #fff;
+}
+
+.mce-content-body .img-box[contenteditable="false"] {
+  display: none !important;
+}
+
+blockquote {
+    margin: 0.5rem 0 1rem;
+    padding: 0.50rem 1rem;
+    font-size: 0.9rem;
+    color: color-mix(in srgb, var(--primary) 30%, var(--dark));
+    background-color: color-mix(in srgb, var(--primary) 12%, white);
+    border: 1px solid color-mix(in srgb, var(--primary) 30%, white);
+    border-left: 5px solid var(--primary);
+    border-radius: 0.375rem;
+}
+
+/* Überschriften im Alert */
+blockquote h5,
+blockquote h6 {
+    margin: 0 0 0.5rem;
+    padding: 0;
+    font-size: 0.9rem;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+
+/* ========================================
+   WARNING – blockquote + h5
+   ======================================== */
+
+blockquote:has(h5) {
+    color: var(--warning);
+    background-color: color-mix(in srgb, var(--warning) 12%, white);
+    border-color: color-mix(in srgb, var(--warning) 35%, white);
+    border-left-color: var(--warning);
+}
+
+blockquote:has(h5) h5 {
+    color: var(--warning);
+}
+
+
+/* ========================================
+   DANGER – blockquote + h6
+   ======================================== */
+
+blockquote:has(h6) {
+    color: var(--danger);
+    background-color: color-mix(in srgb, var(--danger) 12%, white);
+    border-color: color-mix(in srgb, var(--danger) 30%, white);
+    border-left-color: var(--danger);
+}
+
+blockquote:has(h6) h6 {
+    color: var(--danger);
+}
+
+
+/* Letztes Element ohne zusätzlichen Abstand */
+blockquote > :last-child {
+    margin-bottom: 0;
+}
+
+#page-mod-book-view #region-main {
+    background-color: var(--white);
+    padding-bottom: 15px;
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+/* ============================================================
+   @media print {
+    @page {
+        size: A4;
+        margin: 2cm;
+    }
+
+    #page-mod-book-view #region-main {
+        width: auto;
+        max-width: none;
+        margin: 0;
+    }
+}
+   ============================================================ */
+
+/* =========================================================
+   ALLE MOODLE-BLÖCKE
+   ========================================================= */
+
+.block {
+    position: relative;
+
+    margin-bottom: 12px !important;
+
+    border: 1px solid var(--gray-200) !important;
+    border-radius: 12px !important;
+
+    background: var(--white) !important;
+
+    box-shadow:
+        0 2px 6px rgba(3, 20, 23, 0.05),
+        0 6px 18px rgba(3, 20, 23, 0.05) !important;
+
+    overflow: hidden;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+}
+
+
+/* Dezenter Hover */
+.block:hover {
+    transform: translateY(-1px);
+
+    border-color: rgba(0, 140, 186, 0.25) !important;
+
+    box-shadow:
+        0 3px 8px rgba(3, 20, 23, 0.06),
+        0 8px 22px rgba(3, 20, 23, 0.08) !important;
+}
+
+
+/* =========================================================
+   BLOCK BODY
+   ========================================================= */
+
+.block .card-body {
+    padding: 0 !important;
+}
+
+
+/* =========================================================
+   BLOCK HEADER
+   ========================================================= */
+
+.block .card-title {
+    position: relative;
+
+    display: block !important;
+
+    margin: 0 !important;
+    padding: 11px 15px !important;
+
+    min-height: 20px;
+
+    color: var(--white) !important;
+
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    line-height: 1.4;
+
+    background: linear-gradient(
+        135deg,
+        var(--primary),
+        #007da8
+    );
+
+    border: 0 !important;
+
+    /* Dezenter farbiger Schatten unter dem Header */
+    box-shadow:
+        0 2px 5px rgba(0, 140, 186, 0.18);
+
+    z-index: 1;
+}
+
+
+/* Kleiner Farbakzent am linken Rand */
+.block .card-title::before {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+
+    width: 3px;
+
+    background: rgba(255, 255, 255, 0.65);
+}
+
+
+/* =========================================================
+   BLOCK CONTROLS
+   ========================================================= */
+
+.block .block-controls {
+    position: absolute !important;
+
+    top: 8px !important;
+    right: 9px !important;
+
+    z-index: 20;
+}
+
+
+/* Drag-Icon */
+.block .block-controls .moodle-core-dragdrop-draghandle {
+    opacity: 0.65;
+
+    transition: opacity 0.2s ease;
+}
+
+.block:hover .block-controls .moodle-core-dragdrop-draghandle {
+    opacity: 1;
+}
+
+
+/* Icons */
+.block .block-controls .icon {
+    color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.block .block-controls a:hover .icon {
+    color: var(--white) !important;
+}
+
+
+/* =========================================================
+   BLOCK CONTENT
+   ========================================================= */
+
+.block .card-text {
+    margin-top: 0 !important;
+    padding: 14px 15px !important;
+    color: var(--gray-555);
+    background-color: var(--gray-100);
+}
+
+/* =========================================================
+   LINKS
+   ========================================================= */
+
+.block a {
+    color: var(--primary);
+}
+
+.block a:hover {
+    color: var(--dark);
+}
+
+
+/* =========================================================
+   ONLINE USERS
+   ========================================================= */
+
+.block_online_users .card-text {
+    padding-top: 12px !important;
+    padding-bottom: 12px !important;
+}
+
+
+/* Info "1 Person online..." */
+.block_online_users .info {
+    margin-bottom: 8px;
+
+    color: var(--gray-777);
+
+    font-size: 12px;
+}
+
+
+/* User-Liste */
+.block_online_users ul.list {
+    margin: 0 !important;
+    padding: 0 !important;
+
+    list-style: none;
+}
+
+
+/* einzelne Person */
+.block_online_users .listentry {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin: 0 !important;
+    padding: 5px 0 !important;
+
+    border-bottom: 1px solid var(--gray-100);
+}
+
+.block_online_users .listentry:last-child {
+    border-bottom: 0;
+}
+
+
+/* Avatar */
+.block_online_users .userinitials {
+    width: 30px;
+    height: 30px;
+
+    margin-right: 7px;
+
+    background: var(--primary) !important;
+    color: var(--white) !important;
+
+    border-radius: 50%;
+
+    font-size: 11px;
+    font-weight: 600;
+}
+
+
+/* Username */
+.block_online_users .user a {
+    display: flex;
+    align-items: center;
+
+    color: var(--gray-333);
+
+    text-decoration: none;
+}
+
+.block_online_users .user a:hover {
+    color: var(--primary);
+}
+
+
+/* Online-Status */
+.block_online_users .uservisibility {
+    opacity: 0.55;
+}
+
+.block_online_users .uservisibility:hover {
+    opacity: 1;
+}
+
+
+/* =========================================================
+   FOOTER / CUSTOM FOOTER
+   ========================================================= */
+
+.block .custom-footer {
+    display: flex;
+    flex-direction: column;
+
+    gap: 6px;
+}
+
+.block .custom-footer .footer-item {
+    color: var(--gray-777);
+}
+
+.block .custom-footer .footer-item:first-child {
+    color: var(--gray-333);
+
+    font-size: 13px;
+}
+
+
+/* Trennlinie */
+.block .custom-footer .footer-item + .footer-item {
+    padding-top: 7px;
+
+    border-top: 1px solid var(--gray-200);
+}
+
+
+/* =========================================================
+   BUTTONS / BADGES IN BLÖCKEN
+   ========================================================= */
+
+.block .badge {
+    border-radius: 20px;
+}
+
+.block .btn {
+    border-radius: 7px;
+}
+
+
+/* =========================================================
+   FARBEN DER VERSCHIEDENEN BLOCK-TYPEN
+   ========================================================= */
+
+/* ---------------------------------------------------------
+   HTML / normale Informationsblöcke
+   --------------------------------------------------------- */
+
+.block_html .card-title {
+    background: linear-gradient(
+        135deg,
+        #16a9d3,
+        var(--primary)
+    );
+
+    box-shadow:
+        0 2px 5px rgba(0, 140, 186, 0.20);
+}
+
+
+/* ---------------------------------------------------------
+   Personen online
+   --------------------------------------------------------- */
+
+.block_online_users .card-title {
+    background: linear-gradient(
+        135deg,
+        #159b3a,
+        var(--secondary)
+    );
+
+    box-shadow:
+        0 2px 5px rgba(4, 123, 32, 0.20);
+}
+
+
+/* ---------------------------------------------------------
+   Kalender
+   --------------------------------------------------------- */
+
+.block_calendar_month .card-title,
+.block_calendar_upcoming .card-title {
+    background: linear-gradient(
+        135deg,
+        #16a9d3,
+        var(--primary)
+    );
+
+    box-shadow:
+        0 2px 5px rgba(0, 140, 186, 0.20);
+}
+
+
+/* ---------------------------------------------------------
+   Navigation / Einstellungen
+   --------------------------------------------------------- */
+
+.block_navigation .card-title,
+.block_settings .card-title {
+    background: linear-gradient(
+        135deg,
+        #164d54,
+        var(--dark)
+    );
+
+    box-shadow:
+        0 2px 5px rgba(3, 20, 23, 0.20);
+}
+
+
+/* ---------------------------------------------------------
+   Private Dateien / ähnliche Blöcke
+   --------------------------------------------------------- */
+
+.block_private_files .card-title {
+    background: linear-gradient(
+        135deg,
+        #24b6c9,
+        var(--info)
+    );
+
+    box-shadow:
+        0 2px 5px rgba(23, 162, 184, 0.20);
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 767px) {
+
+    .block {
+        margin-bottom: 10px !important;
+
+        border-radius: 10px !important;
+    }
+
+    .block .card-title {
+        padding: 10px 13px !important;
+
+        font-size: 13px !important;
+    }
+
+    .block .card-text {
+        padding: 12px 13px !important;
+    }
+
+}
+
