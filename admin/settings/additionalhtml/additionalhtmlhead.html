@@ -15,7 +15,7 @@ try {
 <style>
 
 /* ============================================================
-   8. DARK MODE – TESTVERSION
+   8. DARK MODE 
    ============================================================ */
 
 html {
@@ -25,8 +25,8 @@ html {
 /* Darkmode-Schalter auf Login-Seite ausblenden */
 
 
-/* body#page-login-index .darkmode-control */
-body .darkmode-control {
+body#page-login-index .darkmode-control
+/* body .darkmode-control */ {
     display: none !important;
 }
 
@@ -42,7 +42,7 @@ html.darkmode {
     --warning: color-mix(in srgb, #ffc107 50%, black);
     --danger: color-mix(in srgb, #dc3545 90%, black);
 
-    --white: #1b1c1f;
+    --white: #1d2a35;
     --light: #b3b3b3;
     --dark: #f5f5f5;
 
@@ -64,22 +64,21 @@ html.darkmode {
 
     /* Kurs-/Aktivitätsfarben */
     --yellow: #ffc107;
-
-    
 }
 
 /* ===========================
 8.1a Globaler Darkmode-Hintergrund
 =========================== */
 
+
 html.darkmode,
 html.darkmode body,
 html.darkmode #page,
-html.darkmode #page-wrapper,
-html.darkmode #page-content {
-    background-color: #1d2a35 !important;
-    background-image: none !important;
+html.darkmode #page-wrapper {
+     background-color: #1d2a35 !important;
+    /* background-image: none !important; */
 }
+
 
 /* ===========================
    8.2 Global Text / Content
@@ -147,7 +146,7 @@ html.darkmode {
 8.5 Category 53 Overrides
 =========================== */
 
-html.darkmode.category-53 {
+html.darkmode .category-53 {
     .text-info {
         color: #4ba2f1 !important;
     }
@@ -170,29 +169,40 @@ html.darkmode.category-53 {
 8.6 Layout / Drawer
 =========================== */
 
-html.darkmode {
-    #page.drawers .main-inner {
-        background-color: var(--gray-100) !important;
-        max-width: 100%;
-        width: 100%;
-        margin: 0.5rem auto 3rem;
-        padding: 1.5rem 0.5rem;
-        border-radius: 0.5rem;
-        flex: 1 0 auto;
-    }
-
-    .drawer {
-        background-color: var(--gray-400);
-        border: 1px solid var(--gray-700) !important;
-        z-index: 1015;
-        position: fixed;
-    }
+html.darkmode .drawer {
+    background-color: var(--gray-100);
+    border: 1px solid var(--gray-700) !important;
+    z-index: 1015;
+    position: fixed;
 }
 
+html.darkmode body #page.drawers .main-inner {
+    background: #0d0d0d !important;
+    border-radius: 1.5rem;
+    border: 1px solid color-mix(in srgb, var(--gray-300) 25%, transparent) !important;
+    box-shadow: 0 6px 12px rgb(0 0 0 / .15);
+    padding: 2rem 1.5rem !important;
+    margin-top: 0.5rem !important;
+}
+
+html.darkmode #region-main {
+    background-color: #0d0d0d !important;
+    box-shadow: 0 3px 10px rgb(0 0 0 / .06);
+    padding-bottom: 15px;
+}
 
 /* ===========================
 8.7 Cards
 =========================== */
+
+html.darkmode .card {
+    background: var(--gray-300) !important;
+}
+
+html.darkmode .card-header {
+    background: var(--gray-200) !important;
+    color: var(--dark) !important;
+}
 
 html.darkmode {
     .card {
@@ -699,7 +709,7 @@ html.darkmode {
     }
 
     .secondary-navigation .navigation {
-        background-color: var(--gray-100) !important;
+        background-color: transparent;
         border-bottom: none;
     }
 
@@ -792,14 +802,6 @@ html.darkmode .completionstate.automatic {
     color: var(--secondary);
 }
 
-
-/* TinyMCE Body */
-
-html.darkmode body#tinymce {
-    background: var(--gray-900) !important;
-}
-
-
 /* Kurs 186 – MAT */
 
 html.darkmode.course-186 #course-question .card-body > div[style] {
@@ -807,8 +809,16 @@ html.darkmode.course-186 #course-question .card-body > div[style] {
     border-color: var(--gray-555) !important;
 }
 
-
 /* Code-Pre – PYT / VBA / MIB */
+
+html.darkmode pre code {
+  color: var(--dark) !important;
+  font-size: 1rem;
+}
+
+html.darkmode code {
+  color: #f359f3 !important;
+}
 
 html.darkmode pre[class*="language-"] {
     background: transparent;
@@ -821,15 +831,6 @@ html.darkmode pre[class*="language-"] {
 html.darkmode.course-173 #course-question tbody {
     background: var(--gray-200) !important;
 }
-
-
-/*
-pre.language-markup {
-    background: white;
-    color: #1681c9;
-}
-*/
-
 
 /* ===========================
 8.18 Pagination / Tooltip / Breadcrumb / Footer
@@ -887,166 +888,8 @@ html.darkmode {
     }
 }
 
-
 /* ===========================
-8.19 TinyMCE
-=========================== */
-
-html.darkmode {
-
-    /* TinyMCE Container */
-
-    .tox-tinymce {
-        background: color-mix(
-            in srgb,
-            var(--dark) 85%,
-            black
-        ) !important;
-
-        border-color: var(--gray-555) !important;
-        color: var(--gray-200) !important;
-    }
-
-
-    /* Header / Menubar / Toolbar */
-
-    .tox-editor-header,
-    .tox-menubar,
-    .tox-toolbar,
-    .tox-toolbar__primary {
-        background: color-mix(
-            in srgb,
-            var(--gray-200) 15%,
-            white
-        ) !important;
-    }
-
-
-    /* Toolbar Buttons */
-
-    .tox-mbtn,
-    .tox-mbtn--select,
-    .tox-tbtn {
-        background: transparent !important;
-        color: var(--gray-200) !important;
-
-        &:hover {
-            background: var(--gray-600) !important;
-            color: var(--dark) !important;
-        }
-    }
-
-
-    /* Dropdowns / Collections */
-
-    .tox-menu,
-    .tox-collection {
-        background: var(--gray-500) !important;
-        border-color: var(--gray-555) !important;
-    }
-
-    .tox-collection__item {
-        color: var(--gray-400) !important;
-
-        &:hover {
-            background: color-mix(
-                in srgb,
-                var(--primary) 20%,
-                black
-            ) !important;
-
-            color: var(--white) !important;
-        }
-    }
-
-    .tox-collection__item--enabled {
-        background: var(--gray-400) !important;
-    }
-
-
-    /* Statusbar */
-
-    .tox-statusbar {
-        background: var(--dark) !important;
-        border-top: 1px solid var(--gray-555) !important;
-        color: var(--gray-200) !important;
-    }
-
-
-    /* Menubar / Toolbar Spacing */
-
-    .tox .tox-menubar + .tox-toolbar,
-    .tox .tox-menubar + .tox-toolbar-overlord {
-        border-top: 0 !important;
-        margin-top: 0 !important;
-        padding-top: 0 !important;
-        padding-bottom: 0 !important;
-    }
-
-
-    /* Dialog Header */
-
-    .tox-dialog__header {
-        background-color: var(--gray-500) !important;
-    }
-
-
-    /* Dialog Body */
-
-    .tox .tox-dialog__body-content {
-        box-sizing: border-box;
-        display: flex;
-        flex: 1;
-        flex-direction: column;
-        max-height: min(650px, calc(100vh - 110px));
-        overflow: auto;
-        -webkit-overflow-scrolling: touch;
-        padding: 16px;
-        background: black !important;
-    }
-
-
-    /* Editor Area */
-
-    .tox-edit-area__iframe {
-        background: var(--dark) !important;
-    }
-
-    .tox .tox-edit-area iframe {
-        background: var(--dark) !important;
-    }
-
-
-    /* TinyMCE Editor Document */
-
-    body#tinymce {
-        background: var(--dark) !important;
-        color: var(--gray-200) !important;
-        caret-color: var(--gray-100) !important;
-
-        p,
-        span,
-        div {
-            color: var(--gray-200) !important;
-        }
-
-        a {
-            color: var(--primary) !important;
-        }
-
-        table,
-        td,
-        th {
-            background: var(--dark) !important;
-            border-color: var(--gray-555) !important;
-            color: var(--gray-200) !important;
-        }
-    }
-}
-
-
-/* ===========================
-8.20 Quiz Navigation
+8.19 Quiz Navigation
 =========================== */
 
 html.darkmode #mod_quiz_navblock {
@@ -1084,7 +927,7 @@ html.darkmode #mod_quiz_navblock {
 
 
 /* ===========================
-8.21 Blend Mode Reset
+8.20 Blend Mode Reset
 =========================== */
 
 html.darkmode {
@@ -1103,7 +946,7 @@ html.darkmode {
 
 
 /* ===========================
-8.22 Quiz Answers / Feedback / Question Types
+8.21 Quiz Answers / Feedback / Question Types
 =========================== */
 
 
@@ -1113,7 +956,7 @@ html.darkmode .que .correct,
 html.darkmode .que .gradedright {
     background: color-mix(
         in srgb,
-        var(--success) 15%,
+        var(--success) 85%,
         black
     ) !important;
 
@@ -1137,7 +980,7 @@ html.darkmode .que .incorrect,
 html.darkmode .que .gradedwrong {
     background: color-mix(
         in srgb,
-        var(--danger) 15%,
+        var(--danger) 85%,
         black
     ) !important;
 
@@ -1159,7 +1002,6 @@ html.darkmode .que .gradedwrong {
 
 html.darkmode .que .generalfeedback,
 html.darkmode .que .specificfeedback {
-    border: 1px solid var(--gray-555) !important;
     color: var(--gray-200) !important;
 }
 
@@ -1182,7 +1024,6 @@ html.darkmode .que .comment {
         black
     ) !important;
 }
-
 
 /* Multiple Choice */
 
@@ -1231,7 +1072,7 @@ html.darkmode .que.numerical input {
 
 
 /* ===========================
-8.23 Configurable Reports / Popovers
+8.22 Configurable Reports / Popovers
 =========================== */
 
 html.darkmode {
@@ -1482,6 +1323,24 @@ html.darkmode #page-mod-quiz-edit ul.slots li.section li.activity .instancemaxma
     background: var(--gray-200);
 }
 
+/* Richtige Anwort anzeigen, wenn Frage falsch war*/
+html.darkmode .que.multichoice .answer .specificfeedback {
+    background: var(--warning);
+}
+
+html.darkmode blockquote {
+    margin: .5rem 0 1rem;
+    padding: .5rem 1rem;
+    font-size: .9rem;
+    color: 
+color-mix(in srgb, var(--primary) 30%, var(--dark));
+    border: 1px solid 
+color-mix(in srgb, var(--primary) 30%, white);
+    border-left: 5px solid var(--primary);
+    border-radius: .375rem;
+    background: none;
+}
+
 /* ============================================================
    DARKMODE SWITCH
    ============================================================ */
@@ -1489,20 +1348,19 @@ html.darkmode #page-mod-quiz-edit ul.slots li.section li.activity .instancemaxma
 .darkmode-control {
     position: fixed;
     bottom: 30px;
-    right: 20px;
+    right: 14px;
     transform: none;
     z-index: 9999;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 8px 14px;
+    padding: 8px 12px;
     margin: 0;
     background: rgba(255, 255, 255, 0.95);
     border-radius: 20px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
     transition: none;
 }
-
 
 /* ============================================================
    SWITCH LABEL
@@ -1511,7 +1369,7 @@ html.darkmode #page-mod-quiz-edit ul.slots li.section li.activity .instancemaxma
 .darkmode-switch {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 6px;
     margin: 0;
     padding: 0;
     cursor: pointer;
@@ -1539,10 +1397,11 @@ html.darkmode #page-mod-quiz-edit ul.slots li.section li.activity .instancemaxma
 .darkmode-switch .slider {
     position: relative;
     display: block;
-    width: 42px;
+    width: 38px;
     height: 22px;
-    min-width: 42px;
-    background-color: #ccc;
+    min-width: 38px;
+    background-color: var(--white);
+    border: 1px solid #8f959e;
     border-radius: 20px;
     transition: none;
 }
@@ -1555,11 +1414,11 @@ html.darkmode #page-mod-quiz-edit ul.slots li.section li.activity .instancemaxma
 .darkmode-switch .slider::before {
     content: "";
     position: absolute;
-    width: 18px;
-    height: 18px;
-    left: 2px;
+    width: 15px;
+    height: 15px;
+    left: 1px;
     top: 2px;
-    background-color: #fff;
+    background-color: #8f959e;
     border-radius: 50%;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
     transition: none;
@@ -1586,9 +1445,9 @@ html.darkmode #page-mod-quiz-edit ul.slots li.section li.activity .instancemaxma
 .darkmode-switch .switch-text {
     margin: 0;
     padding: 0;
-    font-size: 14px;
+    font-size: 0.8rem;
     line-height: 1;
-    color: #212529;
+    color: var(--dark);
     white-space: nowrap;
 }
 
@@ -1625,7 +1484,7 @@ html.darkmode .darkmode-switch .switch-text {
     .darkmode-control {
         bottom: 10px;
         right: 10px;
-        padding: 7px 12px;
+        padding: 4px 8px;
     }
 
     .darkmode-switch {
@@ -1633,170 +1492,10 @@ html.darkmode .darkmode-switch .switch-text {
     }
 
     .darkmode-switch .switch-text {
-        font-size: 13px;
+        font-size: 12px;
     }
 }
 
 </style>
-
-<style>
-
-/* ============================================================
-   DARKMODE SWITCH
-   ============================================================ */
-
-.darkmode-control {
-    position: fixed;
-    bottom: 30px;
-    right: 20px;
-    transform: none;
-    z-index: 9999;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 8px 14px;
-    margin: 0;
-    background: rgba(255, 255, 255, 0.95);
-    border-radius: 20px;
-    box-shadow:
-        0 2px 10px rgba(0, 0, 0, 0.15);
-    transition: none;
-}
-
-/* ============================================================
-   SWITCH LABEL
-   ============================================================ */
-
-.darkmode-switch {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin: 0;
-    padding: 0;
-    cursor: pointer;
-    user-select: none;
-}
-
-/* ============================================================
-   CHECKBOX
-   ============================================================ */
-
-.darkmode-switch input {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    opacity: 0;
-    pointer-events: none;
-}
-
-
-/* ============================================================
-   SWITCH HINTERGRUND
-   ============================================================ */
-
-.darkmode-switch .slider {
-    position: relative;
-    display: block;
-    width: 42px;
-    height: 22px;
-    min-width: 42px;
-    background-color: #ccc;
-    border-radius: 20px;
-    transition: none;
-}
-
-
-/* ============================================================
-   SWITCH KREIS
-   ============================================================ */
-
-.darkmode-switch .slider::before {
-    content: "";
-    position: absolute;
-    width: 18px;
-    height: 18px;
-    left: 2px;
-    top: 2px;
-    background-color: #fff;
-    border-radius: 50%;
-    box-shadow:
-        0 1px 3px rgba(0, 0, 0, 0.25);
-    transition: none;
-}
-
-
-/* ============================================================
-   AKTIV
-   ============================================================ */
-
-.darkmode-switch input:checked + .slider {
-    background-color: #0d6efd;
-}
-
-.darkmode-switch input:checked + .slider::before {
-    transform: translateX(20px);
-}
-
-/* ============================================================
-   TEXT
-   ============================================================ */
-
-.darkmode-switch .switch-text {
-    margin: 0;
-    padding: 0;
-    font-size: 14px;
-    line-height: 1;
-    color: #212529;
-    white-space: nowrap;
-}
-
-/* ============================================================
-   DARKMODE
-   ============================================================ */
-
-html.darkmode .darkmode-control {
-    background: rgba(30, 30, 30, 0.95);
-    box-shadow:
-        0 2px 10px rgba(0, 0, 0, 0.5);
-}
-
-html.darkmode .darkmode-switch .switch-text {
-    color: var(--dark);
-}
-
-
-/* ============================================================
-   FOCUS
-   ============================================================ */
-
-.darkmode-switch input:focus-visible + .slider {
-    outline: 2px solid #0d6efd;
-    outline-offset: 2px;
-}
-
-
-/* ============================================================
-   MOBILE
-   ============================================================ */
-
-@media (max-width: 576px) {
-    .darkmode-control {
-        bottom: 10px;
-        right: 10px;
-        padding: 7px 12px;
-    }
-
-    .darkmode-switch {
-        gap: 8px;
-    }
-
-    .darkmode-switch .switch-text {
-        font-size: 13px;
-    }
-
-}
-
-</style>
-
 
 <meta name="robots" content="noindex" />
