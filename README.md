@@ -20,9 +20,9 @@ The following screenshots should provide a visual overview of the main ESPAS Moo
 
 <!-- Replace the image paths with the actual screenshots -->
 
-|                     ESPAS Moodle Frontpage                    |                   ESPAS Course View                   |
+|                     ESPAS Moodle Dashboard                    |                   ESPAS Course View                   |
 | :-----------------------------------------------------------: | :---------------------------------------------------: |
-| ![ESPAS Moodle Dashboard](/screenshots/frontpage.png) | ![ESPAS Course View](/screenshots/course-view.png) |
+| ![ESPAS Moodle Dashboard](/screenshots/dashboard.png) | ![ESPAS Course View](/screenshots/course-view.png) |
 
 |                  Complex Quiz Question                  |                    ESPAS Dark Mode                    |
 | :-----------------------------------------------------: | :---------------------------------------------------: |
