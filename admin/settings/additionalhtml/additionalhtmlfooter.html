@@ -1,4 +1,27 @@
 <script>
+  // Dark mode constants
+  const CSS_CLASS = "darkmode";
+  const STORAGE_KEY = "espas-darkmode";
+
+  /** Gets dark mode setting from localStorage. */
+  function isDarkMode() {
+    return JSON.parse(localStorage.getItem(STORAGE_KEY)) === 1;
+  }
+
+  /** Toggles dark mode. */
+  function toggleDarkMode() {
+    // Toggle dark mode in HTML
+    const newValue = document.documentElement.classList.toggle(CSS_CLASS);
+
+    // Set dark mode setting in localStorage
+    localStorage.setItem(STORAGE_KEY, Number(newValue));
+  }
+
+  // Apply dark mode setting on page load
+  document.addEventListener("DOMContentLoaded", function () {
+    if (isDarkMode()) document.documentElement.classList.add(CSS_CLASS);
+  });
+
 /* ===================================================== */
 /* Quiz-Kommentar-Popup                                  */
 /* ===================================================== */
