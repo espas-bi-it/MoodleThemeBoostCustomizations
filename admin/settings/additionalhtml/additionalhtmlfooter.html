@@ -17,9 +17,48 @@
     localStorage.setItem(STORAGE_KEY, Number(newValue));
   }
 
-  // Apply dark mode setting on page load
+  // Applies dark mode setting on page load and creates dark mode toggle element
   document.addEventListener("DOMContentLoaded", function () {
+    // Apply dark mode setting on page load
     if (isDarkMode()) document.documentElement.classList.add(CSS_CLASS);
+
+    // Skip toggle creation if it already exists
+    if (document.getElementById("darkmode-toggle")) return;
+
+    // Create container element
+    const darkModeToggleContainer = document.createElement("div");
+    darkModeToggleContainer.classList.add("darkmode-control");
+
+    // Create label
+    const darkModeToggleLabel = document.createElement("label");
+    darkModeToggleLabel.classList.add("darkmode-switch");
+    darkModeToggleContainer.appendChild(darkModeToggleLabel);
+
+    // Create input checkbox
+    const darkModeToggleCheckbox = document.createElement("input");
+    darkModeToggleCheckbox.id = "darkmode-toggle";
+    darkModeToggleCheckbox.setAttribute("type", "checkbox");
+    darkModeToggleCheckbox.setAttribute("checked", isDarkMode());
+    darkModeToggleCheckbox.addEventListener("change", toggleDarkMode);
+    darkModeToggleLabel.appendChild(darkModeToggleCheckbox);
+
+    // Create slider
+    const darkModeToggleSlider = document.createElement("span");
+    darkModeToggleSlider.classList.add("slider");
+    darkModeToggleLabel.appendChild(darkModeToggleSlider);
+
+    // Create label text
+    const darkModeToggleText = document.createElement("span");
+    darkModeToggleText.classList.add("switch-text");
+    darkModeToggleLabel.appendChild(darkModeToggleText);
+
+    // Create icon
+    const darkModeToggleIcon = document.createElement("i");
+    darkModeToggleIcon.classList.add("fa-solid", "fa-moon");
+    darkModeToggleLabel.appendChild(darkModeToggleIcon);
+
+    // Add dark mode switch to DOM
+    document.body.appendChild(darkModeToggleContainer);
   });
 
 /* ===================================================== */
@@ -92,159 +131,4 @@ document.addEventListener(
 
     }
 );
-</script>
-
-<script>
-(function () {
-
-    const storageKey = "espas-darkmode";
-
-
-    function createDarkmodeButton() {
-
-        /*
-         * Falls Moodle das Script aus irgendeinem Grund
-         * mehrfach ausführt, keinen zweiten Button erzeugen.
-         */
-
-        if (document.getElementById("darkmode-toggle")) {
-            return;
-        }
-
-
-        /*
-         * Container
-         */
-
-        const container =
-            document.createElement("div");
-
-        container.className =
-            "darkmode-control";
-
-
-        /*
-         * HTML
-         */
-
-        container.innerHTML = `
-            <label class="darkmode-switch">
-
-                <input
-                    type="checkbox"
-                    id="darkmode-toggle"
-                >
-
-                <span class="slider"></span>
-
-                <span class="switch-text">
-                   <i class="fa-solid fa-moon"></i>
-                </span>
-
-            </label>
-        `;
-
-
-        /*
-         * Button an BODY anhängen
-         */
-
-        document.body.appendChild(container);
-
-
-        /*
-         * Checkbox holen
-         */
-
-        const toggle =
-            document.getElementById("darkmode-toggle");
-
-
-        if (!toggle) {
-            return;
-        }
-
-
-        /*
-         * Gespeicherten Zustand lesen
-         */
-
-        let enabled = false;
-
-        try {
-
-            enabled =
-                localStorage.getItem(storageKey) === "on";
-
-        } catch (e) {
-
-            enabled = false;
-
-        }
-
-
-        /*
-         * Switch sofort richtig setzen
-         */
-
-        toggle.checked = enabled;
-
-
-        /*
-         * Klick
-         */
-
-        toggle.addEventListener(
-            "change",
-            function () {
-
-                const isDark =
-                    toggle.checked;
-
-
-                /*
-                 * Darkmode auf HTML setzen
-                 */
-
-                document.documentElement.classList.toggle(
-                    "darkmode",
-                    isDark
-                );
-
-
-                /*
-                 * Zustand speichern
-                 */
-
-                try {
-
-                    localStorage.setItem(
-                        storageKey,
-                        isDark ? "on" : "off"
-                    );
-
-                } catch (e) {
-
-                    // localStorage eventuell nicht verfügbar
-
-                }
-
-            }
-        );
-
-    }
-
-
-    /*
-     * BODY existiert bereits, weil dieses Script
-     * direkt vor </body> steht.
-     */
-
-    if (document.body) {
-
-        createDarkmodeButton();
-
-    }
-
-})();
 </script>
