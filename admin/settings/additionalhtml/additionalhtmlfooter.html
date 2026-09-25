@@ -4,9 +4,7 @@
   const STORAGE_KEY = "espas-darkmode";
 
   /** Gets dark mode setting from localStorage. */
-  function isDarkMode() {
-    return JSON.parse(localStorage.getItem(STORAGE_KEY)) === 1;
-  }
+  const isDarkMode = JSON.parse(localStorage.getItem(STORAGE_KEY)) === 1;
 
   /** Toggles dark mode. */
   function toggleDarkMode() {
@@ -20,45 +18,54 @@
   // Applies dark mode setting on page load and creates dark mode toggle element
   document.addEventListener("DOMContentLoaded", function () {
     // Apply dark mode setting on page load
-    if (isDarkMode()) document.documentElement.classList.add(CSS_CLASS);
+    if (isDarkMode) document.documentElement.classList.add(CSS_CLASS);
 
     // Skip toggle creation if it already exists
     if (document.getElementById("darkmode-toggle")) return;
 
-    // Create container element
-    const darkModeToggleContainer = document.createElement("div");
-    darkModeToggleContainer.classList.add("darkmode-control");
+    // Container element
+    const toggleContainer = document.createElement("div");
+    toggleContainer.classList.add("d-flex", "align-items-center", "editmode-switch-form");
 
-    // Create label
-    const darkModeToggleLabel = document.createElement("label");
-    darkModeToggleLabel.classList.add("darkmode-switch");
-    darkModeToggleContainer.appendChild(darkModeToggleLabel);
+    // Input group
+    const toggleInputGroup = document.createElement("div");
+    toggleInputGroup.classList.add("input-group");
+    toggleContainer.appendChild(toggleInputGroup);
 
-    // Create input checkbox
-    const darkModeToggleCheckbox = document.createElement("input");
-    darkModeToggleCheckbox.id = "darkmode-toggle";
-    darkModeToggleCheckbox.setAttribute("type", "checkbox");
-    darkModeToggleCheckbox.setAttribute("checked", isDarkMode());
-    darkModeToggleCheckbox.addEventListener("change", toggleDarkMode);
-    darkModeToggleLabel.appendChild(darkModeToggleCheckbox);
+    // Label
+    const toggleLabel = document.createElement("label");
+    toggleLabel.for = "darkmode-toggle-2";
+    toggleLabel.classList.add("me-2", "mb-0");
+    toggleInputGroup.appendChild(toggleLabel);
 
-    // Create slider
-    const darkModeToggleSlider = document.createElement("span");
-    darkModeToggleSlider.classList.add("slider");
-    darkModeToggleLabel.appendChild(darkModeToggleSlider);
+    // Moon icon
+    const toggleLabelIcon = document.createElement("i");
+    toggleLabelIcon.classList.add("fa-solid", "fa-moon");
+    toggleLabel.appendChild(toggleLabelIcon);
 
-    // Create label text
-    const darkModeToggleText = document.createElement("span");
-    darkModeToggleText.classList.add("switch-text");
-    darkModeToggleLabel.appendChild(darkModeToggleText);
+    // Switch container
+    const toggleSwitchContainer = document.createElement("div");
+    toggleSwitchContainer.classList.add("custom-control", "custom-switch");
+    toggleInputGroup.appendChild(toggleSwitchContainer);
 
-    // Create icon
-    const darkModeToggleIcon = document.createElement("i");
-    darkModeToggleIcon.classList.add("fa-solid", "fa-moon");
-    darkModeToggleLabel.appendChild(darkModeToggleIcon);
+    // Input checkbox
+    const toggleCheckbox = document.createElement("input");
+    toggleCheckbox.id = "darkmode-toggle";
+    toggleCheckbox.type = "checkbox";
+    toggleCheckbox.checked = isDarkMode;
+    toggleCheckbox.classList.add("custom-control-input");
+    toggleCheckbox.addEventListener("change", toggleDarkMode);
+    toggleSwitchContainer.appendChild(toggleCheckbox);
 
-    // Add dark mode switch to DOM
-    document.body.appendChild(darkModeToggleContainer);
+    // Checkbox label
+    const toggleCheckboxLabel = document.createElement("span");
+    toggleCheckboxLabel.innerHTML = "&nbsp;";
+    toggleCheckboxLabel.classList.add("custom-control-label");
+    toggleSwitchContainer.appendChild(toggleCheckboxLabel);
+
+    // Add to navigation bar
+    const navigation = document.getElementById("usernavigation");
+    navigation?.prepend(toggleContainer);
   });
 
 /* ===================================================== */
