@@ -35,7 +35,7 @@
     // Label
     const toggleLabel = document.createElement("label");
     toggleLabel.for = "darkmode-toggle-2";
-    toggleLabel.classList.add("me-2", "mb-0");
+    toggleLabel.classList.add("me-2", "mb-0", "mt-1");
     toggleInputGroup.appendChild(toggleLabel);
 
     // Moon icon
@@ -68,74 +68,51 @@
     navigation?.prepend(toggleContainer);
   });
 
-/* ===================================================== */
-/* Quiz-Kommentar-Popup                                  */
-/* ===================================================== */
+ // =================================================
+ //  Quiz Comment Pop-Up
+ // =================================================
 
-document.addEventListener(
+  document.addEventListener(
     "DOMContentLoaded",
     function () {
 
-        const popupBody =
-            document.querySelector(
-                "body#page-mod-quiz-comment"
-            );
-
-
-        if (!popupBody) {
-            return;
-        }
-
-
-        // =================================================
-        // Darkmode vom Hauptfenster übernehmen
-        // =================================================
-
-        if (
-            window.opener &&
-            !window.opener.closed &&
-            window.opener.document.body.classList.contains(
-                "darkmode"
-            )
-        ) {
-
-            popupBody.classList.add(
-                "darkmode"
-            );
-
-        }
-
-
-        // =================================================
-        // Fenstergröße
-        // =================================================
-
-        const width = 950;
-        const height = 1200;
-
-
-        // ================================================
-        // Fenster zentrieren
-        // =================================================
-
-        const left =
-            (window.screen.width - width) / 2;
-
-        const top =
-            (window.screen.height - height) / 2;
-
-
-        window.resizeTo(
-            width,
-            height
+      const popupBody =
+        document.querySelector(
+          "body#page-mod-quiz-comment"
         );
 
 
-        window.moveTo(
-            left,
-            top
-        );
+      if (!popupBody) {
+        return;
+      }
+
+      // =================================================
+      // Window size
+      // =================================================
+
+      const width = 950;
+      const height = 1200;
+
+      // =================================================
+      // Center the window
+      // =================================================
+
+      const left =
+        (window.screen.width - width) / 2;
+
+      const top =
+        (window.screen.height - height) / 2;
+
+      window.resizeTo(
+        width,
+        height
+      );
+
+      window.moveTo(
+        left,
+        top
+      );
 
     }
-);
+  );
 </script>
