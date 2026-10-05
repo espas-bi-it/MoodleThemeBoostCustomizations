@@ -2,1487 +2,498 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-
 /* ============================================================
-   8. DARK MODE 
+   DARK MODE
    ============================================================ */
 
-html {
-    scrollbar-gutter: stable;
+/* Login: switch ausblenden */
+#page-login-index .darkmode-control {
+	display: none !important;
 }
 
-/* Darkmode-Schalter auf Login-Seite ausblenden */
-
-
-body#page-login-index .darkmode-control
-/* body .darkmode-control */ {
-    display: none !important;
+/* Eigener Hintergrund */
+html.darkmode body {
+	background: #171f26 !important;
 }
 
-/* ===========================
-   8.1 Dark Mode Variables
-   =========================== */
-
+/* Moodle basics */
 html.darkmode {
-    --primary: #1283ed;
-    --secondary: #659e65;
-    --success: #145222;
-    --info: color-mix(in srgb, #0dcaf0 50%, black);
-    --warning: color-mix(in srgb, #ffc107 50%, black);
-    --danger: color-mix(in srgb, #dc3545 90%, black);
+	.course-section .availabilityinfo {
+		background-color: var(--surface-2) !important;
+	}
 
-    --white: #1d2a35;
-    --light: #b3b3b3;
-    --dark: #f5f5f5;
+	img {
+		filter: brightness(0.8);
+	}
 
-    --gray-100: #2a2c2f;
-    --gray-200: #3a3c40;
-    --gray-300: #4a4c50;
-    --gray-400: #5a5c60;
-    --gray-500: #6a6c70;
-    --gray-600: #7a7c80;
-    --gray-700: #8a8c90;
-    --gray-800: #9a9ca0;
-    --gray-900: #aaa;
-
-    /* Zusätzliche Graustufen */
-    --gray-222: #333538;
-    --gray-333: #3f4145;
-    --gray-555: #5f6165;
-    --gray-999: #b8b8b8;
-
-    /* Kurs-/Aktivitätsfarben */
-    --yellow: #ffc107;
+	.card-text.content img.icon {
+		filter: invert(1);
+	}
 }
 
-/* ===========================
-8.1a Globaler Darkmode-Hintergrund
-=========================== */
-
-
-html.darkmode,
-html.darkmode body,
-html.darkmode #page,
-html.darkmode #page-wrapper {
-     background-color: #1d2a35 !important;
-    /* background-image: none !important; */
-}
-
-
-/* ===========================
-   8.2 Global Text / Content
-   =========================== */
-
+/* Tables */
 html.darkmode {
-    p,
-    li,
-    td,
-    th,
-    div,
-    a {
-        color: var(--dark) !important;
-    }
-
-    /* Headings */
-    h1,
-    h2,
-    h3 {
-        font-weight: 600;
-        letter-spacing: -0.5px;
-        color: var(--secondary) !important;
-        text-transform: uppercase;
-    }
-
-    /* Links */
-    #page-content a,
-    #block-region-side-pre a {
-        color: color-mix(in srgb, var(--primary) 25%, white) !important;
-    }
-
-    #page-content a:hover,
-    #block-region-side-pre a:hover {
-        text-decoration: underline;
-    }
-}
-
-/* ===========================
-8.3 Background Fixes
-=========================== */
-
-html.darkmode {
-    .bg-light {
-        background-color: var(--gray-400) !important;
-    }
-
-    .bg-white {
-        background-color: var(--gray-100) !important;
-    }
-}
-
-
-/* ===========================
-8.4 Moodle Specific
-=========================== */
-
-html.darkmode {
-    .course-section .availabilityinfo {
-        background-color: var(--gray-200) !important;
-    }
-}
-
-
-/* ===========================
-8.5 Category 53 Overrides
-=========================== */
-
-html.darkmode .category-53 {
-    .text-info {
-        color: #4ba2f1 !important;
-    }
-
-    .text-success {
-        color: #28a745 !important;
-    }
-
-    .text-muted {
-        color: var(--gray-999) !important;
-    }
-
-    .text-white {
-        color: var(--dark) !important;
-    }
-}
-
-
-/* ===========================
-8.6 Layout / Drawer
-=========================== */
-
-html.darkmode .drawer {
-    background-color: var(--gray-100);
-    border: 1px solid var(--gray-700) !important;
-    z-index: 1015;
-    position: fixed;
-}
-
-html.darkmode body #page.drawers .main-inner {
-    background: #0d0d0d !important;
-    border-radius: 1.5rem;
-    border: 1px solid color-mix(in srgb, var(--gray-300) 25%, transparent) !important;
-    box-shadow: 0 6px 12px rgb(0 0 0 / .15);
-    padding: 2rem 1.5rem !important;
-    margin-top: 0.5rem !important;
-}
-
-html.darkmode #region-main {
-    background-color: #0d0d0d !important;
-    box-shadow: 0 3px 10px rgb(0 0 0 / .06);
-    padding-bottom: 15px;
-}
-
-/* ===========================
-8.7 Cards
-=========================== */
-
-html.darkmode .card {
-    background: var(--gray-300) !important;
-}
-
-html.darkmode .card-header {
-    background: var(--gray-200) !important;
-    color: var(--dark) !important;
+	.table,
+	.generaltable th {
+		background: var(--surface-0) !important;
+	}
 }
 
 html.darkmode {
-    .card {
-        background: var(--gray-300) !important;
-    }
+	.table,
+	.generaltable {
+		color: var(--text) !important;
+		background-color: var(--surface-0) !important;
 
-    .card-header {
-        background: var(--gray-200) !important;
-        color: var(--dark) !important;
-    }
+		thead th {
+			background: var(--surface-3) !important;
+			color: var(--text) !important;
+			border-color: var(--border-strong) !important;
+		}
 
-    /* Course teaser overlay */
-    &.category-53 #course-teaser .position-relative > .position-absolute {
-        background: color-mix(
-            in srgb,
-            var(--dark) 20%,
-            transparent
-        ) !important;
-    }
+		tbody > tr:not(:has(.tabledivider)) td {
+			background: var(--surface-0) !important;
+			color: var(--text) !important;
+			border-color: var(--border-strong) !important;
+		}
+
+		/* Table hover */
+		tbody > tr:not(:has(.tabledivider)):hover td,
+		&.table-hover tbody tr:hover > td,
+		&.table-hover tbody tr:hover > th {
+			background: color-mix(in srgb,
+				var(--primary) 4%,
+				var(--surface-0)) !important;
+			color: var(--text) !important;
+		}
+
+		/* Moodle divider rows */
+		tbody > tr:has(.tabledivider) td {
+			background: var(--surface-1) !important;
+			border: 0 !important;
+			padding: 2px 0 !important;
+		}
+
+		.tabledivider {
+			height: 1px;
+			background: var(--border) !important;
+		}
+
+		a {
+			color: var(--primary) !important;
+		}
+	}
+
+	/* Quiz review */
+	table.quizreviewsummary {
+		color: var(--text);
+		background: transparent;
+
+		td.cell,
+		th.cell {
+			background: var(--surface-2) !important;
+			color: var(--text) !important;
+			border-color: var(--border-strong) !important;
+		}
+
+		tbody tr {
+			background: var(--surface-2) !important;
+		}
+
+		tbody tr:nth-child(even) td.cell,
+		tbody tr:nth-child(even) th.cell {
+			background: var(--surface-3) !important;
+		}
+
+		tbody tr:hover td.cell,
+		tbody tr:hover th.cell {
+			background: color-mix(in srgb,
+				var(--primary) 20%,
+				var(--surface-2)) !important;
+			color: var(--text) !important;
+		}
+
+		a {
+			color: var(--primary) !important;
+		}
+	}
+
+	/* Generic bordered tables */
+	.table-bordered {
+		th,
+		td {
+			border-color: var(--border-strong) !important;
+		}
+	}
 }
 
-
-/* ===========================
-8.8 Tables
-=========================== */
-
-html.darkmode {
-    .table {
-        background: var(--gray-100) !important;
-        color: var(--dark) !important;
-
-        td,
-        th {
-            border-color: var(--gray-300) !important;
-            background-color: var(--gray-200) !important;
-        }
-    }
-
-    .table-striped tbody tr:nth-of-type(odd) {
-        background-color: var(--gray-100) !important;
-    }
-}
-
-
-/* ===========================
-   8.9 Moodle Table Special Cases
-   =========================== */
-
-html.darkmode table.quizreviewsummary {
-    color: var(--gray-100);
-    background: transparent;
-}
-
-/* Zellen */
-html.darkmode table.quizreviewsummary td.cell,
-html.darkmode table.quizreviewsummary th.cell {
-    background: var(--gray-300) !important;
-    color: var(--gray-100) !important;
-    border-color: var(--gray-600) !important;
-}
-
-/* Zeilen */
-html.darkmode table.quizreviewsummary tbody tr {
-    background: var(--gray-300) !important;
-}
-
-/* Zebra */
-html.darkmode table.quizreviewsummary tbody tr:nth-child(even) td.cell,
-html.darkmode table.quizreviewsummary tbody tr:nth-child(even) th.cell {
-    background: var(--gray-400) !important;
-}
-
-/* Hover */
-html.darkmode table.quizreviewsummary tbody tr:hover td.cell,
-html.darkmode table.quizreviewsummary tbody tr:hover th.cell {
-    background: var(--gray-600) !important;
-}
-
-/* Generaltable */
-html.darkmode table.generaltable th.cell, html.darkmode table.generaltable td.cell {
-    background: var(--gray-300) !important;
-    color: var(--gray-999) !important;
-    border-color: var(--gray-600) !important;
-}
-
-/* Grading Summary Table */
-
-html.darkmode .table-bordered th,
-html.darkmode .table-bordered td {
-    border: 1px solid var(--gray-555);
-    background: var(--gray-500) !important;
-}
-
-
-/* Quiz Summary Table */
-
+/* Quiz summary */
 html.darkmode.path-mod-quiz {
+	.quizsummaryofattempt {
+		color: var(--text);
 
-    .quizsummaryofattempt {
-        color: var(--gray-100);
-    }
+		th,
+		td {
+			background-color: var(--surface-2) !important;
+			color: var(--text) !important;
+			border-color: var(--border-strong) !important;
+		}
 
-    .quizsummaryofattempt th,
-    .quizsummaryofattempt td {
-        background-color: var(--gray-800) !important;
-        color: var(--gray-100) !important;
-        border-color: var(--gray-600) !important;
-    }
+		thead th {
+			background-color: var(--surface-3) !important;
+			color: var(--text) !important;
+		}
 
-    .quizsummaryofattempt thead th {
-        background-color: var(--gray-900) !important;
-        color: var(--white) !important;
-    }
+		tbody tr:nth-child(even) td,
+		tbody tr:nth-child(even) th {
+			background-color: var(--surface-3) !important;
+		}
 
-    /* Gerade Zeilen */
-    .quizsummaryofattempt tbody tr:nth-child(even) td,
-    .quizsummaryofattempt tbody tr:nth-child(even) th {
-        background-color: var(--gray-700) !important;
-    }
+		tbody tr:hover td,
+		tbody tr:hover th {
+			background: color-mix(in srgb,
+				var(--primary) 12%,
+				var(--surface-2)) !important;
+			color: var(--text) !important;
+		}
 
-    /* Links */
-    .quizsummaryofattempt a {
-        color: var(--primary) !important;
-    }
+		a {
+			color: var(--primary) !important;
+		}
+	}
 }
 
-
-/* ===========================
-8.10 Gradebook
-=========================== */
-
+/* Gradebook */
 html.darkmode .gradereport-grader-table {
-    background: var(--dark);
-    color: var(--gray-200);
+	background: var(--surface-0);
+	color: var(--text);
 
-    th,
-    .header {
-        background: color-mix(
-            in srgb,
-            var(--primary) 20%,
-            black
-        ) !important;
-        color: var(--gray-100) !important;
-        border-color: var(--gray-555) !important;
-    }
+	th,
+	.header {
+		background: color-mix(in srgb,
+			var(--primary) 20%,
+			var(--surface-0)) !important;
+		color: var(--text) !important;
+		border-color: var(--border-strong) !important;
+	}
 
-    td,
-    .cell {
-        background: var(--dark) !important;
-        color: var(--gray-200) !important;
-        border-color: var(--gray-555) !important;
-    }
+	td,
+	.cell {
+		background: var(--surface-0) !important;
+		color: var(--text) !important;
+		border-color: var(--border-strong) !important;
+	}
 
-    tr.odd td {
-        background: var(--dark) !important;
-    }
+	tr.odd td {
+		background: var(--surface-0) !important;
+	}
 
-    tr.even td {
-        background: var(--gray-100) !important;
-    }
+	tr.even td {
+		background: var(--surface-1) !important;
+	}
 
-    .user,
-    .c0 {
-        background: color-mix(
-            in srgb,
-            var(--primary) 15%,
-            black
-        ) !important;
-        color: var(--gray-100) !important;
-    }
+	.user,
+	.c0 {
+		background: color-mix(in srgb,
+			var(--primary) 15%,
+			var(--surface-0)) !important;
+		color: var(--text) !important;
+	}
 
-    .freeze {
-        background: color-mix(
-            in srgb,
-            var(--primary) 25%,
-            black
-        ) !important;
-        color: var(--gray-100) !important;
-    }
+	.freeze {
+		background: color-mix(in srgb,
+			var(--primary) 25%,
+			var(--surface-0)) !important;
+		color: var(--text) !important;
+	}
 
-    tr:hover td {
-        background: color-mix(
-            in srgb,
-            var(--primary) 20%,
-            black
-        ) !important;
-        color: var(--white) !important;
-    }
+	tr:hover td {
+		background: color-mix(in srgb,
+			var(--primary) 20%,
+			var(--surface-0)) !important;
+		color: var(--text) !important;
+	}
 
-    input,
-    select {
-        background: var(--gray-222) !important;
-        color: var(--gray-100) !important;
-        border: 1px solid var(--gray-555) !important;
+	input,
+	select {
+		background: var(--surface-2) !important;
+		color: var(--text) !important;
+		border: 1px solid var(--border-strong) !important;
 
-        &:focus {
-            border-color: var(--primary) !important;
-            box-shadow: 0 0 4px color-mix(
-                in srgb,
-                var(--primary) 40%,
-                black
-            ) !important;
-        }
-    }
+		&:focus {
+			border-color: var(--primary) !important;
+			box-shadow: 0 0 4px color-mix(in srgb,
+				var(--primary) 40%,
+				black) !important;
+		}
+	}
 }
 
+/* Configurable reports Table fix */
+html.darkmode #page-blocks-configurable_reports-viewreport {
+	.table {
+		th.bg-light {
+			background: var(--surface-3) !important;
+			color: var(--text) !important;
+		}
 
-/* ===========================
-8.11 Forms / Tabs / Modals / Dropdowns
-=========================== */
+		th.alert-primary {
+			background: color-mix(in srgb,
+				var(--primary) 22%,
+				var(--surface-2)) !important;
+			color: var(--text) !important;
+		}
 
+		th.alert-success {
+			background: color-mix(in srgb,
+				var(--success) 22%,
+				var(--surface-2)) !important;
+			color: var(--text) !important;
+		}
+
+		th.alert-warning {
+			background: color-mix(in srgb,
+				var(--warning) 22%,
+				var(--surface-2)) !important;
+			color: var(--text) !important;
+		}
+
+		th.alert-dark {
+			background: var(--surface-3) !important;
+			color: var(--text) !important;
+		}
+
+		th .text-muted {
+			color: var(--text-muted) !important;
+		}
+
+		tr.text-dark {
+			color: var(--text) !important;
+		}
+	}
+}
 
 /* Forms */
-
 html.darkmode {
-    .form-control,
-    select,
-    textarea {
-        background-color: var(--gray-200) !important;
-        color: var(--light) !important;
-        border: 1px solid var(--gray-900) !important;
-        border-radius: 6px !important;
-    }
+	.form-control,
+	select,
+	textarea {
+		background-color: var(--surface-2) !important;
+		color: var(--dark) !important;
+	}
 
-    .form-control:focus,
-    select:focus,
-    textarea:focus {
-        color: var(--dark) !important;
-        background-color: var(--gray-200) !important;
-        border-color: var(--primary) !important;
-        outline: 0;
-        box-shadow: 0 0 0 2px color-mix(
-            in srgb,
-            var(--primary) 40%,
-            black
-        ) !important;
-    }
+	.form-control:focus,
+	select:focus,
+	textarea:focus {
+		background-color: var(--surface-2) !important;
+		outline: 0;
+		box-shadow: 0 0 0 2px color-mix(in srgb,
+			var(--primary) 40%,
+			black) !important;
+	}
 }
-
-
-/* Tabs */
-
-html.darkmode {
-    .nav-tabs {
-        border-bottom: 1px solid var(--gray-300);
-
-        .nav-link {
-            color: var(--light);
-
-            &:hover,
-            &:focus {
-                background: var(--gray-200);
-                border-color: var(--primary);
-                color: var(--dark);
-            }
-
-            &.active {
-                background: var(--gray-100);
-                border-color: var(--primary);
-                color: var(--dark);
-            }
-        }
-    }
-}
-
 
 /* Modals */
-
 html.darkmode {
-    .modal-content {
-        background: var(--gray-100) !important;
-        border: 1px solid var(--gray-300) !important;
-        border-radius: 10px !important;
-        color: var(--light) !important;
-    }
+	.modal-content {
+		background: var(--surface-1) !important;
+		border: 1px solid var(--surface-3) !important;
+		border-radius: 10px !important;
+		color: var(--text) !important;
+	}
 
-    .modal-header,
-    .modal-footer {
-        background: var(--gray-200) !important;
-        border-color: var(--gray-300) !important;
-    }
+	.modal-header,
+	.modal-footer {
+		background: var(--surface-2) !important;
+		border-color: var(--surface-3) !important;
+	}
 }
-
 
 /* Dropdowns */
-
 html.darkmode {
-    .dropdown-menu {
-        background: var(--gray-100) !important;
-        border: 1px solid var(--gray-300) !important;
-        border-radius: 8px !important;
-    }
+	.dropdown-menu {
+		background: var(--surface-1) !important;
+		border: 1px solid var(--surface-3) !important;
+		border-radius: 8px !important;
+	}
 
-    .dropdown-item {
-        color: var(--light) !important;
+	.dropdown-item {
+		color: var(--dark) !important;
 
-        &:hover,
-        &:focus {
-            background: var(--gray-200) !important;
-            color: var(--dark) !important;
-        }
-    }
+		&:hover,
+		&:focus {
+			color: var(--dark) !important;
+		}
+	}
 }
 
-
-/* ===========================
-8.12 Alerts
-=========================== */
-
-html.darkmode {
-    .alert {
-        --alert-bg-mix: 50%;
-
-        background: color-mix(
-            in srgb,
-            var(--alert-color) var(--alert-bg-mix),
-            black
-        ) !important;
-
-        border-color: color-mix(
-            in srgb,
-            var(--alert-color) 60%,
-            black
-        ) !important;
-
-        color: color-mix(
-            in srgb,
-            var(--alert-color) 15%,
-            white
-        ) !important;
-    }
-
-    .alert-primary {
-        --alert-color: var(--primary);
-    }
-
-    .alert-secondary {
-        --alert-color: var(--secondary);
-    }
-
-    .alert-success {
-        --alert-color: var(--success);
-    }
-
-    .alert-info {
-        --alert-color: var(--info);
-    }
-
-    .alert-warning {
-        --alert-color: var(--warning);
-    }
-
-    .alert-danger {
-        --alert-color: var(--danger);
-    }
-
-    .alert-light {
-        --alert-color: var(--gray-200);
-    }
-}
-
-
-/* ===========================
-8.13 Badges / Buttons
-=========================== */
-
-html.darkmode {
-
-    .badge-light {
-        --badge-bg: var(--danger);
-        --badge-color: var(--dark);
-    }
-
-    .btn-light {
-        --btn-bg: var(--danger);
-        --btn-color: var(--dark);
-    }
-
-    .btn-primary {
-        --btn-color: var(--dark);
-    }
-
-    .btn-link {
-        --btn-bg: transparent;
-        color: var(--dark) !important;
-    }
-}
-
-
-/* ===========================
-8.14 Activities
-=========================== */
-
-html.darkmode.path-course {
-
-    .activity {
-        --activity-bg: var(--gray-200);
-        --activity-border: var(--primary);
-
-        background: var(--activity-bg) !important;
-        border-left-color: var(--activity-border) !important;
-        color: var(--dark) !important;
-
-        &:hover {
-            background: var(--activity-bg) !important;
-        }
-    }
-
-    /* Aktivitätstypen */
-
-    .activity.modtype_book,
-    .activity.modtype_wiki {
-        --activity-bg: color-mix(
-            in srgb,
-            var(--yellow) 25%,
-            transparent
-        );
-        --activity-border: var(--yellow);
-    }
-
-    .activity.modtype_quiz {
-        --activity-bg: color-mix(
-            in srgb,
-            var(--primary) 15%,
-            transparent
-        );
-        --activity-border: var(--primary);
-    }
-
-    .activity.modtype_feedback {
-        --activity-border: var(--success);
-    }
-
-    .activity.modtype_assign {
-        --activity-bg: var(--gray-100);
-        --activity-border: var(--gray-900);
-    }
-}
-
-
-/* Activity Header */
-
+/* Activities */
 html.darkmode .activity-header {
-    background: var(--gray-300) !important;
+	background: var(--surface-2) !important;
 }
 
-
-/* Sonderfall Kategorie 53 */
-
-html.darkmode.category-53 #course-competence .card {
-    background: color-mix(
-        in srgb,
-        var(--info) 15%,
-        transparent
-    ) !important;
-
-    border-left: 8px solid var(--info) !important;
-}
-
-
-/* ===========================
-8.15 Course Index
-=========================== */
-
+/*
 html.darkmode {
+	.completionstate.completed {
+		color: var(--success);
+	}
 
-    #courseindex,
-    #courseindex-content {
-        background: transparent;
-    }
+	.completionstate.incomplete {
+		color: var(--text-subtle);
+	}
 
-    .courseindex .courseindex-item.pageitem {
-        background-color: var(--primary);
-    }
+	.completionstate.progress {
+		color: var(--info);
+	}
 
-    .courseindex-sectioncontent .courseindex-item:hover {
-        background: var(--gray-400);
-    }
+	.completionstate.manual {
+		color: var(--primary);
+	}
+
+	.completionstate.automatic {
+		color: var(--secondary);
+	}
+}
+*/
+
+/* Edit mode */
+html.darkmode.editing {
+	.divider .divider-content {
+		background: var(--surface-3) !important;
+	}
+
+	#page-mod-quiz-edit .statusdisplay {
+		background-color: var(--warning);
+	}
+
+	#page-mod-quiz-edit ul.slots .content {
+		background-color: var(--surface-1);
+		padding: 1px 0;
+	}
+
+	#page-mod-quiz-edit ul.slots li.activity {
+		background: var(--surface-3);
+		margin: 3px 0;
+		padding: .2em;
+		position: relative;
+	}
+
+	#page-mod-quiz-edit ul.slots li.section li.activity .instancemaxmarkcontainer {
+		background: var(--surface-2);
+	}
+
+	.que.multichoice .answer .specificfeedback {
+		background: var(--warning);
+	}
 }
 
-
-/* ===========================
-8.16 Navbar
-=========================== */
-
-html.darkmode {
-
-    nav.navbar {
-        background: var(--gray-400) !important;
-        backdrop-filter: blur(10px);
-
-        .nav-link {
-            color: var(--dark) !important;
-
-            &[aria-current="true"] {
-                background: var(--primary) !important;
-                color: var(--dark) !important;
-            }
-        }
-    }
-
-    .navbar.fixed-top {
-        border-bottom: 1px solid var(--gray-700) !important;
-    }
-
-    .secondary-navigation .navigation {
-        background-color: transparent;
-        border-bottom: none;
-    }
-
-    .moremenu {
-        .nav-tabs {
-            background-color: var(--gray-400);
-        }
-
-        .nav-link {
-            &:hover,
-            &:focus,
-            &:active {
-                border-color: var(--primary);
-                background-color: var(--gray-200) !important;
-                color: var(--dark) !important;
-            }
-        }
-    }
+/* Misc */
+.courseindex-sectioncontent .courseindex-link {
+	color: var(--dark) !important;
 }
 
-
-/* ===========================
-8.17 Page / Media / Misc
-=========================== */
-
-html.darkmode {
-
-    .page-header-headings {
-        background: var(--white) !important;
-        box-shadow: 0 3px 10px var(--gray-300) !important;
-    }
-
-    img {
-        filter: brightness(0.9) contrast(1.1);
-    }
-
-    .que.essay .qtype_essay_response.readonly {
-        background-color: var(--gray-100) !important;
-    }
-
-    .que .info {
-        background-color: var(--gray-555);
-        border: 1px solid var(--gray-200);
-    }
+.path-mod .automatic-completion-conditions .badge {
+	mix-blend-mode: normal !important;
 }
 
-
-/* Kategorie 53 */
-
-html.darkmode.category-53.path-course h1,
-html.darkmode.category-53.path-course h2,
-html.darkmode.category-53.path-course h3,
-html.darkmode.category-53.path-course h4,
-html.darkmode.category-53.path-course h5 {
-    color: var(--dark) !important;
+.invalid-feedback {
+	color: var(--danger) !important;
 }
 
-
-/* Kategorie 53 – Hintergrund */
-
-html.darkmode.category-53[id^="page-"]::after {
-    content: "";
-    position: fixed;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-}
-
-
-/* Completion States */
-
-html.darkmode .completionstate.completed {
-    color: var(--success);
-}
-
-html.darkmode .completionstate.incomplete {
-    color: var(--gray-500);
-}
-
-html.darkmode .completionstate.progress {
-    color: var(--info);
-}
-
-html.darkmode .completionstate.manual {
-    color: var(--primary);
-}
-
-html.darkmode .completionstate.automatic {
-    color: var(--secondary);
-}
-
-/* Kurs 186 – MAT */
-
-html.darkmode.course-186 #course-question .card-body > div[style] {
-    background-color: var(--gray-333) !important;
-    border-color: var(--gray-555) !important;
-}
-
-/* Code-Pre – PYT / VBA / MIB */
-
-html.darkmode pre code {
-  color: var(--dark) !important;
-  font-size: 1rem;
-}
-
-html.darkmode code {
-  color: #f359f3 !important;
-}
-
-html.darkmode pre[class*="language-"] {
-    background: transparent;
-    border: 1px solid var(--gray-700);
-}
-
-
-/* Kurs 173 – VBA */
-
-html.darkmode.course-173 #course-question tbody {
-    background: var(--gray-200) !important;
-}
-
-/* ===========================
-8.18 Pagination / Tooltip / Breadcrumb / Footer
-=========================== */
-
-html.darkmode {
-
-    /* Pagination */
-
-    .pagination {
-        .page-link {
-            background: var(--gray-400);
-            color: var(--gray-900);
-            border-color: var(--gray-555) !important;
-        }
-
-        .page-item.active .page-link {
-            background: color-mix(
-                in srgb,
-                var(--primary) 30%,
-                black
-            );
-
-            color: var(--dark);
-        }
-    }
-
-    /* Tooltip */
-
-    .tooltip-inner {
-        background: var(--gray-222);
-        color: var(--gray-100);
-    }
-
-    .tooltip.bs-tooltip-auto .arrow::before {
-        border-top-color: var(--gray-222);
-    }
-
-    /* Breadcrumb */
-
-    .breadcrumb {
-        background: var(--dark);
-    }
-
-    .breadcrumb-item,
-    .breadcrumb-item a {
-        color: var(--gray-200);
-    }
-
-    /* Footer */
-
-    #page-footer {
-        background: var(--dark);
-        color: var(--gray-200);
-    }
-}
-
-/* ===========================
-8.19 Quiz Navigation
-=========================== */
-
-html.darkmode #mod_quiz_navblock {
-
-    .card-body {
-        background: var(--gray-333) !important;
-    }
-
-    .card-title {
-        color: var(--dark);
-    }
-
-    .qnbutton {
-        --qn-color: var(--gray-200);
-        --qn-border: var(--gray-555);
-
-        color: var(--qn-color) !important;
-        border: 1px solid var(--qn-border) !important;
-
-        &:hover,
-        &:focus {
-            color: var(--white) !important;
-            border-color: var(--primary) !important;
-        }
-    }
-
-    /* States */
-
-    .qnbutton.thispage,
-    .qnbutton.answersaved,
-    .qnbutton.flagged {
-        --qn-color: var(--white);
-    }
-}
-
-
-/* ===========================
-8.20 Blend Mode Reset
-=========================== */
-
-html.darkmode {
-
-    .badge,
-    .automatic-completion-conditions .badge,
-    .completion-info,
-    .activity-completion,
-    .progress,
-    .progress-bar,
-    .activityiconcontainer,
-    .activityicon {
-        mix-blend-mode: normal !important;
-    }
-}
-
-
-/* ===========================
-8.21 Quiz Answers / Feedback / Question Types
-=========================== */
-
-
-/* Correct / graded right */
-
-html.darkmode .que .correct,
-html.darkmode .que .gradedright {
-    background: color-mix(
-        in srgb,
-        var(--success) 85%,
-        black
-    ) !important;
-
-    border: 1px solid color-mix(
-        in srgb,
-        var(--success) 35%,
-        black
-    ) !important;
-
-    color: color-mix(
-        in srgb,
-        var(--success) 70%,
-        white
-    ) !important;
-}
-
-
-/* Incorrect / graded wrong */
-
-html.darkmode .que .incorrect,
-html.darkmode .que .gradedwrong {
-    background: color-mix(
-        in srgb,
-        var(--danger) 85%,
-        black
-    ) !important;
-
-    border: 1px solid color-mix(
-        in srgb,
-        var(--danger) 35%,
-        black
-    ) !important;
-
-    color: color-mix(
-        in srgb,
-        var(--danger) 70%,
-        white
-    ) !important;
-}
-
-
-/* General / specific feedback */
-
-html.darkmode .que .generalfeedback,
-html.darkmode .que .specificfeedback {
-    color: var(--gray-200) !important;
-}
-
-
-/* Feedback */
-
-html.darkmode .que .feedback {
-    background-color: var(--warning) !important;
-    padding: 5px;
-}
-
-
-/* Kommentar */
-
-html.darkmode .que .comment {
-    background: var(--success) !important;
-    border: 1px solid color-mix(
-        in srgb,
-        var(--success) 35%,
-        black
-    ) !important;
-}
-
-/* Multiple Choice */
-
-html.darkmode .que.multichoice .answer div,
-html.darkmode .que.multichoice .answer label {
-    color: var(--dark) !important;
-}
-
-
-/* Drag & Drop */
-
-html.darkmode .que.ddwtos .draghome,
-html.darkmode .que.ddimageortext .draghome,
-html.darkmode .que.ddmarker .draghome {
-    color: var(--gray-200) !important;
-}
-
-
-/* Cloze */
-
-html.darkmode .que.cloze input,
-html.darkmode .que.cloze select {
-    background: var(--dark) !important;
-    color: var(--gray-100) !important;
-    border-color: var(--gray-555) !important;
-}
-
-
-/* Matching */
-
-html.darkmode .que.match select {
-    background: var(--dark) !important;
-    color: var(--gray-100) !important;
-    border-color: var(--gray-555) !important;
-}
-
-
-/* Short Answer / Numerical */
-
-html.darkmode .que.shortanswer input,
-html.darkmode .que.numerical input {
-    background: var(--gray-100) !important;
-    color: var(--gray-900) !important;
-    border-color: var(--gray-555) !important;
-}
-
-
-/* ===========================
-8.22 Configurable Reports / Popovers
-=========================== */
-
-html.darkmode {
-
-    /* Add Content / Block / Activity */
-
-    .btn.add-content,
-    .btn.add-block,
-    .btn.add-activity,
-    .block-add,
-    [data-action="open-chooser"] {
-        background: var(--gray-100) !important;
-        border: 1px solid var(--gray-300) !important;
-        border-radius: 8px;
-
-        &:hover {
-            background: var(--gray-200) !important;
-            border-color: var(--primary) !important;
-        }
-    }
-
-    /* Popover */
-
-    .popover,
-    .popover-body {
-        background-color: var(--gray-700) !important;
-        color: var(--gray-200) !important;
-    }
-}
-
-
-/* Popover Region */
-
-html.darkmode .popover-region-container {
-    background: var(--gray-100) !important;
-    border-radius: 10px !important;
-}
-
-html.darkmode .popover-region-header-container {
-    background: var(--gray-200) !important;
-}
-
-html.darkmode .popover-region-content-container {
-    background: var(--gray-100) !important;
-    color: var(--light) !important;
-    padding: 10px 14px !important;
-}
-
-
-/* Header actions / icons */
-
-html.darkmode .popover-region-header-actions a {
-    color: var(--light) !important;
-    transition: color 0.2s ease;
-}
-
-html.darkmode .popover-region-header-actions a:hover {
-    color: var(--primary) !important;
-}
-
-html.darkmode .popover-region-header-actions .fa {
-    color: var(--primary) !important;
-}
-
-
-/* Empty message */
-
-html.darkmode .popover-region-content .empty-message {
-    color: var(--gray-700) !important;
-    text-align: center;
-    padding: 20px 0;
-}
-
-
-/* Loading spinner */
-
-html.darkmode .popover-region-content-container .fa-spinner {
-    color: var(--primary) !important;
-}
-
-
-/* Notification items */
-
-html.darkmode .popover-region-content .notification {
-    background: var(--gray-200) !important;
-    border: 1px solid var(--gray-300) !important;
-    border-radius: 6px !important;
-    padding: 10px;
-    margin-bottom: 8px;
-    color: var(--light) !important;
-}
-
-
-/* Footer / "Alle anzeigen" */
-
-html.darkmode .popover-region-footer-container {
-    background: var(--gray-200) !important;
-    border-top: 1px solid var(--gray-300) !important;
-    padding: 10px 14px !important;
-    text-align: center;
-}
-
-html.darkmode .popover-region-footer-container .popover-region-seeall-text {
-    color: var(--primary) !important;
-    font-weight: 600;
-}
-
-html.darkmode .see-all-link:hover .popover-region-seeall-text {
-    color: var(--dark) !important;
-}
-
-
-/* Message Popover Toggle */
-
-html.darkmode
-.popover-region[data-region="popover-region-messages"]
-.popover-region-toggle {
-    background: var(--gray-400) !important;
-    border: 1px solid var(--gray-300) !important;
-    color: var(--light) !important;
-    border-radius: 6px !important;
-    padding: 6px 10px !important;
-    transition: all 0.2s ease;
-}
-
-
-/* Hover */
-
-html.darkmode
-.popover-region[data-region="popover-region-messages"]
-.popover-region-toggle:hover {
-    background: var(--gray-200) !important;
-    border-color: var(--primary) !important;
-    color: var(--dark) !important;
-}
-
-
-/* Icon */
-
-html.darkmode
-.popover-region[data-region="popover-region-messages"]
-.popover-region-toggle
-.fa-message {
-    color: var(--primary) !important;
-    transition: color 0.2s ease;
-}
-
-
-/* Active */
-
-html.darkmode
-.popover-region[data-region="popover-region-messages"][aria-expanded="true"]
-.popover-region-toggle {
-    background: var(--gray-200) !important;
-    border-color: var(--primary) !important;
-    color: var(--dark) !important;
-}
-
-
-/* Counter Bubble */
-
-html.darkmode
-.popover-region[data-region="popover-region-messages"]
-.count-container {
-    background: var(--primary) !important;
-    color: var(--white) !important;
-    border-radius: 50% !important;
-    padding: 2px 6px;
-    font-size: 0.75rem;
-    font-weight: 600;
-    position: absolute;
-    top: -4px;
-    right: -4px;
-    box-shadow: 0 0 6px var(--primary);
-}
-
-
-/* Counter versteckt */
-
-html.darkmode
-.popover-region[data-region="popover-region-messages"]
-.count-container.hidden {
-    display: none !important;
-}
-
-
-/* Screenreader / Jump-to */
-
-html.darkmode
-.popover-region[data-region="popover-region-messages"]
-[data-region="jumpto"] {
-    background: var(--gray-200) !important;
-    color: var(--dark) !important;
-}
-
-
-/* Moodle Help Icon Popover in Footer */
-
-html.darkmode .footer-section {
-    background-color: var(--gray-700) !important;
-    color: var(--gray-200) !important;
-    border-color: var(--secondary) !important;
-}
-
-html.darkmode .footer-section a {
-    color: var(--primary) !important;
-}
-
-html.darkmode .footer-section .icon {
-    color: var(--gray-555) !important;
-}
-
-
-/* Kursspezifisch CMD 170 */
-
-html.darkmode.course-170 #course-question pre,
-html.darkmode .course-170 #course-question .bg-dark {
-    background: var(--white) !important;
-    color: var(--dark) !important;
-}
-
-
-/* ============================================================
-  EDITMODE
-   ============================================================ */
-
-html.darkmode.editing .divider .divider-content {
-    background: var(--gray-800) !important;
-}
-
-html.darkmode #page-mod-quiz-edit .statusdisplay {
-  background-color: var(--warning);
-}
-
-html.darkmode #page-mod-quiz-edit ul.slots .content {
-    background-color: var(--gray-100);
-    padding: 1px 0;
-}
-
-html.darkmode #page-mod-quiz-edit ul.slots li.activity {
-    background: var(--gray-999);
-    margin: 3px 0;
-    padding: .2em;
-    position: relative;
-}
-
-html.darkmode #page-mod-quiz-edit ul.slots li.section li.activity .instancemaxmarkcontainer {
-    background: var(--gray-200);
-}
-
-/* Richtige Anwort anzeigen, wenn Frage falsch war*/
-html.darkmode .que.multichoice .answer .specificfeedback {
-    background: var(--warning);
-}
-
-html.darkmode blockquote {
-    margin: .5rem 0 1rem;
-    padding: .5rem 1rem;
-    font-size: .9rem;
-    color: 
-color-mix(in srgb, var(--primary) 30%, var(--dark));
-    border: 1px solid 
-color-mix(in srgb, var(--primary) 30%, white);
-    border-left: 5px solid var(--primary);
-    border-radius: .375rem;
-    background: none;
-}
-
-/* ============================================================
-   DARKMODE SWITCH
-   ============================================================ */
-
+/* Darkmode switch */
 .darkmode-control {
-    position: fixed;
-    bottom: 30px;
-    right: 14px;
-    transform: none;
-    z-index: 9999;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 8px 12px;
-    margin: 0;
-    background: rgba(255, 255, 255, 0.95);
-    border-radius: 20px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
-    transition: none;
+	position: fixed;
+	bottom: 30px;
+	right: 14px;
+	transform: none;
+	z-index: 999;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 8px 12px;
+	margin: 0;
+	background: rgba(255, 255, 255, 0.95);
+	border-radius: 20px;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+	transition: none;
 }
-
-/* ============================================================
-   SWITCH LABEL
-   ============================================================ */
 
 .darkmode-switch {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    margin: 0;
-    padding: 0;
-    cursor: pointer;
-    user-select: none;
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	margin: 0;
+	padding: 0;
+	cursor: pointer;
+	user-select: none;
 }
-
-
-/* ============================================================
-   CHECKBOX
-   ============================================================ */
 
 .darkmode-switch input {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    opacity: 0;
-    pointer-events: none;
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	opacity: 0;
+	pointer-events: none;
 }
-
-
-/* ============================================================
-   SWITCH HINTERGRUND
-   ============================================================ */
 
 .darkmode-switch .slider {
-    position: relative;
-    display: block;
-    width: 38px;
-    height: 22px;
-    min-width: 38px;
-    background-color: var(--white);
-    border: 1px solid #8f959e;
-    border-radius: 20px;
-    transition: none;
+	position: relative;
+	display: block;
+	width: 38px;
+	height: 22px;
+	min-width: 38px;
+	background-color: var(--white);
+	border: 1px solid #8f959e;
+	border-radius: 20px;
+	transition: none;
 }
-
-
-/* ============================================================
-   SWITCH KREIS
-   ============================================================ */
 
 .darkmode-switch .slider::before {
-    content: "";
-    position: absolute;
-    width: 15px;
-    height: 15px;
-    left: 1px;
-    top: 2px;
-    background-color: #8f959e;
-    border-radius: 50%;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
-    transition: none;
+	content: "";
+	position: absolute;
+	width: 15px;
+	height: 15px;
+	left: 1px;
+	top: 2px;
+	background-color: #8f959e;
+	border-radius: 50%;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+	transition: none;
 }
 
-
-/* ============================================================
-   AKTIV
-   ============================================================ */
-
 .darkmode-switch input:checked + .slider {
-    background-color: #0d6efd;
+	background-color: var(--primary);
 }
 
 .darkmode-switch input:checked + .slider::before {
-    transform: translateX(20px);
+	transform: translateX(20px);
 }
-
-
-/* ============================================================
-   TEXT
-   ============================================================ */
-
-.darkmode-switch .switch-text {
-    margin: 0;
-    padding: 0;
-    font-size: 0.8rem;
-    line-height: 1;
-    color: var(--dark);
-    white-space: nowrap;
-}
-
-
-/* ============================================================
-   DARKMODE
-   ============================================================ */
 
 html.darkmode .darkmode-control {
-    background: rgba(30, 30, 30, 0.95);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+	background: rgba(30, 30, 30, 0.95);
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 }
 
 html.darkmode .darkmode-switch .switch-text {
-    color: var(--dark);
+	color: var(--dark);
 }
-
-
-/* ============================================================
-   FOCUS
-   ============================================================ */
 
 .darkmode-switch input:focus-visible + .slider {
-    outline: 2px solid #0d6efd;
-    outline-offset: 2px;
+	outline: 2px solid #0d6efd;
+	outline-offset: 2px;
 }
 
-
-/* ============================================================
-   MOBILE
-   ============================================================ */
-
+/* Mobile */
 @media (max-width: 576px) {
-    .darkmode-control {
-        bottom: 10px;
-        right: 10px;
-        padding: 4px 8px;
-    }
+	.darkmode-control {
+		bottom: 10px;
+		right: 10px;
+		padding: 4px 8px;
+	}
 
-    .darkmode-switch {
-        gap: 8px;
-    }
-
-    .darkmode-switch .switch-text {
-        font-size: 12px;
-    }
+	.darkmode-switch {
+		gap: 8px;
+	}
 }
 
 </style>
