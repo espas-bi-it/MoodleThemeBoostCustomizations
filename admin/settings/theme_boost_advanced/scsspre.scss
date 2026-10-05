@@ -1,8 +1,121 @@
-$primary:   #007399;
-$secondary: #047b20;
-$success:   #28a745;
-$info:      #17a2b8;
-$warning:   #ffc107;
-$danger:    #d9534f;
-$light:     #f2f2f2;
-$dark:      #031417;
+/* ===========================
+   CSS Variables
+   =========================== */
+
+:root {
+    /* Brand */
+    --primary: #008cba !important;
+    --secondary: #3f6f73 !important;
+
+    /* Context */
+   --context-admin: #b94a4a !important;
+   --context-admin-subtle: #cd7e7e;
+   --context-admin-strong: #8f3535;
+
+   --context-documentation: #3f7777 !important;
+   --context-documentation-subtle: #a0c5c5;
+   --context-documentation-strong: #2d5d5d;
+
+    /* Status */
+    --success: #429954 !important;
+    --success-subtle: #dcecdf;
+    --success-strong: #286638;
+
+    --info: #17a2b8 !important;
+    --info-subtle: #eaf7fa;
+    --info-strong: #08798a;
+
+    --warning: #d79712 !important;
+    --warning-subtle: #f7e8c5;
+    --warning-strong: #946500;
+
+    --danger: #d9534f !important;
+    --danger-subtle: #f5dada;
+    --danger-strong: #a8322f;
+
+    --yellow: #ffff00;
+    --yellow-subtle: #fff9b3;
+    --yellow-strong: #b8a800;
+
+    /* Surfaces */
+    --surface-0: #ffffff;
+    --surface-1: #f7f8fa;
+    --surface-2: #e9ecef;
+    --surface-3: #d9dde2;
+
+    /* Text */
+    --text: #031417;
+    --text-muted: #777777;
+    --text-subtle: #555555;
+
+    /* Borders */
+    --border: #e9ecef;
+    --border-strong: #d9dde2;
+
+    /* Bootstrap compatibility */
+    --light: #f2f2f2 !important;
+    --dark: #031417 !important;
+    --white: #ffffff !important;
+}
+
+
+/* ===========================
+   Dark mode variables
+   =========================== */
+
+html.darkmode {
+
+    /* Brand */
+    --primary: #78aaff !important;
+    --secondary: #e6b566 !important;
+
+    /* Context */
+    --context-admin: #ef8064 !important;
+    --context-admin-subtle: #4a2d27;
+    --context-admin-strong: #ffab96;
+
+    --context-documentation: #5ca0a0 !important;
+    --context-documentation-subtle: #293f42;
+    --context-documentation-strong: #a5dddd;
+
+    /* Status */
+    --success: #9bd875 !important;
+    --success-subtle: #30482a;
+    --success-strong: #b9e89a;
+
+    --info: #a9bee5 !important;
+    --info-subtle: #303d52;
+    --info-strong: #c8d8f2;
+
+    --warning: #edc982 !important;
+    --warning-subtle: #4a3d28;
+    --warning-strong: #ffe1a3;
+
+    --danger: #ef8064 !important;
+    --danger-subtle: #4a2d27;
+    --danger-strong: #ffab96;
+
+    --yellow: #ffff33;
+    --yellow-subtle: #4a4a20;
+    --yellow-strong: #ffff80;
+
+    /* Surfaces */
+    --surface-0: #23313d;
+    --surface-1: #304454;
+    --surface-2: #374d5d;
+    --surface-3: #415869;
+
+    /* Text */
+    --text: #f5f5f5 !important;
+    --text-muted: #b8b8b8 !important;
+    --text-subtle: #9a9ca0 !important;
+
+    /* Borders */
+    --border: #3b5262 !important;
+    --border-strong: #4d6575 !important;
+
+    /* Bootstrap compatibility */
+    --white: #1d2125 !important;
+    --light: #41474b !important;
+    --dark: #f5f5f5 !important;
+}
