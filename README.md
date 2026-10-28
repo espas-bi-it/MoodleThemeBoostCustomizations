@@ -28,15 +28,6 @@ The following screenshots should provide a visual overview of the main ESPAS Moo
 | :-----------------------------------------------------: | :---------------------------------------------------: |
 | ![Complex Quiz Question](/screenshots/quiz.png) | ![ESPAS Dark Mode](screenshots/darkmode.png) |
 
-### Recommended screenshots
-
-The four screenshots should ideally show:
-
-1. **Dashboard / Start Page** – general ESPAS layout and navigation
-2. **Course View** – cards, blocks, course index, and activities
-3. **Complex Quiz Question** – demonstrating the increased content width
-4. **Dark Mode** – demonstrating the Dark Mode implementation
-
 ---
 
 # Configuration in Moodle
